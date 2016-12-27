@@ -21,7 +21,9 @@ URL: <http://a-desk.jp/modules/forum_module/index.php?cat_id=3>
 ## 設定ツールについて
 「REVIVE USB, Configuration Tool ver 1.30」に手を加え、サンプリング周期と一致検出回数の設定項目を増やしたものです。  
 チャタリング対策版ファームウェア以外では動作しません。  
-デフォルトでは「サンプリング周期＝10ms／一致検出回数＝3回」に設定していますが、これらを変更することができます。  
+デフォルトでは「サンプリング周期＝10ms／一致検出回数＝3回」に設定していますが、これらを変更することができます。 
+
+![REVIVE USB CT for Debounce](https://raw.githubusercontent.com/ushui/REVIVE_USB_Debounce/master/revive_usb_ct_for_debounce.png)  
 ### サンプリング周期
 チャタリングノイズ除去の効果があります。  
 1～174msまで設定可能で、その設定値ごとにスイッチのON/OFF読み出しを行います。  
