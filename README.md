@@ -1,20 +1,22 @@
 # REVIVE USB チャタリング対策版（PID004A）
-「REVIVE USB ver 007」と「REVIVE USB, Configuration Tool ver 1.30」をベースに作成したものです。  
-一度だけボタンを押したつもりがダブルクリックになったりキーが複数回入力されるケース（チャタリング）を防ぐことが目的です。  
-サンプリング方式とN回一致検出によるチャタリング防止を実現していて、ユーザがこれらのしきい値を変更することができます。  
+一度しかボタンを押していないのにダブルクリックになる、キーが複数回入力されるなどのケースを防ぐことができます。  
+通常のファームウェアはリアルタイムでスイッチの状態を読み取っているのでわずかな信号の揺れも検知してしまいますが、これを一定時間ごとに読み取って解決しています。  
+そのため遅延（デフォルトは最短30ms。1～44370msまで調整可）が生じることに注意が必要です。  
+設定ツールによってしきい値を変更できるので、遅延を抑えたい場合やそれでもチャタリングが起きる場合にも対応できます。  
 ## 使い方
 基盤の組み立て方や配線などは下記を参考にしてください。  
 URL: <http://a-desk.jp/modules/forum_module/index.php?cat_id=3> 
 
-1. 上記URLからファームウェア書き込みソフト「HIDBootLoader.exe」をダウンロードして起動する。  
+1. 上記URLからファームウェア書き込みソフト「HIDBootLoader.exe」をダウンロードする。  
 
-2. このリポジトリから「[REVIVE_USB_Debounce.hex](https://raw.githubusercontent.com/ushui/REVIVE_USB_Debounce/master/REVIVE_USB_Debounce.hex)」と「[REVIVE_USB_CT_for_Debounce.exe](https://github.com/ushui/REVIVE_USB_Debounce/raw/master/REVIVE_USB_CT_for_Debounce.exe)」をダウンロードする。  
+2. このリポジトリから「[REVIVE_USB_Debounce_latest.zip](https://github.com/ushui/REVIVE_USB_Debounce/raw/master/REVIVE_USB_Debounce_latest.zip)」をダウンロードし、解凍する。  
+「REVIVE_USB_Debounce.hex」と「REVIVE_USB_CT_for_Debounce.exe」の2つのファイルが解凍される。  
 
 3. 手持ちのREVIVE USBのショートピンをBOOTにしてPCへ接続する。  
 
-4. 「Open Hex File」ボタンから「REVIVE_USB_Debounce.hex」を選択し、  
+4. 「HIDBootLoader.exe」を起動して「Open Hex File」ボタンから「REVIVE_USB_Debounce.hex」を選択し、  
 「Program/Velify」ボタンを押してREVIVE USBのファームウェアを書き換える。  
-6. 手持ちのREVIVE USBのショートピンをBOOTから戻して再度PCへ接続する。  
+6. REVIVE USBのショートピンをBOOTから戻して再度PCへ接続する。  
 
 7. 「REVIVE_USB_CT_for_Debounce.exe」を起動して好みの設定に変更する。  
 
@@ -36,22 +38,27 @@ URL: <http://a-desk.jp/modules/forum_module/index.php?cat_id=3>
 どの程度の設定値にすればよいかは使用するスイッチ・設置環境・用途によるので何とも言えません。  
 一般的なマイクロスイッチであればデフォルト値から変更の必要はないと思われます。  
 設定値の決め方は、設定ツールからキーボードと適当なキーに設定し、メモ帳を開いてボタンを押してチャタリングが確認できれば数値を上げてみる程度でいいと思います。  
-もちろん遅延を抑えたい場合は逆のことを行えばいいでしょう。遅延秒数はおおよそサンプリング周期×一致検出回数で求められます（実際は少しブレます）。  
+もちろん遅延を抑えたい場合は逆のことを行えばいいでしょう。遅延秒数は**サンプリング周期×一致検出回数**で求められます（実際は後ろに少しブレます）。  
 ## 動作環境について
 設定ツールはWindows XP以降のOSで動作します（Windows Vistaで動作を確認しています）。  
 書き込み・設定をWindows上で行ってしまえば、ファームウェア（REVIVE USB）はMacやLinux/UNIX系のOSでも動作するはずです。
-## 開発環境について
+## 開発環境・開発言語について
+### ハードウェア
+REVIVE USB (PIC18F14K50)
 ### ファームウェア
-MPLAB IDE 8
-### 設定ツール
-Visual C# 2010 Express
+開発環境：MPLAB IDE 8  
+開発言語：C
+### ソフトウェア（設定ツール）
+開発環境：Visual C# 2010 Express  
+開発言語：C#
 ## ソースコードについて
-ライセンスは「Assembly Desk License」に準拠します。  
+「Assembly Desk License」ライセンスに準拠します。  
 「REVIVE USB チャタリング対策版」は「REVIVE USB ver 007」と「REVIVE USB, Configuration Tool ver 1.30」をベースに、「REVIVE USB (Keyboard Only版) Ver 2.0.0」とその設定ツールを参考にして作成しました。  
 作成者である「Bit Trade One, LTD」に感謝いたします。
 
 ***
+2016/12/28 文書の追記と補足・修正。使い方の手順を書き換えた。  
 2016/12/27 readme作成。
 ***
 作成者： ushui（ゆーしゅい）  
-Twitter: @kaede_hrc  
+Twitter: [@kaede_hrc](https://twitter.com/kaede_hrc)  
