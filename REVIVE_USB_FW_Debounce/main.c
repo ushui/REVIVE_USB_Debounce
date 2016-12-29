@@ -1,6 +1,8 @@
 // USB HID core
 /*
- * Ver Debounce 1.0.0 (2016/12/26)
+ * Ver Debounce 1.1 (2016/12/29)
+ *   スイッチの状態がONからOFFになる際にチャタリング防止処理を行っていなかったバグを修正。
+ * Ver Debounce 1.0 (2016/12/26)
  *   「REVIVE USB ver 007」をベースに、「REVIVE USB (Keyboard Only版) Ver 2.0.0」を参考に作成。
  *   チャタリング防止処理（タイマ割り込みによるサンプリング方式＆N回一致検出）を行うように変更。
  */
@@ -104,6 +106,9 @@ void YourLowPriorityISRCode();
 #define MOVE_OFF	0
 #define MOVE_ON		1
 
+#define	STATE_OFF	0
+#define	STATE_ON	1
+
 #define NUM_OF_PINS		12
 #define NUM_OF_SETTINGS	3
 
@@ -125,7 +130,7 @@ void YourLowPriorityISRCode();
 
 /** VARIABLES ******************************************************/
 #pragma udata
-char c_version[]="Debounce 1.0.0 based ver 007";
+char c_version[]="Debounce 1.1";
 BYTE mouse_buffer[4];
 BYTE joystick_buffer[4];
 BYTE keyboard_buffer[8]; 
@@ -137,7 +142,7 @@ USB_HANDLE USBOutHandle = 0;
 USB_HANDLE USBInHandle = 0;
 
 unsigned int button_state;
-unsigned char button_pressing_count[NUM_OF_PINS];
+unsigned char button_pressing_count[NUM_OF_PINS][STATE_ON];
 
 char mouse_move_up;
 char mouse_move_down;
@@ -317,15 +322,26 @@ unsigned char ToSendDataBuffer[64];
 			for(fi = 0;fi < NUM_OF_PINS; fi++)
 			{
 				if(((button_state & (0x0001 << fi)) ? 1:0))
-				{ //ONの状態なら一致検出回数をカウントアップ
-					if (button_pressing_count[fi] < eeprom_check_count)
+				{ //ON
+					if (button_pressing_count[fi][STATE_ON] < eeprom_check_count)
 					{
-						button_pressing_count[fi]++;
+						button_pressing_count[fi][STATE_ON]++;
+					}
+					if (button_pressing_count[fi][STATE_ON] == eeprom_check_count)
+					{ //ONが回数分続いたのでOFF検出回数をセット。OFFが回数分続かずONに戻った場合もセットする
+						button_pressing_count[fi][STATE_OFF] = eeprom_check_count;
 					}
 				}
 				else
-				{ //OFFの状態なら一致検出回数をリセット
-					button_pressing_count[fi] = 0;
+				{ //OFF
+					if (button_pressing_count[fi][STATE_OFF] > 0)
+					{
+						button_pressing_count[fi][STATE_OFF]--;
+					}
+					if (button_pressing_count[fi][STATE_OFF] == 0)
+					{ //OFFが回数分続いたのでON検出回数をリセット。ONが回数分続かずOFFに戻った場合もリセットする
+						button_pressing_count[fi][STATE_ON] = 0;
+					}
 				}
 			}
 		}
@@ -539,7 +555,8 @@ void UserInit(void)
 	for(fi = 0;fi < NUM_OF_PINS; fi++)
 	{
 		//一致検出回数初期化
-		button_pressing_count[fi] = 0;
+		button_pressing_count[fi][STATE_OFF] = 0;
+		button_pressing_count[fi][STATE_ON] = 0;
 		//EEPROMのボタン設定値を読み込み
 		for(fj = 0;fj < NUM_OF_SETTINGS;fj++)
 		{
@@ -630,7 +647,7 @@ void ProcessIO(void)
 	
 	for(fi = 0;fi < NUM_OF_PINS ; fi++)
 	{
-		if(button_pressing_count[fi] == eeprom_check_count)
+		if(button_pressing_count[fi][STATE_ON] == eeprom_check_count)
 		{
 			switch(eeprom_data[fi][EEPROM_DATA_MODE])
 			{
