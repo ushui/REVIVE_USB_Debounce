@@ -1,7 +1,5 @@
 // USB HID core
 /*
- * Ver Debounce 1.2 (2016/12/29)
- *   入力が無効になっていたバグを修正。
  * Ver Debounce 1.1 (2016/12/29)
  *   スイッチの状態がONからOFFになる際にチャタリング防止処理を行っていなかったバグを修正。
  * Ver Debounce 1.0 (2016/12/26)
@@ -144,7 +142,7 @@ USB_HANDLE USBOutHandle = 0;
 USB_HANDLE USBInHandle = 0;
 
 unsigned int button_state;
-unsigned char button_pressing_count[NUM_OF_PINS][2];
+unsigned char button_pressing_count[NUM_OF_PINS][STATE_ON];
 
 char mouse_move_up;
 char mouse_move_down;
