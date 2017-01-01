@@ -10,22 +10,22 @@ URL: <http://a-desk.jp/modules/forum_module/index.php?cat_id=3>
 1. 上記URLからファームウェア書き込みソフト「HIDBootLoader.exe」をダウンロードする。  
 
 2. このリポジトリから「[REVIVE_USB_Debounce_latest.zip](https://github.com/ushui/REVIVE_USB_Debounce/raw/master/REVIVE_USB_Debounce_latest.zip)」をダウンロードし、解凍する。  
-「REVIVE_USB_Debounce.hex」と「REVIVE_USB_CT_for_Debounce.exe」の2つのファイルが解凍される。  
+「readme.txt」「REVIVE_USB_Debounce_FW.hex」「REVIVE_USB_Debounce_CT.exe」の3つのファイルが解凍される。  
 
 3. 手持ちのREVIVE USBのショートピンをBOOTにしてPCへ接続する。  
 
-4. 「HIDBootLoader.exe」を起動して「Open Hex File」ボタンから「REVIVE_USB_Debounce.hex」を選択し、  
+4. 「HIDBootLoader.exe」を起動して「Open Hex File」ボタンから「REVIVE_USB_Debounce_FW.hex」を選択し、  
 「Program/Velify」ボタンを押してREVIVE USBのファームウェアを書き換える。  
 6. REVIVE USBのショートピンをBOOTから戻して再度PCへ接続する。  
 
-7. 「REVIVE_USB_CT_for_Debounce.exe」を起動して好みの設定に変更する。  
+7. 「REVIVE_USB_Debounce_CT.exe」を起動して好みの設定に変更する。  
 
 ## 設定ツールについて
-「REVIVE USB, Configuration Tool ver 1.30」に手を加え、サンプリング周期と一致検出回数の設定項目を増やしたものです。  
+「REVIVE USB, Configuration Tool」に手を加え、サンプリング周期と一致検出回数の設定項目を増やしたものです。  
 チャタリング対策版ファームウェア以外では動作しません。  
 デフォルトでは「サンプリング周期＝10ms／一致検出回数＝3回」に設定していますが、これらを変更することができます。 
 
-![REVIVE USB CT for Debounce](https://raw.githubusercontent.com/ushui/REVIVE_USB_Debounce/master/revive_usb_ct_for_debounce.png)  
+![REVIVE USB Debounce, Configuration Tool](https://raw.githubusercontent.com/ushui/REVIVE_USB_Debounce/master/revive_usb_debounce_ct.png)  
 ### サンプリング周期
 チャタリングノイズ除去の効果があります。  
 1～174msまで設定可能で、その設定値ごとにスイッチのON/OFF読み出しを行います。  
@@ -54,10 +54,13 @@ REVIVE USB (PIC18F14K50)
 開発言語：C#
 ## ソースコードについて
 「Assembly Desk License」ライセンスに準拠します。  
-「REVIVE USB チャタリング対策版」は「REVIVE USB ver 007」と「REVIVE USB, Configuration Tool ver 1.30」をベースに、「REVIVE USB (Keyboard Only版) Ver 2.0.0」とその設定ツールを参考にして作成しました。  
+「REVIVE USB チャタリング対策版」は「REVIVE USB」と「REVIVE USB, Configuration Tool」をベースに、「REVIVE USB (Keyboard Only版) 」とその設定ツールを参考にして作成しました。  
 作成者である「Bit Trade One, LTD」に感謝いたします。
+## 派生バージョン
+* [REVIVE USB MATRIX チャタリング対策版（PID004B）](https://github.com/ushui/REVIVE_USB_MATRIX_Debounce)
 
 ***
+2017/01/01 MATRIX版に合わせて表記の追記と修正。  
 2016/12/29 FW Version 1.2に合わせて追記。  
 2016/12/28 文書の追記と補足・修正。使い方の手順を書き換えた。  
 2016/12/27 readme作成。
