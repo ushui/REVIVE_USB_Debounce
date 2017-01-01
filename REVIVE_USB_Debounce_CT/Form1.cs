@@ -278,7 +278,7 @@ namespace HID_PnP_Demo
         byte[] version_buff = new byte[64];
 
         //Variables used by the application/form updates.
-        byte[] eeprom_data = Enumerable.Repeat<byte>(0, Constants.NUM_OF_BUTTON_SETTINGS).ToArray();
+        byte[] eeprom_data = Enumerable.Repeat<byte>(0, Constants.NUM_OF_PIN_SETTINGS).ToArray();
         byte eeprom_smpl_interval = 1;
         byte eeprom_check_count = 1;
         bool[] ChangeAssign = Enumerable.Repeat<bool>(true, Constants.NUM_OF_PINS).ToArray();
@@ -297,6 +297,7 @@ namespace HID_PnP_Demo
         byte MouseMoveValue_selected = 80;
         byte Now_Background_image = 1;  //どっちの背景が表示されているか。0:未接続 1:接続済み
         int StatusBoxChange = 99;
+        bool ReadFromDevice = true;
 
         //バーチャルキーコードとUSBキーコードの変換用配列
         byte[] VKtoUSBkey = new byte[256]{
@@ -1232,204 +1233,208 @@ namespace HID_PnP_Demo
                 {
                     if (AttachedState == true)	//Do not try to use the read/write handles unless the USB device is attached and ready
                     {
-                        //Get ANxx/POT Voltage value from the microcontroller firmware.  Note: some demo boards may not have a pot
-                        //on them.  In this case, the firmware may be configured to read an ANxx I/O pin voltage with the ADC
-                        //instead.  If this is the case, apply a proper voltage to the pin.  See the firmware for exact implementation.
+						//Get ANxx/POT Voltage value from the microcontroller firmware.  Note: some demo boards may not have a pot
+						//on them.  In this case, the firmware may be configured to read an ANxx I/O pin voltage with the ADC
+						//instead.  If this is the case, apply a proper voltage to the pin.  See the firmware for exact implementation.
 
-                        OUTBuffer[0] = 0x00;	//The first byte is the "Report ID" and does not get sent over the USB bus.  Always set = 0.
-                        OUTBuffer[1] = 0x37;	//READ_POT command (see the firmware source code), gets 10-bit ADC Value
-                        //Initialize the rest of the 64-byte packet to "0xFF".  Binary '1' bits do not use as much power, and do not cause as much EMI
-                        //when they move across the USB cable.  USB traffic is "NRZI" encoded, where '1' bits do not cause the D+/D- signals to toggle states.
-                        //This initialization is not strictly necessary however.
-                        for (uint i = 2; i < 65; i++)
-                            OUTBuffer[i] = 0xFF;
-
-                        //To get the ADCValue, first, we send a packet with our "READ_POT" command in it.
-                        if (WriteFile(WriteHandleToUSBDevice, OUTBuffer, 65, ref BytesWritten, IntPtr.Zero))	//Blocking function, unless an "overlapped" structure is used
+                        if (ReadFromDevice == true)
                         {
-                            INBuffer[0] = 0;
-                            //Now get the response packet from the firmware.
-                            if (ReadFileManagedBuffer(ReadHandleToUSBDevice, INBuffer, 65, ref BytesRead, IntPtr.Zero))		//Blocking function, unless an "overlapped" structure is used	
-                            {
-                                //INBuffer[0] is the report ID, which we don't care about.
-                                //INBuffer[1] is an echo back of the command (see microcontroller firmware).
-                                if (INBuffer[1] == 0x37)
-                                {
-                                    for (int fi = 0; fi < Constants.NUM_OF_PINS; fi++)
-                                    {
-                                        if (INBuffer[fi * Constants.NUM_OF_SETTINGS + 2] > Constants.DEVICE_TYPE_MAX)
-                                        {   //EEPROMの内容が壊れていたら0にする
-                                            for (int fj = 0; fj < Constants.NUM_OF_SETTINGS; fj++)
-                                            {
-                                                eeprom_data[fi * Constants.NUM_OF_SETTINGS + fj] = 0;
-                                            }
-                                        }
-                                        else
-                                        {
-                                            for (int fj = 0; fj < Constants.NUM_OF_SETTINGS; fj++)
-                                            {
-                                                eeprom_data[fi * Constants.NUM_OF_SETTINGS + fj] = INBuffer[fi * Constants.NUM_OF_SETTINGS + fj + 2];
-                                            }
-                                        }
-                                    }
-                                    if (INBuffer[Constants.NUM_OF_BUTTON_SETTINGS + 2] > 0)
-                                    {
-                                        eeprom_smpl_interval = INBuffer[Constants.NUM_OF_BUTTON_SETTINGS + 2];
-                                        eeprom_check_count = INBuffer[Constants.NUM_OF_BUTTON_SETTINGS + 2 + 1];
-                                    }
-                                    else
-                                    {
-                                        eeprom_smpl_interval = (byte)smpl_interval_numUpDown.Value;
-                                        eeprom_check_count = (byte)check_count_numUpDown.Value;
-                                    }
-                                }
-                            }
-                        }
-                        if (VersionReadReq == true)
-                        {
-                            VersionReadReq = false;
+							ReadFromDevice = false;
+							OUTBuffer[0] = 0x00;	//The first byte is the "Report ID" and does not get sent over the USB bus.  Always set = 0.
+							OUTBuffer[1] = 0x37;	//READ_POT command (see the firmware source code), gets 10-bit ADC Value
+							//Initialize the rest of the 64-byte packet to "0xFF".  Binary '1' bits do not use as much power, and do not cause as much EMI
+							//when they move across the USB cable.  USB traffic is "NRZI" encoded, where '1' bits do not cause the D+/D- signals to toggle states.
+							//This initialization is not strictly necessary however.
+							for (uint i = 2; i < 65; i++)
+								OUTBuffer[i] = 0xFF;
 
-                            for (uint i = 0; i < 65; i++)	//This loop is not strictly necessary.  Simply initializes unused bytes to
-                            {
-                                OUTBuffer[i] = 0xFF;				//0xFF for lower EMI and power consumption when driving the USB cable.
-                            }
-                            //Get the pushbutton state from the microcontroller firmware.
-                            OUTBuffer[0] = 0;			//The first byte is the "Report ID" and does not get sent over the USB bus.  Always set = 0.
-                            OUTBuffer[1] = 0x56;		//0x81 is the "Get Pushbutton State" command in the firmware
+							//To get the ADCValue, first, we send a packet with our "READ_POT" command in it.
+							if (WriteFile(WriteHandleToUSBDevice, OUTBuffer, 65, ref BytesWritten, IntPtr.Zero))	//Blocking function, unless an "overlapped" structure is used
+							{
+								INBuffer[0] = 0;
+								//Now get the response packet from the firmware.
+								if (ReadFileManagedBuffer(ReadHandleToUSBDevice, INBuffer, 65, ref BytesRead, IntPtr.Zero))		//Blocking function, unless an "overlapped" structure is used	
+								{
+									//INBuffer[0] is the report ID, which we don't care about.
+									//INBuffer[1] is an echo back of the command (see microcontroller firmware).
+									if (INBuffer[1] == 0x37)
+									{
+										for (int fi = 0; fi < Constants.NUM_OF_PINS; fi++)
+										{
+											if (INBuffer[fi * Constants.NUM_OF_SETTINGS + 2] > Constants.DEVICE_TYPE_MAX)
+											{   //EEPROMの内容が壊れていたら0にする
+												for (int fj = 0; fj < Constants.NUM_OF_SETTINGS; fj++)
+												{
+													eeprom_data[fi * Constants.NUM_OF_SETTINGS + fj] = 0;
+												}
+											}
+											else
+											{
+												for (int fj = 0; fj < Constants.NUM_OF_SETTINGS; fj++)
+												{
+													eeprom_data[fi * Constants.NUM_OF_SETTINGS + fj] = INBuffer[fi * Constants.NUM_OF_SETTINGS + fj + 2];
+												}
+											}
+										}
+										if (INBuffer[Constants.NUM_OF_PIN_SETTINGS + 2] > 0)
+										{
+											eeprom_smpl_interval = INBuffer[Constants.NUM_OF_PIN_SETTINGS + 2];
+											eeprom_check_count = INBuffer[Constants.NUM_OF_PIN_SETTINGS + 2 + 1];
+										}
+										else
+										{
+											eeprom_smpl_interval = (byte)smpl_interval_numUpDown.Value;
+											eeprom_check_count = (byte)check_count_numUpDown.Value;
+										}
+									}
+								}
+							}
+						}
+						if (VersionReadReq == true)
+						{
+							VersionReadReq = false;
 
-                            //To get the pushbutton state, first, we send a packet with our "Get Pushbutton State" command in it.
-                            if (WriteFile(WriteHandleToUSBDevice, OUTBuffer, 65, ref BytesWritten, IntPtr.Zero))	//Blocking function, unless an "overlapped" structure is used
-                            {
-                                //Now get the response packet from the firmware.
-                                INBuffer[0] = 0;
-                                {
-                                    if (ReadFileManagedBuffer(ReadHandleToUSBDevice, INBuffer, 65, ref BytesRead, IntPtr.Zero))	//Blocking function, unless an "overlapped" structure is used
-                                    {
-                                        //INBuffer[0] is the report ID, which we don't care about.
-                                        //INBuffer[1] is an echo back of the command (see microcontroller firmware).
-                                        //INBuffer[2] contains the I/O port pin value for the pushbutton (see microcontroller firmware).  
-                                        if (INBuffer[1] == 0x56)
-                                        {
-                                            for (uint i = 2; i < 65; i++)
-                                            {
-                                                version_buff[i - 2] = INBuffer[i];
-                                            }
-                                            VersionReadComp = true;
-                                        }
-                                    }
-                                }
-                            }
-                            else
-                            {
-                                AttachedState = false;
-                            }
-                        }
+							for (uint i = 0; i < 65; i++)	//This loop is not strictly necessary.  Simply initializes unused bytes to
+							{
+								OUTBuffer[i] = 0xFF;				//0xFF for lower EMI and power consumption when driving the USB cable.
+							}
+							//Get the pushbutton state from the microcontroller firmware.
+							OUTBuffer[0] = 0;			//The first byte is the "Report ID" and does not get sent over the USB bus.  Always set = 0.
+							OUTBuffer[1] = 0x56;		//0x81 is the "Get Pushbutton State" command in the firmware
 
-
-                        //Get the pushbutton state from the microcontroller firmware.
-                        OUTBuffer[0] = 0;			//The first byte is the "Report ID" and does not get sent over the USB bus.  Always set = 0.
-                        OUTBuffer[1] = 0x81;		//0x81 is the "Get Pushbutton State" command in the firmware
-                        for (uint i = 2; i < 65; i++)	//This loop is not strictly necessary.  Simply initializes unused bytes to
-                            OUTBuffer[i] = 0xFF;				//0xFF for lower EMI and power consumption when driving the USB cable.
-
-                        //To get the pushbutton state, first, we send a packet with our "Get Pushbutton State" command in it.
-                        if (WriteFile(WriteHandleToUSBDevice, OUTBuffer, 65, ref BytesWritten, IntPtr.Zero))	//Blocking function, unless an "overlapped" structure is used
-                        {
-                            //Now get the response packet from the firmware.
-                            INBuffer[0] = 0;
-                            {
-                                if (ReadFileManagedBuffer(ReadHandleToUSBDevice, INBuffer, 65, ref BytesRead, IntPtr.Zero))	//Blocking function, unless an "overlapped" structure is used
-                                {
-                                    //INBuffer[0] is the report ID, which we don't care about.
-                                    //INBuffer[1] is an echo back of the command (see microcontroller firmware).
-                                    //INBuffer[2] contains the I/O port pin value for the pushbutton (see microcontroller firmware).  
-                                    if (INBuffer[1] == 0x81)
-                                    {
-                                        PushButtonState = (uint)((INBuffer[2] << 8) + INBuffer[3]);
-                                    }
-                                }
-                            }
-                        }
+							//To get the pushbutton state, first, we send a packet with our "Get Pushbutton State" command in it.
+							if (WriteFile(WriteHandleToUSBDevice, OUTBuffer, 65, ref BytesWritten, IntPtr.Zero))	//Blocking function, unless an "overlapped" structure is used
+							{
+								//Now get the response packet from the firmware.
+								INBuffer[0] = 0;
+								{
+									if (ReadFileManagedBuffer(ReadHandleToUSBDevice, INBuffer, 65, ref BytesRead, IntPtr.Zero))	//Blocking function, unless an "overlapped" structure is used
+									{
+										//INBuffer[0] is the report ID, which we don't care about.
+										//INBuffer[1] is an echo back of the command (see microcontroller firmware).
+										//INBuffer[2] contains the I/O port pin value for the pushbutton (see microcontroller firmware).  
+										if (INBuffer[1] == 0x56)
+										{
+											for (uint i = 2; i < 65; i++)
+											{
+												version_buff[i - 2] = INBuffer[i];
+											}
+											VersionReadComp = true;
+										}
+									}
+								}
+							}
+							else
+							{
+								AttachedState = false;
+							}
+						}
 
 
+						//Get the pushbutton state from the microcontroller firmware.
+						OUTBuffer[0] = 0;			//The first byte is the "Report ID" and does not get sent over the USB bus.  Always set = 0.
+						OUTBuffer[1] = 0x81;		//0x81 is the "Get Pushbutton State" command in the firmware
+						for (uint i = 2; i < 65; i++)	//This loop is not strictly necessary.  Simply initializes unused bytes to
+							OUTBuffer[i] = 0xFF;				//0xFF for lower EMI and power consumption when driving the USB cable.
 
-                        //Check if this thread should send a Toggle LED(s) command to the firmware.  ToggleLEDsPending will get set
-                        //by the ToggleLEDs_btn click event handler function if the user presses the button on the form.
-                        if (Changevalue_btn_pressed == true)
-                        {
-                            for (uint i = 0; i < 65; i++)	//This loop is not strictly necessary.  Simply initializes unused bytes to
-                                OUTBuffer[i] = 0xFF;		//0xFF for lower EMI and power consumption when driving the USB cable.
+						//To get the pushbutton state, first, we send a packet with our "Get Pushbutton State" command in it.
+						if (WriteFile(WriteHandleToUSBDevice, OUTBuffer, 65, ref BytesWritten, IntPtr.Zero))	//Blocking function, unless an "overlapped" structure is used
+						{
+							//Now get the response packet from the firmware.
+							INBuffer[0] = 0;
+							{
+								if (ReadFileManagedBuffer(ReadHandleToUSBDevice, INBuffer, 65, ref BytesRead, IntPtr.Zero))	//Blocking function, unless an "overlapped" structure is used
+								{
+									//INBuffer[0] is the report ID, which we don't care about.
+									//INBuffer[1] is an echo back of the command (see microcontroller firmware).
+									//INBuffer[2] contains the I/O port pin value for the pushbutton (see microcontroller firmware).  
+									if (INBuffer[1] == 0x81)
+									{
+										PushButtonState = (uint)((INBuffer[2] << 8) + INBuffer[3]);
+									}
+								}
+							}
+						}
 
-                            OUTBuffer[0] = 0;				//The first byte is the "Report ID" and does not get sent over the USB bus.  Always set = 0.
-                            OUTBuffer[1] = 0x80;			//0x80 is the "Toggle LED(s)" command in the firmware
 
-                            // EEPROMデータに書き換えコードを追加
-                            OUTBuffer[2] = 0x05;
-                            OUTBuffer[3] = 0xAA;
-                            OUTBuffer[4] = 0x55;
-                            OUTBuffer[5] = 0x0A;
-                            OUTBuffer[6] = 0x0F;
 
-                            for (int fi = 0; fi < Constants.NUM_OF_BUTTON_SETTINGS; fi++)
-                            {
-                                OUTBuffer[fi + 7] = eeprom_data[fi];
-                            }
+						//Check if this thread should send a Toggle LED(s) command to the firmware.  ToggleLEDsPending will get set
+						//by the ToggleLEDs_btn click event handler function if the user presses the button on the form.
+						if (Changevalue_btn_pressed == true)
+						{
+							for (uint i = 0; i < 65; i++)	//This loop is not strictly necessary.  Simply initializes unused bytes to
+								OUTBuffer[i] = 0xFF;		//0xFF for lower EMI and power consumption when driving the USB cable.
 
-                            byte tmp_num_value;
-                            tmp_num_value = (byte)smpl_interval_numUpDown.Value;
-                            OUTBuffer[Constants.NUM_OF_BUTTON_SETTINGS + 7] = tmp_num_value;
-                            eeprom_smpl_interval = tmp_num_value;
+							OUTBuffer[0] = 0;				//The first byte is the "Report ID" and does not get sent over the USB bus.  Always set = 0.
+							OUTBuffer[1] = 0x80;			//0x80 is the "Toggle LED(s)" command in the firmware
 
-                            tmp_num_value = (byte)check_count_numUpDown.Value;
-                            OUTBuffer[Constants.NUM_OF_BUTTON_SETTINGS + 7 + 1] = tmp_num_value;
-                            eeprom_check_count = tmp_num_value;
+							// EEPROMデータに書き換えコードを追加
+							OUTBuffer[2] = 0x05;
+							OUTBuffer[3] = 0xAA;
+							OUTBuffer[4] = 0x55;
+							OUTBuffer[5] = 0x0A;
+							OUTBuffer[6] = 0x0F;
 
-                            OUTBuffer[SetPin_selected * Constants.NUM_OF_SETTINGS + 7] = DeviceType_selected;
-                            eeprom_data[SetPin_selected * Constants.NUM_OF_SETTINGS] = DeviceType_selected;
+							for (int fi = 0; fi < Constants.NUM_OF_PIN_SETTINGS; fi++)
+							{
+								OUTBuffer[fi + 7] = eeprom_data[fi];
+							}
 
-                            StatusBoxChange = SetPin_selected;
+							byte tmp_num_value;
+							tmp_num_value = (byte)smpl_interval_numUpDown.Value;
+							OUTBuffer[Constants.NUM_OF_PIN_SETTINGS + 7] = tmp_num_value;
+							eeprom_smpl_interval = tmp_num_value;
 
-                            switch (DeviceType_selected)
-                            {
-                                case Constants.DEVICE_TYPE_NONE_MOUSE:
-                                    OUTBuffer[SetPin_selected * Constants.NUM_OF_SETTINGS + 8] = MouseValue_selected;
-                                    OUTBuffer[SetPin_selected * Constants.NUM_OF_SETTINGS + 9] = MouseMoveValue_selected;
+							tmp_num_value = (byte)check_count_numUpDown.Value;
+							OUTBuffer[Constants.NUM_OF_PIN_SETTINGS + 7 + 1] = tmp_num_value;
+							eeprom_check_count = tmp_num_value;
 
-                                    eeprom_data[SetPin_selected * Constants.NUM_OF_SETTINGS + 1] = MouseValue_selected;
-                                    eeprom_data[SetPin_selected * Constants.NUM_OF_SETTINGS + 2] = MouseMoveValue_selected;
-                                    break;
-                                case Constants.DEVICE_TYPE_NONE_KEYBOARD:
-                                    OUTBuffer[SetPin_selected * Constants.NUM_OF_SETTINGS + 8] = KeyboardValue_selected;
-                                    OUTBuffer[SetPin_selected * Constants.NUM_OF_SETTINGS + 9] = KeyboardModifier_selected;
+							OUTBuffer[SetPin_selected * Constants.NUM_OF_SETTINGS + 7] = DeviceType_selected;
+							eeprom_data[SetPin_selected * Constants.NUM_OF_SETTINGS] = DeviceType_selected;
 
-                                    eeprom_data[SetPin_selected * Constants.NUM_OF_SETTINGS + 1] = KeyboardValue_selected;
-                                    eeprom_data[SetPin_selected * Constants.NUM_OF_SETTINGS + 2] = KeyboardModifier_selected;
-                                    break;
-                                case Constants.DEVICE_TYPE_NONE_JOY:
-                                    OUTBuffer[SetPin_selected * Constants.NUM_OF_SETTINGS + 8] = LeverValue_selected;
-                                    OUTBuffer[SetPin_selected * Constants.NUM_OF_SETTINGS + 8] |= ButtonValue_selected2;
-                                    OUTBuffer[SetPin_selected * Constants.NUM_OF_SETTINGS + 9] = ButtonValue_selected;
+							StatusBoxChange = SetPin_selected;
 
-                                    eeprom_data[SetPin_selected * Constants.NUM_OF_SETTINGS + 1] = LeverValue_selected;
-                                    eeprom_data[SetPin_selected * Constants.NUM_OF_SETTINGS + 1] |= ButtonValue_selected2;
-                                    eeprom_data[SetPin_selected * Constants.NUM_OF_SETTINGS + 2] = ButtonValue_selected;
-                                    break;
-                                default:
-                                    OUTBuffer[SetPin_selected * Constants.NUM_OF_SETTINGS + 8] = 0;
-                                    OUTBuffer[SetPin_selected * Constants.NUM_OF_SETTINGS + 9] = 0;
+							switch (DeviceType_selected)
+							{
+								case Constants.DEVICE_TYPE_NONE_MOUSE:
+									OUTBuffer[SetPin_selected * Constants.NUM_OF_SETTINGS + 8] = MouseValue_selected;
+									OUTBuffer[SetPin_selected * Constants.NUM_OF_SETTINGS + 9] = MouseMoveValue_selected;
 
-                                    eeprom_data[SetPin_selected * Constants.NUM_OF_SETTINGS + 1] = 0;
-                                    eeprom_data[SetPin_selected * Constants.NUM_OF_SETTINGS + 2] = 0;
-                                    break;
-                            }
+									eeprom_data[SetPin_selected * Constants.NUM_OF_SETTINGS + 1] = MouseValue_selected;
+									eeprom_data[SetPin_selected * Constants.NUM_OF_SETTINGS + 2] = MouseMoveValue_selected;
+									break;
+								case Constants.DEVICE_TYPE_NONE_KEYBOARD:
+									OUTBuffer[SetPin_selected * Constants.NUM_OF_SETTINGS + 8] = KeyboardValue_selected;
+									OUTBuffer[SetPin_selected * Constants.NUM_OF_SETTINGS + 9] = KeyboardModifier_selected;
 
-                            //Now send the packet to the USB firmware on the microcontroller
-                            WriteFile(WriteHandleToUSBDevice, OUTBuffer, 65, ref BytesWritten, IntPtr.Zero);	//Blocking function, unless an "overlapped" structure is used
-                            Changevalue_btn_pressed = false;
+									eeprom_data[SetPin_selected * Constants.NUM_OF_SETTINGS + 1] = KeyboardValue_selected;
+									eeprom_data[SetPin_selected * Constants.NUM_OF_SETTINGS + 2] = KeyboardModifier_selected;
+									break;
+								case Constants.DEVICE_TYPE_NONE_JOY:
+									OUTBuffer[SetPin_selected * Constants.NUM_OF_SETTINGS + 8] = LeverValue_selected;
+									OUTBuffer[SetPin_selected * Constants.NUM_OF_SETTINGS + 8] |= ButtonValue_selected2;
+									OUTBuffer[SetPin_selected * Constants.NUM_OF_SETTINGS + 9] = ButtonValue_selected;
 
-                            ChangeAssign[SetPin_selected] = true;
-                            ConnectFirstTime = true;
-                        }
+									eeprom_data[SetPin_selected * Constants.NUM_OF_SETTINGS + 1] = LeverValue_selected;
+									eeprom_data[SetPin_selected * Constants.NUM_OF_SETTINGS + 1] |= ButtonValue_selected2;
+									eeprom_data[SetPin_selected * Constants.NUM_OF_SETTINGS + 2] = ButtonValue_selected;
+									break;
+								default:
+									OUTBuffer[SetPin_selected * Constants.NUM_OF_SETTINGS + 8] = 0;
+									OUTBuffer[SetPin_selected * Constants.NUM_OF_SETTINGS + 9] = 0;
+
+									eeprom_data[SetPin_selected * Constants.NUM_OF_SETTINGS + 1] = 0;
+									eeprom_data[SetPin_selected * Constants.NUM_OF_SETTINGS + 2] = 0;
+									break;
+							}
+
+							//Now send the packet to the USB firmware on the microcontroller
+							WriteFile(WriteHandleToUSBDevice, OUTBuffer, 65, ref BytesWritten, IntPtr.Zero);	//Blocking function, unless an "overlapped" structure is used
+							Changevalue_btn_pressed = false;
+
+							ChangeAssign[SetPin_selected] = true;
+							ConnectFirstTime = true;
+						}
                     } //end of: if(AttachedState == true)
                     else
                     {
@@ -1495,7 +1500,7 @@ namespace HID_PnP_Demo
                     SetPin_combox.Enabled = true;
                     devicetype_combox.Enabled = true;
 
-                    SystemSetting_grpbox.Enabled = true;
+                    AllButtonSetting_grpbox.Enabled = true;
 
                     Status_C_pb.Visible = true;
                     Status_NC_pb.Visible = false;
@@ -1652,7 +1657,7 @@ namespace HID_PnP_Demo
                 }
                 if (StatusBoxChange != 99)
                 {
-                    StatusBox_lbl2.Text = "全体を[ " + 
+                    StatusBox_lbl2.Text = "AllButtonSettingを[ " + 
                         eeprom_smpl_interval + "ms / " + 
                         eeprom_check_count + "回 ]に、" + 
                         SetPin_combox.Text + "を[ " + 
@@ -1677,7 +1682,7 @@ namespace HID_PnP_Demo
                     SetPin_combox.Enabled = false;
                     devicetype_combox.Enabled = false;
 
-                    SystemSetting_grpbox.Enabled = false;
+                    AllButtonSetting_grpbox.Enabled = false;
                 }
 
                 for (int fi = 0; fi < Constants.NUM_OF_PINS; fi++)
@@ -1791,13 +1796,13 @@ namespace HID_PnP_Demo
 
                     Arrow_Com_pb.Visible = false;
 
-                    if (eeprom_data[SetPin_selected * Constants.NUM_OF_SETTINGS + 1] > Constants.SETTING_VALUE_MOUSE_MAX)
-                        eeprom_data[SetPin_selected * Constants.NUM_OF_SETTINGS + 1] = 0;
-
-                    mousevalue_combx.Items.Add("ダミー");
-                    mousevalue_combx.SelectedIndex = Constants.SETTING_VALUE_MOUSE_MAX + 1; //SelectedIndexChangedイベント発火用
-                    mousevalue_combx.SelectedIndex = eeprom_data[SetPin_selected * Constants.NUM_OF_SETTINGS + 1];
-                    mousevalue_combx.Items.Remove("ダミー");
+					mousevalue_combx.Items.Add("ダミー");
+					mousevalue_combx.SelectedIndex = Constants.SETTING_VALUE_MOUSE_MAX + 1; //SelectedIndexChangedイベント発火用
+					if (eeprom_data[SetPin_selected * Constants.NUM_OF_SETTINGS + 1] > Constants.SETTING_VALUE_MOUSE_MAX)
+						mousevalue_combx.SelectedIndex = 0;
+					else
+						mousevalue_combx.SelectedIndex = eeprom_data[SetPin_selected * Constants.NUM_OF_SETTINGS + 1];
+					mousevalue_combx.Items.Remove("ダミー");
 
                     break;
                 case Constants.DEVICE_TYPE_NONE_KEYBOARD:
@@ -2394,7 +2399,7 @@ namespace HID_PnP_Demo
         //ボタンや設定
         public const int NUM_OF_PINS = 12;
         public const int NUM_OF_SETTINGS = 3;
-        public const int NUM_OF_BUTTON_SETTINGS = NUM_OF_PINS * NUM_OF_SETTINGS; // 送信バッファに入り切らないので56を超えないこと
+        public const int NUM_OF_PIN_SETTINGS = NUM_OF_PINS * NUM_OF_SETTINGS; // 送信バッファに入り切らないので56を超えないこと
         public const int SETTING_VALUE_MOUSE_MAX = 9; //マウスの設定タイプ
         //デバイスタイプ
         public const byte DEVICE_TYPE_MIN = 0;

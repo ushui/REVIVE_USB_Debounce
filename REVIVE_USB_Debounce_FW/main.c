@@ -1,5 +1,7 @@
 // USB HID core
 /*
+ * Ver Debounce 1.3 (2016/01/01)
+ *   リファクタリングを行った。
  * Ver Debounce 1.2 (2016/12/29)
  *   入力が無効になっていたバグを修正。
  * Ver Debounce 1.1 (2016/12/29)
@@ -132,7 +134,7 @@ void YourLowPriorityISRCode();
 
 /** VARIABLES ******************************************************/
 #pragma udata
-char c_version[]="Debounce 1.1";
+char c_version[]="Debounce 1.3";
 BYTE mouse_buffer[4];
 BYTE joystick_buffer[4];
 BYTE keyboard_buffer[8]; 
@@ -146,26 +148,12 @@ USB_HANDLE USBInHandle = 0;
 unsigned int button_state;
 unsigned char button_pressing_count[NUM_OF_PINS][2];
 
-char mouse_move_up;
-char mouse_move_down;
-char mouse_move_left;
-char mouse_move_right;
-char mouse_wheel_up;
-char mouse_wheel_down;
-
 int temp_mouse_move_up = 0;
 int temp_mouse_move_down = 0;
 int temp_mouse_move_left = 0;
 int temp_mouse_move_right = 0;
 int temp_mouse_wheel_up = 0;
 int temp_mouse_wheel_down = 0;
-
-unsigned char speed_mouse_move_up;
-unsigned char speed_mouse_move_down;
-unsigned char speed_mouse_move_left;
-unsigned char speed_mouse_move_right;
-unsigned char speed_mouse_wheel_up;
-unsigned char speed_mouse_wheel_down;
 
 //ボタンの設定用変数
 unsigned char eeprom_data[NUM_OF_PINS][NUM_OF_SETTINGS] = {
@@ -583,8 +571,8 @@ void UserInit(void)
 		//以下の初期値は1以上にすること
 		eeprom_smpl_interval = 10;
 		eeprom_check_count = 3;
-		uc_temp = WriteEEPROM_Agree(EEPROM_SAVE_NUM*(NUM_OF_PINS*NUM_OF_SETTINGS), 0x0A, EEPROM_SAVE_NUM);
-		uc_temp = WriteEEPROM_Agree(EEPROM_SAVE_NUM*(NUM_OF_PINS*NUM_OF_SETTINGS+1), 0x03, EEPROM_SAVE_NUM);
+		uc_temp = WriteEEPROM_Agree(EEPROM_SAVE_NUM*(NUM_OF_PINS*NUM_OF_SETTINGS), eeprom_smpl_interval, EEPROM_SAVE_NUM);
+		uc_temp = WriteEEPROM_Agree(EEPROM_SAVE_NUM*(NUM_OF_PINS*NUM_OF_SETTINGS+1), eeprom_check_count, EEPROM_SAVE_NUM);
 	}
 	
 	//Timer0の設定（TIMER_INT_ON & T0_16BIT & T0_SOURCE_INT & T0_PS_1_32）
@@ -627,10 +615,21 @@ void ProcessIO(void)
 	char tmp;
 	char result;
 	unsigned char uc_temp;
+	char mouse_move_up;
+	char mouse_move_down;
+	char mouse_move_left;
+	char mouse_move_right;
+	char mouse_wheel_up;
+	char mouse_wheel_down;
+	unsigned char speed_mouse_move_up;
+	unsigned char speed_mouse_move_down;
+	unsigned char speed_mouse_move_left;
+	unsigned char speed_mouse_move_right;
+	unsigned char speed_mouse_wheel_up;
+	unsigned char speed_mouse_wheel_down;
 
     // User Application USB tasks
     if((USBDeviceState < CONFIGURED_STATE)||(USBSuspendControl==1)) return;
-
 
 //--------------------------------------------------------------------
 

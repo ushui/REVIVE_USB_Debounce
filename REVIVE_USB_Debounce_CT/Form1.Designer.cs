@@ -142,7 +142,7 @@ namespace HID_PnP_Demo
             this.check_count_lbl2 = new System.Windows.Forms.Label();
             this.smpl_interval_lbl2 = new System.Windows.Forms.Label();
             this.fw_version_lbl = new System.Windows.Forms.Label();
-            this.SystemSetting_grpbox = new System.Windows.Forms.GroupBox();
+            this.AllButtonSetting_grpbox = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.MouseMove_UD)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ButtonPressIcon12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ButtonPressIcon11)).BeginInit();
@@ -193,7 +193,7 @@ namespace HID_PnP_Demo
             ((System.ComponentModel.ISupportInitialize)(this.BackGround_pb)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.smpl_interval_numUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.check_count_numUpDown)).BeginInit();
-            this.SystemSetting_grpbox.SuspendLayout();
+            this.AllButtonSetting_grpbox.SuspendLayout();
             this.SuspendLayout();
             // 
             // ReadWriteThread
@@ -793,9 +793,9 @@ namespace HID_PnP_Demo
             this.StatusBox_lbl2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(106)))), ((int)(((byte)(106)))));
             this.StatusBox_lbl2.Location = new System.Drawing.Point(18, 487);
             this.StatusBox_lbl2.Name = "StatusBox_lbl2";
-            this.StatusBox_lbl2.Size = new System.Drawing.Size(233, 12);
+            this.StatusBox_lbl2.Size = new System.Drawing.Size(287, 12);
             this.StatusBox_lbl2.TabIndex = 118;
-            this.StatusBox_lbl2.Text = "REVIVE USB, Configuration Tool‹N“®‚µ‚Ü‚µ‚½";
+            this.StatusBox_lbl2.Text = "REVIVE USB Debounce, Configuration Tool‹N“®‚µ‚Ü‚µ‚½";
             // 
             // devicetype_lbl5
             // 
@@ -1535,35 +1535,36 @@ namespace HID_PnP_Demo
             // 
             this.fw_version_lbl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(214)))), ((int)(((byte)(214)))));
             this.fw_version_lbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(106)))), ((int)(((byte)(106)))));
-            this.fw_version_lbl.Location = new System.Drawing.Point(519, 487);
+            this.fw_version_lbl.Location = new System.Drawing.Point(516, 487);
             this.fw_version_lbl.Name = "fw_version_lbl";
             this.fw_version_lbl.Size = new System.Drawing.Size(228, 12);
             this.fw_version_lbl.TabIndex = 170;
             this.fw_version_lbl.Text = "FW Version";
             this.fw_version_lbl.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
-            // SystemSetting_grpbox
+            // AllButtonSetting_grpbox
             // 
-            this.SystemSetting_grpbox.Controls.Add(this.check_count_numUpDown);
-            this.SystemSetting_grpbox.Controls.Add(this.smpl_interval_lbl1);
-            this.SystemSetting_grpbox.Controls.Add(this.smpl_interval_lbl2);
-            this.SystemSetting_grpbox.Controls.Add(this.check_count_lbl1);
-            this.SystemSetting_grpbox.Controls.Add(this.check_count_lbl2);
-            this.SystemSetting_grpbox.Controls.Add(this.smpl_interval_numUpDown);
-            this.SystemSetting_grpbox.Enabled = false;
-            this.SystemSetting_grpbox.Location = new System.Drawing.Point(228, 375);
-            this.SystemSetting_grpbox.Name = "SystemSetting_grpbox";
-            this.SystemSetting_grpbox.Size = new System.Drawing.Size(191, 96);
-            this.SystemSetting_grpbox.TabIndex = 171;
-            this.SystemSetting_grpbox.TabStop = false;
-            this.SystemSetting_grpbox.Text = "AllButtonSetting";
+            this.AllButtonSetting_grpbox.Controls.Add(this.check_count_numUpDown);
+            this.AllButtonSetting_grpbox.Controls.Add(this.smpl_interval_lbl1);
+            this.AllButtonSetting_grpbox.Controls.Add(this.smpl_interval_lbl2);
+            this.AllButtonSetting_grpbox.Controls.Add(this.check_count_lbl1);
+            this.AllButtonSetting_grpbox.Controls.Add(this.check_count_lbl2);
+            this.AllButtonSetting_grpbox.Controls.Add(this.smpl_interval_numUpDown);
+            this.AllButtonSetting_grpbox.Enabled = false;
+            this.AllButtonSetting_grpbox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(106)))), ((int)(((byte)(106)))));
+            this.AllButtonSetting_grpbox.Location = new System.Drawing.Point(228, 375);
+            this.AllButtonSetting_grpbox.Name = "AllButtonSetting_grpbox";
+            this.AllButtonSetting_grpbox.Size = new System.Drawing.Size(191, 96);
+            this.AllButtonSetting_grpbox.TabIndex = 171;
+            this.AllButtonSetting_grpbox.TabStop = false;
+            this.AllButtonSetting_grpbox.Text = "AllButtonSetting";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(878, 500);
-            this.Controls.Add(this.SystemSetting_grpbox);
+            this.Controls.Add(this.AllButtonSetting_grpbox);
             this.Controls.Add(this.fw_version_lbl);
             this.Controls.Add(this.DeviceAssign_lbl12);
             this.Controls.Add(this.DeviceAssign_lbl11);
@@ -1671,7 +1672,7 @@ namespace HID_PnP_Demo
             this.MaximumSize = new System.Drawing.Size(894, 538);
             this.MinimizeBox = false;
             this.Name = "Form1";
-            this.Text = "REVIVE USB, Configuration Tool ver 1.0.0 for Debounce based ver 1.30";
+            this.Text = "REVIVE USB Debounce, Configuration Tool ver 1.0.1";
             ((System.ComponentModel.ISupportInitialize)(this.MouseMove_UD)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ButtonPressIcon12)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ButtonPressIcon11)).EndInit();
@@ -1722,8 +1723,8 @@ namespace HID_PnP_Demo
             ((System.ComponentModel.ISupportInitialize)(this.BackGround_pb)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.smpl_interval_numUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.check_count_numUpDown)).EndInit();
-            this.SystemSetting_grpbox.ResumeLayout(false);
-            this.SystemSetting_grpbox.PerformLayout();
+            this.AllButtonSetting_grpbox.ResumeLayout(false);
+            this.AllButtonSetting_grpbox.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1843,7 +1844,7 @@ namespace HID_PnP_Demo
         private System.Windows.Forms.Label check_count_lbl2;
         private System.Windows.Forms.Label smpl_interval_lbl2;
         private System.Windows.Forms.Label fw_version_lbl;
-        private System.Windows.Forms.GroupBox SystemSetting_grpbox;
+        private System.Windows.Forms.GroupBox AllButtonSetting_grpbox;
     }
 }
 
