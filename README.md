@@ -21,9 +21,9 @@ URL: <http://a-desk.jp/modules/forum_module/index.php?cat_id=3>
 7. 「REVIVE_USB_Debounce_CT.exe」を起動して好みの設定に変更する。  
 
 ## 設定ツールについて
-「REVIVE USB, Configuration Tool」に手を加え、サンプリング周期と一致検出回数の設定項目を増やしたものです。  
-チャタリング対策版ファームウェア以外では動作しません。  
-デフォルトでは「サンプリング周期＝10ms／一致検出回数＝3回」に設定していますが、必要であればこれらを変更することができます（そのままでも使えます）。  
+「REVIVE USB, Configuration Tool」にサンプリング周期と一致検出回数の設定項目を増やしたものです。  
+当ファームウェア以外では動作しません。  
+デフォルトでは「サンプリング周期＝10ms／一致検出回数＝3回」に設定していますが、必要であれば変更することができます（そのままでも使えます）。  
 
 ![REVIVE USB Debounce, Configuration Tool](https://raw.githubusercontent.com/ushui/REVIVE_USB_Debounce/master/revive_usb_debounce_ct.png)  
 ### サンプリング周期
@@ -35,7 +35,7 @@ URL: <http://a-desk.jp/modules/forum_module/index.php?cat_id=3>
 1～255回まで設定可能で、その回数分スイッチがONであれば正しい入力とみなして入力を行います。  
 ONからOFFになる時にも回数分OFFであることを確認します。  
 大きく設定するとチャタリングノイズ除去の精度向上や外来ノイズの除去が期待できますが、サンプリング周期に比例して遅延が増加します。  
-
+### 補足
 どの程度の設定値にすればよいかは使用するスイッチ・設置環境・用途によるので何とも言えません。  
 一般的なマイクロスイッチであればデフォルト値から変更の必要はないと思われます。  
 設定値の決め方は、設定ツールからキーボードと適当なキーに設定し、メモ帳を開いてボタンを押してチャタリングが確認できれば数値を上げてみる程度でいいと思います。  
@@ -54,8 +54,7 @@ REVIVE USB (PIC18F14K50)
 開発言語：C#
 ## ソースコードについて
 「Assembly Desk License」ライセンスに準拠します。  
-「REVIVE USB チャタリング対策版」は「REVIVE USB」と「REVIVE USB, Configuration Tool」をベースに、「REVIVE USB (Keyboard Only版) 」とその設定ツールを参考にして作成しました。  
-作成者である「Bit Trade One, LTD」に感謝いたします。
+「REVIVE USB チャタリング対策版」は「REVIVE USB」と「REVIVE USB, Configuration Tool」をベースに、「REVIVE USB (Keyboard Only版) 」とその設定ツールを参考にして作成しました。作成者である「Bit Trade One, LTD」に感謝いたします。
 ## 派生バージョン
 * [REVIVE USB MATRIX チャタリング対策版（PID004B）](https://github.com/ushui/REVIVE_USB_MATRIX_Debounce)
 * [REVIVE USB ロータリーエンコーダ対応 チャタリング対策版（PID004C）](https://github.com/ushui/REVIVE_USB_RENC_Debounce)
