@@ -1350,7 +1350,7 @@ namespace HID_PnP_Demo
 									//INBuffer[2] contains the I/O port pin value for the pushbutton (see microcontroller firmware).  
 									if (INBuffer[1] == 0x81)
 									{
-										PushButtonState = (uint)((INBuffer[2] << 8) + INBuffer[3]);
+										PushButtonState = (uint)(INBuffer[2] + (INBuffer[3] << 8));
 									}
 								}
 							}
@@ -1657,12 +1657,12 @@ namespace HID_PnP_Demo
                 }
                 if (StatusBoxChange != 99)
                 {
-                    StatusBox_lbl2.Text = "AllButtonSetting‚ð[ " + 
+                    StatusBox_lbl2.Text = "Ý’è‚ð[ " + 
                         eeprom_smpl_interval + "ms / " + 
-                        eeprom_check_count + "‰ñ ]‚ÉA" + 
-                        SetPin_combox.Text + "‚ð[ " + 
+                        eeprom_check_count + "‰ñ ][ " + 
+                        SetPin_combox.Text + " / " + 
                         templbls2[StatusBoxChange].Text + " / " + 
-                        templbls[StatusBoxChange].Text + " ]‚ÉÝ’è‚µ‚Ü‚µ‚½";
+                        templbls[StatusBoxChange].Text + " ]‚É•ÏX‚µ‚Ü‚µ‚½";
                     StatusBoxChange = 99;
                 }
             }

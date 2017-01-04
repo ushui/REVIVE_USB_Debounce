@@ -10,7 +10,7 @@ URL: <http://a-desk.jp/modules/forum_module/index.php?cat_id=3>
 1. 上記URLからファームウェア書き込みソフト「HIDBootLoader.exe」をダウンロードする。  
 
 2. このリポジトリから「[REVIVE_USB_Debounce_latest.zip](https://github.com/ushui/REVIVE_USB_Debounce/raw/master/REVIVE_USB_Debounce_latest.zip)」をダウンロードし、解凍する。  
-「readme.txt」「REVIVE_USB_Debounce_FW.hex」「REVIVE_USB_Debounce_CT.exe」の3つのファイルが解凍される。  
+「readme.txt」「REVIVE_USB_Debounce_CT.exe」「REVIVE_USB_Debounce_FW.hex」の3つのファイルが解凍される。  
 
 3. 手持ちのREVIVE USBのショートピンをBOOTにしてPCへ接続する。  
 
@@ -23,7 +23,7 @@ URL: <http://a-desk.jp/modules/forum_module/index.php?cat_id=3>
 ## 設定ツールについて
 「REVIVE USB, Configuration Tool」に手を加え、サンプリング周期と一致検出回数の設定項目を増やしたものです。  
 チャタリング対策版ファームウェア以外では動作しません。  
-デフォルトでは「サンプリング周期＝10ms／一致検出回数＝3回」に設定していますが、これらを変更することができます。 
+デフォルトでは「サンプリング周期＝10ms／一致検出回数＝3回」に設定していますが、必要であればこれらを変更することができます（そのままでも使えます）。  
 
 ![REVIVE USB Debounce, Configuration Tool](https://raw.githubusercontent.com/ushui/REVIVE_USB_Debounce/master/revive_usb_debounce_ct.png)  
 ### サンプリング周期
@@ -58,8 +58,10 @@ REVIVE USB (PIC18F14K50)
 作成者である「Bit Trade One, LTD」に感謝いたします。
 ## 派生バージョン
 * [REVIVE USB MATRIX チャタリング対策版（PID004B）](https://github.com/ushui/REVIVE_USB_MATRIX_Debounce)
+* [REVIVE USB ロータリーエンコーダ対応 チャタリング対策版（PID004C）](https://github.com/ushui/REVIVE_USB_RENC_Debounce)
 
 ***
+2017/01/04 ロータリーエンコーダ対応版に合わせて表記の追記と修正。  
 2017/01/01 MATRIX版に合わせて表記の追記と修正。  
 2016/12/29 FW Version 1.2に合わせて追記。  
 2016/12/28 文書の追記と補足・修正。使い方の手順を書き換えた。  

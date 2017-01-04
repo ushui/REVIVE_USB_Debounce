@@ -1,12 +1,14 @@
 // USB HID core
 /*
- * Ver Debounce 1.3 (2016/01/01)
+ * Debounce ver 1.4 (2016/01/04)
+ *   バッファオーバーフローが発生していたバグとPIN8以降の入力がおかしくなっていたバグの修正。
+ * Debounce ver 1.3 (2016/01/01)
  *   リファクタリングを行った。
- * Ver Debounce 1.2 (2016/12/29)
+ * Debounce ver 1.2 (2016/12/29)
  *   入力が無効になっていたバグを修正。
- * Ver Debounce 1.1 (2016/12/29)
+ * Debounce ver 1.1 (2016/12/29)
  *   スイッチの状態がONからOFFになる際にチャタリング防止処理を行っていなかったバグを修正。
- * Ver Debounce 1.0 (2016/12/26)
+ * Debounce ver 1.0 (2016/12/26)
  *   「REVIVE USB ver 007」をベースに、「REVIVE USB (Keyboard Only版) Ver 2.0.0」を参考に作成。
  *   チャタリング防止処理（タイマ割り込みによるサンプリング方式＆N回一致検出）を行うように変更。
  */
@@ -134,7 +136,7 @@ void YourLowPriorityISRCode();
 
 /** VARIABLES ******************************************************/
 #pragma udata
-char c_version[]="Debounce 1.3";
+char c_version[]="D1.4";
 BYTE mouse_buffer[4];
 BYTE joystick_buffer[4];
 BYTE keyboard_buffer[8]; 
@@ -145,8 +147,16 @@ USB_HANDLE lastOUTTransmissionKeyboard;
 USB_HANDLE USBOutHandle = 0;
 USB_HANDLE USBInHandle = 0;
 
-unsigned int button_state;
+unsigned char button_state_set1 = 0;
+unsigned char button_state_set2 = 0;
 unsigned char button_pressing_count[NUM_OF_PINS][2];
+
+char mouse_move_up;
+char mouse_move_down;
+char mouse_move_left;
+char mouse_move_right;
+char mouse_wheel_up;
+char mouse_wheel_down;
 
 int temp_mouse_move_up = 0;
 int temp_mouse_move_down = 0;
@@ -154,6 +164,13 @@ int temp_mouse_move_left = 0;
 int temp_mouse_move_right = 0;
 int temp_mouse_wheel_up = 0;
 int temp_mouse_wheel_down = 0;
+
+unsigned char speed_mouse_move_up;
+unsigned char speed_mouse_move_down;
+unsigned char speed_mouse_move_left;
+unsigned char speed_mouse_move_right;
+unsigned char speed_mouse_wheel_up;
+unsigned char speed_mouse_wheel_down;
 
 //ボタンの設定用変数
 unsigned char eeprom_data[NUM_OF_PINS][NUM_OF_SETTINGS] = {
@@ -279,8 +296,9 @@ unsigned char ToSendDataBuffer[64];
 		//Service the interrupt
 		//Clear the interrupt flag
 		//Etc.
-		unsigned int timer_temp;
+		unsigned int tmp_timer;
 		char fi;
+		char flg_on_button;
 		if(INTCONbits.TMR0IF == 1)
 		{
 			INTCONbits.TMR0IF = 0;
@@ -300,18 +318,24 @@ unsigned char ToSendDataBuffer[64];
 			 * 
 			 *          レイテンシ = 0x0009
 			 */
-			timer_temp = 0x10000 - 0x0177 * eeprom_smpl_interval + 0x0009;
+			tmp_timer = 0x10000 - 0x0177 * eeprom_smpl_interval + 0x0009;
 			//Timer0をセットし直す
-			TMR0H = (BYTE)(timer_temp >> 8); //キャスト時には下位8ビットが残る
-			TMR0L = (BYTE)(timer_temp);
+			TMR0H = (BYTE)(tmp_timer >> 8); //キャスト時には下位8ビットが残る
+			TMR0L = (BYTE)(tmp_timer);
 			
 			//ON/OFF取得
-			button_state = !PIN1 | (!PIN2 << 1) | (!PIN3 << 2) | (!PIN4  << 3) | (!PIN5  << 4) | (!PIN6  << 5)\
-								| (!PIN7 << 6) | (!PIN8 << 7) | (!PIN9 << 8) | (!PIN10 << 9) | (!PIN11 << 10) | (!PIN12 << 11);
-			
+			button_state_set1 = !PIN1 | (!PIN2 << 1) | (!PIN3 << 2) | (!PIN4 << 3) | (!PIN5 << 4) | (!PIN6 << 5)\
+								| (!PIN7 << 6) |(!PIN8 << 7);
+			button_state_set2 = !PIN9 | (!PIN10 << 1) | (!PIN11 << 2) | (!PIN12 << 3);
+
 			for(fi = 0;fi < NUM_OF_PINS; fi++)
 			{
-				if(((button_state & (0x0001 << fi)) ? 1:0))
+				if(fi < 8)
+					flg_on_button = ((button_state_set1 & (0x01 << fi)) ? 1:0);
+				else
+					flg_on_button = ((button_state_set2 & (0x01 << (fi-8))) ? 1:0);
+
+				if(flg_on_button)
 				{ //ON
 					if (button_pressing_count[fi][STATE_ON] < eeprom_check_count)
 					{
@@ -610,23 +634,9 @@ void UserInit(void)
 void ProcessIO(void)
 {
 	char fi,fj;
-	char result_button_press;
 	char pressed_keys;
 	char tmp;
-	char result;
 	unsigned char uc_temp;
-	char mouse_move_up;
-	char mouse_move_down;
-	char mouse_move_left;
-	char mouse_move_right;
-	char mouse_wheel_up;
-	char mouse_wheel_down;
-	unsigned char speed_mouse_move_up;
-	unsigned char speed_mouse_move_down;
-	unsigned char speed_mouse_move_left;
-	unsigned char speed_mouse_move_right;
-	unsigned char speed_mouse_wheel_up;
-	unsigned char speed_mouse_wheel_down;
 
     // User Application USB tasks
     if((USBDeviceState < CONFIGURED_STATE)||(USBSuspendControl==1)) return;
@@ -906,8 +916,8 @@ void ProcessIO(void)
                 break;
             case 0x81:  //ボタンの押下状態を返信
                 ToSendDataBuffer[0] = 0x81;				//Echo back to the host PC the command we are fulfilling in the first byte.  In this case, the Get Pushbutton State command.
-				ToSendDataBuffer[1] = (BYTE)(button_state >> 8); //キャスト時には下位8ビットが残る
-				ToSendDataBuffer[2] = (BYTE)(button_state);
+				ToSendDataBuffer[1] = button_state_set1 & 0xff;
+				ToSendDataBuffer[2] = button_state_set2 & 0x0f;
 
                 if(!HIDTxHandleBusy(USBInHandle))
                 {

@@ -1515,7 +1515,7 @@ namespace HID_PnP_Demo
             // 
             this.check_count_lbl2.AutoSize = true;
             this.check_count_lbl2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(106)))), ((int)(((byte)(106)))));
-            this.check_count_lbl2.Location = new System.Drawing.Point(149, 61);
+            this.check_count_lbl2.Location = new System.Drawing.Point(144, 61);
             this.check_count_lbl2.Name = "check_count_lbl2";
             this.check_count_lbl2.Size = new System.Drawing.Size(17, 12);
             this.check_count_lbl2.TabIndex = 168;
@@ -1525,7 +1525,7 @@ namespace HID_PnP_Demo
             // 
             this.smpl_interval_lbl2.AutoSize = true;
             this.smpl_interval_lbl2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(106)))), ((int)(((byte)(106)))));
-            this.smpl_interval_lbl2.Location = new System.Drawing.Point(149, 27);
+            this.smpl_interval_lbl2.Location = new System.Drawing.Point(144, 27);
             this.smpl_interval_lbl2.Name = "smpl_interval_lbl2";
             this.smpl_interval_lbl2.Size = new System.Drawing.Size(20, 12);
             this.smpl_interval_lbl2.TabIndex = 169;
@@ -1564,6 +1564,7 @@ namespace HID_PnP_Demo
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(878, 500);
+            this.Controls.Add(this.StatusBox_lbl2);
             this.Controls.Add(this.AllButtonSetting_grpbox);
             this.Controls.Add(this.fw_version_lbl);
             this.Controls.Add(this.DeviceAssign_lbl12);
@@ -1601,7 +1602,6 @@ namespace HID_PnP_Demo
             this.Controls.Add(this.Pin06B_pb);
             this.Controls.Add(this.Pin07A_pb);
             this.Controls.Add(this.Pin07B_pb);
-            this.Controls.Add(this.StatusBox_lbl2);
             this.Controls.Add(this.StatusBox_lbl);
             this.Controls.Add(this.Arrow_Com_pb);
             this.Controls.Add(this.Arrow_Keyboard_pb);
@@ -1672,7 +1672,7 @@ namespace HID_PnP_Demo
             this.MaximumSize = new System.Drawing.Size(894, 538);
             this.MinimizeBox = false;
             this.Name = "Form1";
-            this.Text = "REVIVE USB Debounce, Configuration Tool ver 1.0.1";
+            this.Text = "REVIVE USB Debounce, Configuration Tool ver 1.0.2";
             ((System.ComponentModel.ISupportInitialize)(this.MouseMove_UD)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ButtonPressIcon12)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ButtonPressIcon11)).EndInit();
