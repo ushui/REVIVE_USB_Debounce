@@ -61,8 +61,10 @@ REVIVE USB (PIC18F14K50)
 * [REVIVE USB MATRIX チャタリング対策版（PID004B）](https://github.com/ushui/REVIVE_USB_MATRIX_Debounce)
 * [REVIVE USB ロータリーエンコーダ対応 チャタリング対策版（PID004C）](https://github.com/ushui/REVIVE_USB_RENC_Debounce)
 * [REVIVE USB ロータリーエンコーダ対応 スライダー/ダイヤル入力 チャタリング対策版（PID004D）](https://github.com/ushui/REVIVE_USB_RENC_SD_Debounce)
+* [REVIVE USB ロータリーエンコーダ対応 アナログレバー入力 チャタリング対策版（PID004E）](https://github.com/ushui/REVIVE_USB_RENC_AL_Debounce)
 
 ***
+2017/01/24 アナログレバー入力対応版に合わせて派生バージョンを追記。  
 2017/01/22 遅延に関する記述の修正。スライダー/ダイヤル入力対応版に合わせて派生バージョンを追記。  
 2017/01/04 ロータリーエンコーダ対応版に合わせて表記の追記と修正。  
 2017/01/01 MATRIX版に合わせて表記の追記と修正。  
