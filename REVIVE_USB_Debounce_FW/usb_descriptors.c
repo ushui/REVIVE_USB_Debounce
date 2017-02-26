@@ -1,15 +1,15 @@
 /********************************************************************
- FileName:     	usb_descriptors.c
- Dependencies:	See INCLUDES section
- Processor:		PIC18 or PIC24 USB Microcontrollers
- Hardware:		The code is natively intended to be used on the following
- 				hardware platforms: PICDEM・FS USB Demo Board, 
- 				PIC18F87J50 FS USB Plug-In Module, or
- 				Explorer 16 + PIC24 USB PIM.  The firmware may be
- 				modified for use on other USB platforms by editing the
- 				HardwareProfile.h file.
- Complier:  	Microchip C18 (for PIC18) or C30 (for PIC24)
- Company:		Microchip Technology, Inc.
+ FileName:         usb_descriptors.c
+ Dependencies:    See INCLUDES section
+ Processor:        PIC18 or PIC24 USB Microcontrollers
+ Hardware:        The code is natively intended to be used on the following
+                 hardware platforms: PICDEM・FS USB Demo Board, 
+                 PIC18F87J50 FS USB Plug-In Module, or
+                 Explorer 16 + PIC24 USB PIM.  The firmware may be
+                 modified for use on other USB platforms by editing the
+                 HardwareProfile.h file.
+ Complier:      Microchip C18 (for PIC18) or C30 (for PIC24)
+ Company:        Microchip Technology, Inc.
 
  Software License Agreement:
 
@@ -199,25 +199,25 @@ ROM BYTE configDescriptor1[]={
     0,                      // Interface Number
     0,                      // Alternate Setting Number
     1,                      // Number of endpoints in this intf
-    HID_INTF,               // Class code	'0x03'
-    BOOT_INTF_SUBCLASS,     // Subclass code	'0x01'
-    HID_PROTOCOL_MOUSE,     // Protocol code	'0x02'
+    HID_INTF,               // Class code    '0x03'
+    BOOT_INTF_SUBCLASS,     // Subclass code    '0x01'
+    HID_PROTOCOL_MOUSE,     // Protocol code    '0x02'
     0,                      // Interface string index
 
     /* HID Class-Specific Descriptor */
     0x09,//sizeof(USB_HID_DSC)+3,    // Size of this descriptor in bytes RRoj hack
-    DSC_HID,                // HID descriptor type	'0x21'
+    DSC_HID,                // HID descriptor type    '0x21'
     DESC_CONFIG_WORD(0x0111),                 // HID Spec Release Number in BCD format (1.11)
     0x00,                   // Country Code (0x00 for Not supported)
     HID_NUM_OF_DSC,         // Number of class descriptors, see usbcfg.h
-    DSC_RPT,                // Report descriptor type		'0x22'
+    DSC_RPT,                // Report descriptor type        '0x22'
     DESC_CONFIG_WORD(HID_RPT01_SIZE),   //sizeof(hid_rpt01),      // Size of the report descriptor
     
     /* Endpoint Descriptor */
     0x07,/*sizeof(USB_EP_DSC)*/
-    USB_DESCRIPTOR_ENDPOINT,    //Endpoint Descriptor	'0x05'
+    USB_DESCRIPTOR_ENDPOINT,    //Endpoint Descriptor    '0x05'
     HID_EP1 | _EP_IN,            //EndpointAddress
-    _INTERRUPT,                       //Attributes		'0x03'
+    _INTERRUPT,                       //Attributes        '0x03'
     DESC_CONFIG_WORD(0x0004),        //size
     0x01,                        //Interval
 
@@ -257,7 +257,7 @@ ROM BYTE configDescriptor1[]={
     HID_EP2 | _EP_OUT,            //EndpointAddress
     _INTERRUPT,                       //Attributes
     DESC_CONFIG_WORD(64),        //size
-    0x01,						//Interval
+    0x01,                        //Interval
 
 //ここから下はキーボード
     /* Interface Descriptor */
@@ -440,14 +440,14 @@ ROM struct{BYTE report[HID_RPT04_SIZE];}hid_rpt04={
     0x09, 0x01,             // Usage (Vendor Usage 1)
     0xA1, 0x01,             // Collection (Application)
     0x19, 0x01,             //      Usage Minimum 
-    0x29, 0x40,             //      Usage Maximum 	//64 input usages total (0x01 to 0x40)
+    0x29, 0x40,             //      Usage Maximum     //64 input usages total (0x01 to 0x40)
     0x15, 0x00,             //      Logical Minimum (data bytes in the report may have minimum value = 0x00)
-    0x26, 0xFF, 0x00, 	  	//      Logical Maximum (data bytes in the report may have maximum value = 0x00FF = unsigned 255)
+    0x26, 0xFF, 0x00,           //      Logical Maximum (data bytes in the report may have maximum value = 0x00FF = unsigned 255)
     0x75, 0x08,             //      Report Size: 8-bit field size
     0x95, 0x40,             //      Report Count: Make sixty-four 8-bit fields (the next time the parser hits an "Input", "Output", or "Feature" item)
     0x81, 0x00,             //      Input (Data, Array, Abs): Instantiates input packet fields based on the above report size, count, logical min/max, and usage.
     0x19, 0x01,             //      Usage Minimum 
-    0x29, 0x40,             //      Usage Maximum 	//64 output usages total (0x01 to 0x40)
+    0x29, 0x40,             //      Usage Maximum     //64 output usages total (0x01 to 0x40)
     0x91, 0x00,             //      Output (Data, Array, Abs): Instantiates output packet fields.  Uses same report size and count as "Input" fields, since nothing new/different was specified to the parser since the "Input" item.
     0xC0}                   // End Collection
 };

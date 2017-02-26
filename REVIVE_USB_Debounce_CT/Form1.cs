@@ -1,14 +1,14 @@
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------
 //-------------------------------------------------------BEGIN CUT AND PASTE BLOCK-----------------------------------------------------------------------------------
 /********************************************************************
- FileName:		Form1.cs
- Dependencies:	When compiled, needs .NET framework 2.0 redistributable to run.
- Hardware:		Need a free USB port to connect USB peripheral device
-				programmed with appropriate Generic HID firmware.  VID and
-				PID in firmware must match the VID and PID in this
-				program.
- Compiler:  	Microsoft Visual C# 2005 Express Edition (or better)
- Company:		Microchip Technology, Inc.
+ FileName:        Form1.cs
+ Dependencies:    When compiled, needs .NET framework 2.0 redistributable to run.
+ Hardware:        Need a free USB port to connect USB peripheral device
+                programmed with appropriate Generic HID firmware.  VID and
+                PID in firmware must match the VID and PID in this
+                program.
+ Compiler:      Microsoft Visual C# 2005 Express Edition (or better)
+ Company:        Microchip Technology, Inc.
 
  Software License Agreement:
 
@@ -35,16 +35,16 @@
 
  Change History:
   Rev   Date         Description
-  2.5a	07/17/2009	 Initial Release.  Ported from HID PnP Demo
+  2.5a    07/17/2009     Initial Release.  Ported from HID PnP Demo
                      application source, which was originally 
                      written in MSVC++ 2005 Express Edition.
 ********************************************************************
-NOTE:	All user made code contained in this project is in the Form1.cs file.
-		All other code and files were generated automatically by either the
-		new project wizard, or by the development environment (ex: code is
-		automatically generated if you create a new button on the form, and
-		then double click on it, which creates a click event handler
-		function).  User developed code (code not developed by the IDE) has
+NOTE:    All user made code contained in this project is in the Form1.cs file.
+        All other code and files were generated automatically by either the
+        new project wizard, or by the development environment (ex: code is
+        automatically generated if you create a new button on the form, and
+        then double click on it, which creates a click event handler
+        function).  User developed code (code not developed by the IDE) has
         been marked in "cut and paste blocks" to make it easier to identify.
 ********************************************************************/
 
@@ -267,7 +267,7 @@ namespace HID_PnP_Demo
 
         //--------------- Global Varibles Section ------------------
         //USB related variables that need to have wide scope.
-        bool AttachedState = false;						//Need to keep track of the USB device attachment status for proper plug and play operation.
+        bool AttachedState = false;                        //Need to keep track of the USB device attachment status for proper plug and play operation.
         bool AttachedButBroken = false;
         SafeFileHandle WriteHandleToUSBDevice = null;
         SafeFileHandle ReadHandleToUSBDevice = null;
@@ -847,7 +847,7 @@ namespace HID_PnP_Demo
             DEV_BROADCAST_DEVICEINTERFACE DeviceBroadcastHeader = new DEV_BROADCAST_DEVICEINTERFACE();
             DeviceBroadcastHeader.dbcc_devicetype = DBT_DEVTYP_DEVICEINTERFACE;
             DeviceBroadcastHeader.dbcc_size = (uint)Marshal.SizeOf(DeviceBroadcastHeader);
-            DeviceBroadcastHeader.dbcc_reserved = 0;	//Reserved says not to use...
+            DeviceBroadcastHeader.dbcc_reserved = 0;    //Reserved says not to use...
             DeviceBroadcastHeader.dbcc_classguid = InterfaceClassGuid;
 
             //Need to get the address of the DeviceBroadcastHeader to call RegisterDeviceNotification(), but
@@ -863,7 +863,7 @@ namespace HID_PnP_Demo
             //If it is connected and present, we should open read and write handles to the device so we can communicate with it later.
             //If it was not connected, we will have to wait until the user plugs the device in, and the WM_DEVICECHANGE callback function can process
             //the message and again search for the device.
-            if (CheckIfPresentAndGetUSBDevicePath())	//Check and make sure at least one device with matching VID/PID is attached
+            if (CheckIfPresentAndGetUSBDevicePath())    //Check and make sure at least one device with matching VID/PID is attached
             {
                 uint ErrorStatusWrite;
                 uint ErrorStatusRead;
@@ -877,21 +877,21 @@ namespace HID_PnP_Demo
 
                 if ((ErrorStatusWrite == ERROR_SUCCESS) && (ErrorStatusRead == ERROR_SUCCESS))
                 {
-                    AttachedState = true;		//Let the rest of the PC application know the USB device is connected, and it is safe to read/write to it
+                    AttachedState = true;        //Let the rest of the PC application know the USB device is connected, and it is safe to read/write to it
                     AttachedButBroken = false;
                     StatusBox_lbl.Text = "デバイス検出済";
                 }
                 else //for some reason the device was physically plugged in, but one or both of the read/write handles didn't open successfully...
                 {
-                    AttachedState = false;		//Let the rest of this application known not to read/write to the device.
-                    AttachedButBroken = true;	//Flag so that next time a WM_DEVICECHANGE message occurs, can retry to re-open read/write pipes
+                    AttachedState = false;        //Let the rest of this application known not to read/write to the device.
+                    AttachedButBroken = true;    //Flag so that next time a WM_DEVICECHANGE message occurs, can retry to re-open read/write pipes
                     if (ErrorStatusWrite == ERROR_SUCCESS)
                         WriteHandleToUSBDevice.Close();
                     if (ErrorStatusRead == ERROR_SUCCESS)
                         ReadHandleToUSBDevice.Close();
                 }
             }
-            else	//Device must not be connected (or not programmed with correct firmware)
+            else    //Device must not be connected (or not programmed with correct firmware)
             {
                 AttachedState = false;
                 AttachedButBroken = false;
@@ -906,7 +906,7 @@ namespace HID_PnP_Demo
                 StatusBox_lbl.Text = "デバイス未検出";
             }
 
-            ReadWriteThread.RunWorkerAsync();	//Recommend performing USB read/write operations in a separate thread.  Otherwise,
+            ReadWriteThread.RunWorkerAsync();    //Recommend performing USB read/write operations in a separate thread.  Otherwise,
             //the Read/Write operations are effectively blocking functions and can lock up the
             //user interface if the I/O operations take a long time to complete.
 
@@ -918,12 +918,12 @@ namespace HID_PnP_Demo
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------
         //-------------------------------------------------------BEGIN CUT AND PASTE BLOCK-----------------------------------------------------------------------------------
 
-        //FUNCTION:	CheckIfPresentAndGetUSBDevicePath()
-        //PURPOSE:	Check if a USB device is currently plugged in with a matching VID and PID
-        //INPUT:	Uses globally declared String DevicePath, globally declared GUID, and the MY_DEVICE_ID constant.
-        //OUTPUT:	Returns BOOL.  TRUE when device with matching VID/PID found.  FALSE if device with VID/PID could not be found.
-        //			When returns TRUE, the globally accessable "DetailedInterfaceDataStructure" will contain the device path
-        //			to the USB device with the matching VID/PID.
+        //FUNCTION:    CheckIfPresentAndGetUSBDevicePath()
+        //PURPOSE:    Check if a USB device is currently plugged in with a matching VID and PID
+        //INPUT:    Uses globally declared String DevicePath, globally declared GUID, and the MY_DEVICE_ID constant.
+        //OUTPUT:    Returns BOOL.  TRUE when device with matching VID/PID found.  FALSE if device with VID/PID could not be found.
+        //            When returns TRUE, the globally accessable "DetailedInterfaceDataStructure" will contain the device path
+        //            to the USB device with the matching VID/PID.
 
         bool CheckIfPresentAndGetUSBDevicePath()
         {
@@ -936,13 +936,13 @@ namespace HID_PnP_Demo
             Microsoft has created a number of functions which are useful for finding plug and play devices.  Documentation
             for each function used can be found in the MSDN library.  We will be using the following functions (unmanaged C functions):
 
-            SetupDiGetClassDevs()					//provided by setupapi.dll, which comes with Windows
-            SetupDiEnumDeviceInterfaces()			//provided by setupapi.dll, which comes with Windows
-            GetLastError()							//provided by kernel32.dll, which comes with Windows
-            SetupDiDestroyDeviceInfoList()			//provided by setupapi.dll, which comes with Windows
-            SetupDiGetDeviceInterfaceDetail()		//provided by setupapi.dll, which comes with Windows
-            SetupDiGetDeviceRegistryProperty()		//provided by setupapi.dll, which comes with Windows
-            CreateFile()							//provided by kernel32.dll, which comes with Windows
+            SetupDiGetClassDevs()                    //provided by setupapi.dll, which comes with Windows
+            SetupDiEnumDeviceInterfaces()            //provided by setupapi.dll, which comes with Windows
+            GetLastError()                            //provided by kernel32.dll, which comes with Windows
+            SetupDiDestroyDeviceInfoList()            //provided by setupapi.dll, which comes with Windows
+            SetupDiGetDeviceInterfaceDetail()        //provided by setupapi.dll, which comes with Windows
+            SetupDiGetDeviceRegistryProperty()        //provided by setupapi.dll, which comes with Windows
+            CreateFile()                            //provided by kernel32.dll, which comes with Windows
 
             In order to call these unmanaged functions, the Marshal class is very useful.
              
@@ -1001,16 +1001,16 @@ namespace HID_PnP_Demo
                         if (SetupDiEnumDeviceInterfaces(DeviceInfoTable, IntPtr.Zero, ref InterfaceClassGuid, InterfaceIndex, ref InterfaceDataStructure))
                         {
                             ErrorStatus = (uint)Marshal.GetLastWin32Error();
-                            if (ErrorStatus == ERROR_NO_MORE_ITEMS)	//Did we reach the end of the list of matching devices in the DeviceInfoTable?
-                            {	//Cound not find the device.  Must not have been attached.
-                                SetupDiDestroyDeviceInfoList(DeviceInfoTable);	//Clean up the old structure we no longer need.
+                            if (ErrorStatus == ERROR_NO_MORE_ITEMS)    //Did we reach the end of the list of matching devices in the DeviceInfoTable?
+                            {    //Cound not find the device.  Must not have been attached.
+                                SetupDiDestroyDeviceInfoList(DeviceInfoTable);    //Clean up the old structure we no longer need.
                                 return false;
                             }
                         }
-                        else	//Else some other kind of unknown error ocurred...
+                        else    //Else some other kind of unknown error ocurred...
                         {
                             ErrorStatus = (uint)Marshal.GetLastWin32Error();
-                            SetupDiDestroyDeviceInfoList(DeviceInfoTable);	//Clean up the old structure we no longer need.
+                            SetupDiDestroyDeviceInfoList(DeviceInfoTable);    //Clean up the old structure we no longer need.
                             return false;
                         }
 
@@ -1037,7 +1037,7 @@ namespace HID_PnP_Demo
                         //Now check if the first string in the hardware ID matches the device ID of the USB device we are trying to find.
                         String DeviceIDFromRegistry = Marshal.PtrToStringUni(PropertyValueBuffer); //Make a new string, fill it with the contents from the PropertyValueBuffer
 
-                        Marshal.FreeHGlobal(PropertyValueBuffer);		//No longer need the PropertyValueBuffer, free the memory to prevent potential memory leaks
+                        Marshal.FreeHGlobal(PropertyValueBuffer);        //No longer need the PropertyValueBuffer, free the memory to prevent potential memory leaks
 
                         //Convert both strings to lower case.  This makes the code more robust/portable accross OS Versions
                         DeviceIDFromRegistry = DeviceIDFromRegistry.ToLowerInvariant();
@@ -1070,14 +1070,14 @@ namespace HID_PnP_Demo
                                 DevicePath = Marshal.PtrToStringUni(pToDevicePath); //Now copy the path information into the globally defined DevicePath String.
 
                                 //We now have the proper device path, and we can finally use the path to open I/O handle(s) to the device.
-                                SetupDiDestroyDeviceInfoList(DeviceInfoTable);	//Clean up the old structure we no longer need.
+                                SetupDiDestroyDeviceInfoList(DeviceInfoTable);    //Clean up the old structure we no longer need.
                                 Marshal.FreeHGlobal(pUnmanagedDetailedInterfaceDataStructure);  //No longer need this unmanaged SP_DEVICE_INTERFACE_DETAIL_DATA buffer.  We already extracted the path information.
                                 return true;    //Returning the device path in the global DevicePath String
                             }
                             else //Some unknown failure occurred
                             {
                                 uint ErrorCode = (uint)Marshal.GetLastWin32Error();
-                                SetupDiDestroyDeviceInfoList(DeviceInfoTable);	//Clean up the old structure.
+                                SetupDiDestroyDeviceInfoList(DeviceInfoTable);    //Clean up the old structure.
                                 Marshal.FreeHGlobal(pUnmanagedDetailedInterfaceDataStructure);  //No longer need this unmanaged SP_DEVICE_INTERFACE_DETAIL_DATA buffer.  We already extracted the path information.
                                 return false;
                             }
@@ -1088,7 +1088,7 @@ namespace HID_PnP_Demo
                         //However, just in case some unexpected error occurs, keep track of the number of loops executed.
                         //If the number of loops exceeds a very large number, exit anyway, to prevent inadvertent infinite looping.
                         LoopCounter++;
-                        if (LoopCounter == 10000000)	//Surely there aren't more than 10 million devices attached to any forseeable PC...
+                        if (LoopCounter == 10000000)    //Surely there aren't more than 10 million devices attached to any forseeable PC...
                         {
                             return false;
                         }
@@ -1121,12 +1121,12 @@ namespace HID_PnP_Demo
                     //to your device (with known VID/PID) took place before doing any kind of opening or closing of handles/endpoints.
                     //(the message could have been totally unrelated to your application/USB device)
 
-                    if (CheckIfPresentAndGetUSBDevicePath())	//Check and make sure at least one device with matching VID/PID is attached
+                    if (CheckIfPresentAndGetUSBDevicePath())    //Check and make sure at least one device with matching VID/PID is attached
                     {
                         //If executes to here, this means the device is currently attached and was found.
                         //This code needs to decide however what to do, based on whether or not the device was previously known to be
                         //attached or not.
-                        if ((AttachedState == false) || (AttachedButBroken == true))	//Check the previous attachment state
+                        if ((AttachedState == false) || (AttachedButBroken == true))    //Check the previous attachment state
                         {
                             uint ErrorStatusWrite;
                             uint ErrorStatusRead;
@@ -1140,14 +1140,14 @@ namespace HID_PnP_Demo
 
                             if ((ErrorStatusWrite == ERROR_SUCCESS) && (ErrorStatusRead == ERROR_SUCCESS))
                             {
-                                AttachedState = true;		//Let the rest of the PC application know the USB device is connected, and it is safe to read/write to it
+                                AttachedState = true;        //Let the rest of the PC application know the USB device is connected, and it is safe to read/write to it
                                 AttachedButBroken = false;
                                 StatusBox_lbl.Text = "デバイス検出済";
                             }
                             else //for some reason the device was physically plugged in, but one or both of the read/write handles didn't open successfully...
                             {
-                                AttachedState = false;		//Let the rest of this application known not to read/write to the device.
-                                AttachedButBroken = true;	//Flag so that next time a WM_DEVICECHANGE message occurs, can retry to re-open read/write pipes
+                                AttachedState = false;        //Let the rest of this application known not to read/write to the device.
+                                AttachedButBroken = true;    //Flag so that next time a WM_DEVICECHANGE message occurs, can retry to re-open read/write pipes
                                 if (ErrorStatusWrite == ERROR_SUCCESS)
                                     WriteHandleToUSBDevice.Close();
                                 if (ErrorStatusRead == ERROR_SUCCESS)
@@ -1157,9 +1157,9 @@ namespace HID_PnP_Demo
                         //else we did find the device, but AttachedState was already true.  In this case, don't do anything to the read/write handles,
                         //since the WM_DEVICECHANGE message presumably wasn't caused by our USB device.  
                     }
-                    else	//Device must not be connected (or not programmed with correct firmware)
+                    else    //Device must not be connected (or not programmed with correct firmware)
                     {
-                        if (AttachedState == true)		//If it is currently set to true, that means the device was just now disconnected
+                        if (AttachedState == true)        //If it is currently set to true, that means the device was just now disconnected
                         {
                             AttachedState = false;
                             WriteHandleToUSBDevice.Close();
@@ -1217,13 +1217,13 @@ namespace HID_PnP_Demo
 
             Higher effective bandwidth (up to the maximum offered by interrupt endpoints), both when connected
             directly and through a USB 2.0 hub, can generally be achieved by queuing up multiple pending read and/or
-            write requests simultaneously.  This can be done when using	asynchronous I/O operations (calling ReadFile() and
-            WriteFile()	with overlapped structures).  The Microchip	HID USB Bootloader application uses asynchronous I/O
-            for some USB operations and the source code can be used	as an example.*/
+            write requests simultaneously.  This can be done when using    asynchronous I/O operations (calling ReadFile() and
+            WriteFile()    with overlapped structures).  The Microchip    HID USB Bootloader application uses asynchronous I/O
+            for some USB operations and the source code can be used    as an example.*/
 
 
-            Byte[] OUTBuffer = new byte[65];	//Allocate a memory buffer equal to the OUT endpoint size + 1
-            Byte[] INBuffer = new byte[65];		//Allocate a memory buffer equal to the IN endpoint size + 1
+            Byte[] OUTBuffer = new byte[65];    //Allocate a memory buffer equal to the OUT endpoint size + 1
+            Byte[] INBuffer = new byte[65];        //Allocate a memory buffer equal to the IN endpoint size + 1
             uint BytesWritten = 0;
             uint BytesRead = 0;
 
@@ -1231,214 +1231,214 @@ namespace HID_PnP_Demo
             {
                 try
                 {
-                    if (AttachedState == true)	//Do not try to use the read/write handles unless the USB device is attached and ready
+                    if (AttachedState == true)    //Do not try to use the read/write handles unless the USB device is attached and ready
                     {
-						//Get ANxx/POT Voltage value from the microcontroller firmware.  Note: some demo boards may not have a pot
-						//on them.  In this case, the firmware may be configured to read an ANxx I/O pin voltage with the ADC
-						//instead.  If this is the case, apply a proper voltage to the pin.  See the firmware for exact implementation.
+                        //Get ANxx/POT Voltage value from the microcontroller firmware.  Note: some demo boards may not have a pot
+                        //on them.  In this case, the firmware may be configured to read an ANxx I/O pin voltage with the ADC
+                        //instead.  If this is the case, apply a proper voltage to the pin.  See the firmware for exact implementation.
 
                         if (ReadFromDevice == true)
                         {
-							ReadFromDevice = false;
-							OUTBuffer[0] = 0x00;	//The first byte is the "Report ID" and does not get sent over the USB bus.  Always set = 0.
-							OUTBuffer[1] = 0x37;	//READ_POT command (see the firmware source code), gets 10-bit ADC Value
-							//Initialize the rest of the 64-byte packet to "0xFF".  Binary '1' bits do not use as much power, and do not cause as much EMI
-							//when they move across the USB cable.  USB traffic is "NRZI" encoded, where '1' bits do not cause the D+/D- signals to toggle states.
-							//This initialization is not strictly necessary however.
-							for (uint i = 2; i < 65; i++)
-								OUTBuffer[i] = 0xFF;
+                            ReadFromDevice = false;
+                            OUTBuffer[0] = 0x00;    //The first byte is the "Report ID" and does not get sent over the USB bus.  Always set = 0.
+                            OUTBuffer[1] = 0x37;    //READ_POT command (see the firmware source code), gets 10-bit ADC Value
+                            //Initialize the rest of the 64-byte packet to "0xFF".  Binary '1' bits do not use as much power, and do not cause as much EMI
+                            //when they move across the USB cable.  USB traffic is "NRZI" encoded, where '1' bits do not cause the D+/D- signals to toggle states.
+                            //This initialization is not strictly necessary however.
+                            for (uint i = 2; i < 65; i++)
+                                OUTBuffer[i] = 0xFF;
 
-							//To get the ADCValue, first, we send a packet with our "READ_POT" command in it.
-							if (WriteFile(WriteHandleToUSBDevice, OUTBuffer, 65, ref BytesWritten, IntPtr.Zero))	//Blocking function, unless an "overlapped" structure is used
-							{
-								INBuffer[0] = 0;
-								//Now get the response packet from the firmware.
-								if (ReadFileManagedBuffer(ReadHandleToUSBDevice, INBuffer, 65, ref BytesRead, IntPtr.Zero))		//Blocking function, unless an "overlapped" structure is used	
-								{
-									//INBuffer[0] is the report ID, which we don't care about.
-									//INBuffer[1] is an echo back of the command (see microcontroller firmware).
-									if (INBuffer[1] == 0x37)
-									{
-										for (int fi = 0; fi < Constants.NUM_OF_PINS; fi++)
-										{
-											if (INBuffer[fi * Constants.NUM_OF_SETTINGS + 2] > Constants.DEVICE_TYPE_MAX)
-											{   //EEPROMの内容が壊れていたら0にする
-												for (int fj = 0; fj < Constants.NUM_OF_SETTINGS; fj++)
-												{
-													eeprom_data[fi * Constants.NUM_OF_SETTINGS + fj] = 0;
-												}
-											}
-											else
-											{
-												for (int fj = 0; fj < Constants.NUM_OF_SETTINGS; fj++)
-												{
-													eeprom_data[fi * Constants.NUM_OF_SETTINGS + fj] = INBuffer[fi * Constants.NUM_OF_SETTINGS + fj + 2];
-												}
-											}
-										}
-										if (INBuffer[Constants.NUM_OF_PIN_SETTINGS + 2] > 0)
-										{
-											eeprom_smpl_interval = INBuffer[Constants.NUM_OF_PIN_SETTINGS + 2];
-											eeprom_check_count = INBuffer[Constants.NUM_OF_PIN_SETTINGS + 2 + 1];
-										}
-										else
-										{
-											eeprom_smpl_interval = (byte)smpl_interval_numUpDown.Value;
-											eeprom_check_count = (byte)check_count_numUpDown.Value;
-										}
-									}
-								}
-							}
-						}
-						if (VersionReadReq == true)
-						{
-							VersionReadReq = false;
+                            //To get the ADCValue, first, we send a packet with our "READ_POT" command in it.
+                            if (WriteFile(WriteHandleToUSBDevice, OUTBuffer, 65, ref BytesWritten, IntPtr.Zero))    //Blocking function, unless an "overlapped" structure is used
+                            {
+                                INBuffer[0] = 0;
+                                //Now get the response packet from the firmware.
+                                if (ReadFileManagedBuffer(ReadHandleToUSBDevice, INBuffer, 65, ref BytesRead, IntPtr.Zero))        //Blocking function, unless an "overlapped" structure is used    
+                                {
+                                    //INBuffer[0] is the report ID, which we don't care about.
+                                    //INBuffer[1] is an echo back of the command (see microcontroller firmware).
+                                    if (INBuffer[1] == 0x37)
+                                    {
+                                        for (int fi = 0; fi < Constants.NUM_OF_PINS; fi++)
+                                        {
+                                            if (INBuffer[fi * Constants.NUM_OF_SETTINGS + 2] > Constants.DEVICE_TYPE_MAX)
+                                            {   //EEPROMの内容が壊れていたら0にする
+                                                for (int fj = 0; fj < Constants.NUM_OF_SETTINGS; fj++)
+                                                {
+                                                    eeprom_data[fi * Constants.NUM_OF_SETTINGS + fj] = 0;
+                                                }
+                                            }
+                                            else
+                                            {
+                                                for (int fj = 0; fj < Constants.NUM_OF_SETTINGS; fj++)
+                                                {
+                                                    eeprom_data[fi * Constants.NUM_OF_SETTINGS + fj] = INBuffer[fi * Constants.NUM_OF_SETTINGS + fj + 2];
+                                                }
+                                            }
+                                        }
+                                        if (INBuffer[Constants.NUM_OF_PIN_SETTINGS + 2] > 0)
+                                        {
+                                            eeprom_smpl_interval = INBuffer[Constants.NUM_OF_PIN_SETTINGS + 2];
+                                            eeprom_check_count = INBuffer[Constants.NUM_OF_PIN_SETTINGS + 2 + 1];
+                                        }
+                                        else
+                                        {
+                                            eeprom_smpl_interval = (byte)smpl_interval_numUpDown.Value;
+                                            eeprom_check_count = (byte)check_count_numUpDown.Value;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        if (VersionReadReq == true)
+                        {
+                            VersionReadReq = false;
 
-							for (uint i = 0; i < 65; i++)	//This loop is not strictly necessary.  Simply initializes unused bytes to
-							{
-								OUTBuffer[i] = 0xFF;				//0xFF for lower EMI and power consumption when driving the USB cable.
-							}
-							//Get the pushbutton state from the microcontroller firmware.
-							OUTBuffer[0] = 0;			//The first byte is the "Report ID" and does not get sent over the USB bus.  Always set = 0.
-							OUTBuffer[1] = 0x56;		//0x81 is the "Get Pushbutton State" command in the firmware
+                            for (uint i = 0; i < 65; i++)    //This loop is not strictly necessary.  Simply initializes unused bytes to
+                            {
+                                OUTBuffer[i] = 0xFF;                //0xFF for lower EMI and power consumption when driving the USB cable.
+                            }
+                            //Get the pushbutton state from the microcontroller firmware.
+                            OUTBuffer[0] = 0;            //The first byte is the "Report ID" and does not get sent over the USB bus.  Always set = 0.
+                            OUTBuffer[1] = 0x56;        //0x81 is the "Get Pushbutton State" command in the firmware
 
-							//To get the pushbutton state, first, we send a packet with our "Get Pushbutton State" command in it.
-							if (WriteFile(WriteHandleToUSBDevice, OUTBuffer, 65, ref BytesWritten, IntPtr.Zero))	//Blocking function, unless an "overlapped" structure is used
-							{
-								//Now get the response packet from the firmware.
-								INBuffer[0] = 0;
-								{
-									if (ReadFileManagedBuffer(ReadHandleToUSBDevice, INBuffer, 65, ref BytesRead, IntPtr.Zero))	//Blocking function, unless an "overlapped" structure is used
-									{
-										//INBuffer[0] is the report ID, which we don't care about.
-										//INBuffer[1] is an echo back of the command (see microcontroller firmware).
-										//INBuffer[2] contains the I/O port pin value for the pushbutton (see microcontroller firmware).  
-										if (INBuffer[1] == 0x56)
-										{
-											for (uint i = 2; i < 65; i++)
-											{
-												version_buff[i - 2] = INBuffer[i];
-											}
-											VersionReadComp = true;
-										}
-									}
-								}
-							}
-							else
-							{
-								AttachedState = false;
-							}
-						}
-
-
-						//Get the pushbutton state from the microcontroller firmware.
-						OUTBuffer[0] = 0;			//The first byte is the "Report ID" and does not get sent over the USB bus.  Always set = 0.
-						OUTBuffer[1] = 0x81;		//0x81 is the "Get Pushbutton State" command in the firmware
-						for (uint i = 2; i < 65; i++)	//This loop is not strictly necessary.  Simply initializes unused bytes to
-							OUTBuffer[i] = 0xFF;				//0xFF for lower EMI and power consumption when driving the USB cable.
-
-						//To get the pushbutton state, first, we send a packet with our "Get Pushbutton State" command in it.
-						if (WriteFile(WriteHandleToUSBDevice, OUTBuffer, 65, ref BytesWritten, IntPtr.Zero))	//Blocking function, unless an "overlapped" structure is used
-						{
-							//Now get the response packet from the firmware.
-							INBuffer[0] = 0;
-							{
-								if (ReadFileManagedBuffer(ReadHandleToUSBDevice, INBuffer, 65, ref BytesRead, IntPtr.Zero))	//Blocking function, unless an "overlapped" structure is used
-								{
-									//INBuffer[0] is the report ID, which we don't care about.
-									//INBuffer[1] is an echo back of the command (see microcontroller firmware).
-									//INBuffer[2] contains the I/O port pin value for the pushbutton (see microcontroller firmware).  
-									if (INBuffer[1] == 0x81)
-									{
-										PushButtonState = (uint)(INBuffer[2] + (INBuffer[3] << 8));
-									}
-								}
-							}
-						}
+                            //To get the pushbutton state, first, we send a packet with our "Get Pushbutton State" command in it.
+                            if (WriteFile(WriteHandleToUSBDevice, OUTBuffer, 65, ref BytesWritten, IntPtr.Zero))    //Blocking function, unless an "overlapped" structure is used
+                            {
+                                //Now get the response packet from the firmware.
+                                INBuffer[0] = 0;
+                                {
+                                    if (ReadFileManagedBuffer(ReadHandleToUSBDevice, INBuffer, 65, ref BytesRead, IntPtr.Zero))    //Blocking function, unless an "overlapped" structure is used
+                                    {
+                                        //INBuffer[0] is the report ID, which we don't care about.
+                                        //INBuffer[1] is an echo back of the command (see microcontroller firmware).
+                                        //INBuffer[2] contains the I/O port pin value for the pushbutton (see microcontroller firmware).  
+                                        if (INBuffer[1] == 0x56)
+                                        {
+                                            for (uint i = 2; i < 65; i++)
+                                            {
+                                                version_buff[i - 2] = INBuffer[i];
+                                            }
+                                            VersionReadComp = true;
+                                        }
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                AttachedState = false;
+                            }
+                        }
 
 
+                        //Get the pushbutton state from the microcontroller firmware.
+                        OUTBuffer[0] = 0;            //The first byte is the "Report ID" and does not get sent over the USB bus.  Always set = 0.
+                        OUTBuffer[1] = 0x81;        //0x81 is the "Get Pushbutton State" command in the firmware
+                        for (uint i = 2; i < 65; i++)    //This loop is not strictly necessary.  Simply initializes unused bytes to
+                            OUTBuffer[i] = 0xFF;                //0xFF for lower EMI and power consumption when driving the USB cable.
 
-						//Check if this thread should send a Toggle LED(s) command to the firmware.  ToggleLEDsPending will get set
-						//by the ToggleLEDs_btn click event handler function if the user presses the button on the form.
-						if (Changevalue_btn_pressed == true)
-						{
-							for (uint i = 0; i < 65; i++)	//This loop is not strictly necessary.  Simply initializes unused bytes to
-								OUTBuffer[i] = 0xFF;		//0xFF for lower EMI and power consumption when driving the USB cable.
+                        //To get the pushbutton state, first, we send a packet with our "Get Pushbutton State" command in it.
+                        if (WriteFile(WriteHandleToUSBDevice, OUTBuffer, 65, ref BytesWritten, IntPtr.Zero))    //Blocking function, unless an "overlapped" structure is used
+                        {
+                            //Now get the response packet from the firmware.
+                            INBuffer[0] = 0;
+                            {
+                                if (ReadFileManagedBuffer(ReadHandleToUSBDevice, INBuffer, 65, ref BytesRead, IntPtr.Zero))    //Blocking function, unless an "overlapped" structure is used
+                                {
+                                    //INBuffer[0] is the report ID, which we don't care about.
+                                    //INBuffer[1] is an echo back of the command (see microcontroller firmware).
+                                    //INBuffer[2] contains the I/O port pin value for the pushbutton (see microcontroller firmware).  
+                                    if (INBuffer[1] == 0x81)
+                                    {
+                                        PushButtonState = (uint)(INBuffer[2] + (INBuffer[3] << 8));
+                                    }
+                                }
+                            }
+                        }
 
-							OUTBuffer[0] = 0;				//The first byte is the "Report ID" and does not get sent over the USB bus.  Always set = 0.
-							OUTBuffer[1] = 0x80;			//0x80 is the "Toggle LED(s)" command in the firmware
 
-							// EEPROMデータに書き換えコードを追加
-							OUTBuffer[2] = 0x05;
-							OUTBuffer[3] = 0xAA;
-							OUTBuffer[4] = 0x55;
-							OUTBuffer[5] = 0x0A;
-							OUTBuffer[6] = 0x0F;
 
-							for (int fi = 0; fi < Constants.NUM_OF_PIN_SETTINGS; fi++)
-							{
-								OUTBuffer[fi + 7] = eeprom_data[fi];
-							}
+                        //Check if this thread should send a Toggle LED(s) command to the firmware.  ToggleLEDsPending will get set
+                        //by the ToggleLEDs_btn click event handler function if the user presses the button on the form.
+                        if (Changevalue_btn_pressed == true)
+                        {
+                            for (uint i = 0; i < 65; i++)    //This loop is not strictly necessary.  Simply initializes unused bytes to
+                                OUTBuffer[i] = 0xFF;        //0xFF for lower EMI and power consumption when driving the USB cable.
 
-							byte tmp_num_value;
-							tmp_num_value = (byte)smpl_interval_numUpDown.Value;
-							OUTBuffer[Constants.NUM_OF_PIN_SETTINGS + 7] = tmp_num_value;
-							eeprom_smpl_interval = tmp_num_value;
+                            OUTBuffer[0] = 0;                //The first byte is the "Report ID" and does not get sent over the USB bus.  Always set = 0.
+                            OUTBuffer[1] = 0x80;            //0x80 is the "Toggle LED(s)" command in the firmware
 
-							tmp_num_value = (byte)check_count_numUpDown.Value;
-							OUTBuffer[Constants.NUM_OF_PIN_SETTINGS + 7 + 1] = tmp_num_value;
-							eeprom_check_count = tmp_num_value;
+                            // EEPROMデータに書き換えコードを追加
+                            OUTBuffer[2] = 0x05;
+                            OUTBuffer[3] = 0xAA;
+                            OUTBuffer[4] = 0x55;
+                            OUTBuffer[5] = 0x0A;
+                            OUTBuffer[6] = 0x0F;
 
-							OUTBuffer[SetPin_selected * Constants.NUM_OF_SETTINGS + 7] = DeviceType_selected;
-							eeprom_data[SetPin_selected * Constants.NUM_OF_SETTINGS] = DeviceType_selected;
+                            for (int fi = 0; fi < Constants.NUM_OF_PIN_SETTINGS; fi++)
+                            {
+                                OUTBuffer[fi + 7] = eeprom_data[fi];
+                            }
 
-							StatusBoxChange = SetPin_selected;
+                            byte tmp_num_value;
+                            tmp_num_value = (byte)smpl_interval_numUpDown.Value;
+                            OUTBuffer[Constants.NUM_OF_PIN_SETTINGS + 7] = tmp_num_value;
+                            eeprom_smpl_interval = tmp_num_value;
 
-							switch (DeviceType_selected)
-							{
-								case Constants.DEVICE_TYPE_NONE_MOUSE:
-									OUTBuffer[SetPin_selected * Constants.NUM_OF_SETTINGS + 8] = MouseValue_selected;
-									OUTBuffer[SetPin_selected * Constants.NUM_OF_SETTINGS + 9] = MouseMoveValue_selected;
+                            tmp_num_value = (byte)check_count_numUpDown.Value;
+                            OUTBuffer[Constants.NUM_OF_PIN_SETTINGS + 7 + 1] = tmp_num_value;
+                            eeprom_check_count = tmp_num_value;
 
-									eeprom_data[SetPin_selected * Constants.NUM_OF_SETTINGS + 1] = MouseValue_selected;
-									eeprom_data[SetPin_selected * Constants.NUM_OF_SETTINGS + 2] = MouseMoveValue_selected;
-									break;
-								case Constants.DEVICE_TYPE_NONE_KEYBOARD:
-									OUTBuffer[SetPin_selected * Constants.NUM_OF_SETTINGS + 8] = KeyboardValue_selected;
-									OUTBuffer[SetPin_selected * Constants.NUM_OF_SETTINGS + 9] = KeyboardModifier_selected;
+                            OUTBuffer[SetPin_selected * Constants.NUM_OF_SETTINGS + 7] = DeviceType_selected;
+                            eeprom_data[SetPin_selected * Constants.NUM_OF_SETTINGS] = DeviceType_selected;
 
-									eeprom_data[SetPin_selected * Constants.NUM_OF_SETTINGS + 1] = KeyboardValue_selected;
-									eeprom_data[SetPin_selected * Constants.NUM_OF_SETTINGS + 2] = KeyboardModifier_selected;
-									break;
-								case Constants.DEVICE_TYPE_NONE_JOY:
-									OUTBuffer[SetPin_selected * Constants.NUM_OF_SETTINGS + 8] = LeverValue_selected;
-									OUTBuffer[SetPin_selected * Constants.NUM_OF_SETTINGS + 8] |= ButtonValue_selected2;
-									OUTBuffer[SetPin_selected * Constants.NUM_OF_SETTINGS + 9] = ButtonValue_selected;
+                            StatusBoxChange = SetPin_selected;
 
-									eeprom_data[SetPin_selected * Constants.NUM_OF_SETTINGS + 1] = LeverValue_selected;
-									eeprom_data[SetPin_selected * Constants.NUM_OF_SETTINGS + 1] |= ButtonValue_selected2;
-									eeprom_data[SetPin_selected * Constants.NUM_OF_SETTINGS + 2] = ButtonValue_selected;
-									break;
-								default:
-									OUTBuffer[SetPin_selected * Constants.NUM_OF_SETTINGS + 8] = 0;
-									OUTBuffer[SetPin_selected * Constants.NUM_OF_SETTINGS + 9] = 0;
+                            switch (DeviceType_selected)
+                            {
+                                case Constants.DEVICE_TYPE_NONE_MOUSE:
+                                    OUTBuffer[SetPin_selected * Constants.NUM_OF_SETTINGS + 8] = MouseValue_selected;
+                                    OUTBuffer[SetPin_selected * Constants.NUM_OF_SETTINGS + 9] = MouseMoveValue_selected;
 
-									eeprom_data[SetPin_selected * Constants.NUM_OF_SETTINGS + 1] = 0;
-									eeprom_data[SetPin_selected * Constants.NUM_OF_SETTINGS + 2] = 0;
-									break;
-							}
+                                    eeprom_data[SetPin_selected * Constants.NUM_OF_SETTINGS + 1] = MouseValue_selected;
+                                    eeprom_data[SetPin_selected * Constants.NUM_OF_SETTINGS + 2] = MouseMoveValue_selected;
+                                    break;
+                                case Constants.DEVICE_TYPE_NONE_KEYBOARD:
+                                    OUTBuffer[SetPin_selected * Constants.NUM_OF_SETTINGS + 8] = KeyboardValue_selected;
+                                    OUTBuffer[SetPin_selected * Constants.NUM_OF_SETTINGS + 9] = KeyboardModifier_selected;
 
-							//Now send the packet to the USB firmware on the microcontroller
-							WriteFile(WriteHandleToUSBDevice, OUTBuffer, 65, ref BytesWritten, IntPtr.Zero);	//Blocking function, unless an "overlapped" structure is used
-							Changevalue_btn_pressed = false;
+                                    eeprom_data[SetPin_selected * Constants.NUM_OF_SETTINGS + 1] = KeyboardValue_selected;
+                                    eeprom_data[SetPin_selected * Constants.NUM_OF_SETTINGS + 2] = KeyboardModifier_selected;
+                                    break;
+                                case Constants.DEVICE_TYPE_NONE_JOY:
+                                    OUTBuffer[SetPin_selected * Constants.NUM_OF_SETTINGS + 8] = LeverValue_selected;
+                                    OUTBuffer[SetPin_selected * Constants.NUM_OF_SETTINGS + 8] |= ButtonValue_selected2;
+                                    OUTBuffer[SetPin_selected * Constants.NUM_OF_SETTINGS + 9] = ButtonValue_selected;
 
-							ChangeAssign[SetPin_selected] = true;
-							ConnectFirstTime = true;
-						}
+                                    eeprom_data[SetPin_selected * Constants.NUM_OF_SETTINGS + 1] = LeverValue_selected;
+                                    eeprom_data[SetPin_selected * Constants.NUM_OF_SETTINGS + 1] |= ButtonValue_selected2;
+                                    eeprom_data[SetPin_selected * Constants.NUM_OF_SETTINGS + 2] = ButtonValue_selected;
+                                    break;
+                                default:
+                                    OUTBuffer[SetPin_selected * Constants.NUM_OF_SETTINGS + 8] = 0;
+                                    OUTBuffer[SetPin_selected * Constants.NUM_OF_SETTINGS + 9] = 0;
+
+                                    eeprom_data[SetPin_selected * Constants.NUM_OF_SETTINGS + 1] = 0;
+                                    eeprom_data[SetPin_selected * Constants.NUM_OF_SETTINGS + 2] = 0;
+                                    break;
+                            }
+
+                            //Now send the packet to the USB firmware on the microcontroller
+                            WriteFile(WriteHandleToUSBDevice, OUTBuffer, 65, ref BytesWritten, IntPtr.Zero);    //Blocking function, unless an "overlapped" structure is used
+                            Changevalue_btn_pressed = false;
+
+                            ChangeAssign[SetPin_selected] = true;
+                            ConnectFirstTime = true;
+                        }
                     } //end of: if(AttachedState == true)
                     else
                     {
-                        Thread.Sleep(5);	//Add a small delay.  Otherwise, this while(true) loop can execute very fast and cause 
+                        Thread.Sleep(5);    //Add a small delay.  Otherwise, this while(true) loop can execute very fast and cause 
                         //high CPU utilization, with no particular benefit to the application.
                     }
                 }
@@ -1719,12 +1719,12 @@ namespace HID_PnP_Demo
         //-------------------------------------------------------BEGIN CUT AND PASTE BLOCK-----------------------------------------------------------------------------------
 
         //--------------------------------------------------------------------------------------------------------------------------
-        //FUNCTION:	ReadFileManagedBuffer()
-        //PURPOSE:	Wrapper function to call ReadFile()
+        //FUNCTION:    ReadFileManagedBuffer()
+        //PURPOSE:    Wrapper function to call ReadFile()
         //
-        //INPUT:	Uses managed versions of the same input parameters as ReadFile() uses.
+        //INPUT:    Uses managed versions of the same input parameters as ReadFile() uses.
         //
-        //OUTPUT:	Returns boolean indicating if the function call was successful or not.
+        //OUTPUT:    Returns boolean indicating if the function call was successful or not.
         //          Also returns data in the byte[] INBuffer, and the number of bytes read. 
         //
         //Notes:    Wrapper function used to call the ReadFile() function.  ReadFile() takes a pointer to an unmanaged buffer and deposits
@@ -1796,13 +1796,13 @@ namespace HID_PnP_Demo
 
                     Arrow_Com_pb.Visible = false;
 
-					mousevalue_combx.Items.Add("ダミー");
-					mousevalue_combx.SelectedIndex = Constants.SETTING_VALUE_MOUSE_MAX + 1; //SelectedIndexChangedイベント発火用
-					if (eeprom_data[SetPin_selected * Constants.NUM_OF_SETTINGS + 1] > Constants.SETTING_VALUE_MOUSE_MAX)
-						mousevalue_combx.SelectedIndex = 0;
-					else
-						mousevalue_combx.SelectedIndex = eeprom_data[SetPin_selected * Constants.NUM_OF_SETTINGS + 1];
-					mousevalue_combx.Items.Remove("ダミー");
+                    mousevalue_combx.Items.Add("ダミー");
+                    mousevalue_combx.SelectedIndex = Constants.SETTING_VALUE_MOUSE_MAX + 1; //SelectedIndexChangedイベント発火用
+                    if (eeprom_data[SetPin_selected * Constants.NUM_OF_SETTINGS + 1] > Constants.SETTING_VALUE_MOUSE_MAX)
+                        mousevalue_combx.SelectedIndex = 0;
+                    else
+                        mousevalue_combx.SelectedIndex = eeprom_data[SetPin_selected * Constants.NUM_OF_SETTINGS + 1];
+                    mousevalue_combx.Items.Remove("ダミー");
 
                     break;
                 case Constants.DEVICE_TYPE_NONE_KEYBOARD:

@@ -1,15 +1,15 @@
 /********************************************************************
   File Information:
-    FileName:     	usb_function_hid.c
+    FileName:         usb_function_hid.c
     Dependencies:   See INCLUDES section
     Processor:      PIC18 or PIC24 USB Microcontrollers
     Hardware:       The code is natively intended to be used on the following
-    				hardware platforms: PICDEMÅEΩ FS USB Demo Board, 
-    				PIC18F87J50 FS USB Plug-In Module, or
-    				Explorer 16 + PIC24 USB PIM.  The firmware may be
-    				modified for use on other USB platforms by editing the
-    				HardwareProfile.h file.
-    Complier:  	    Microchip C18 (for PIC18) or C30 (for PIC24)
+                    hardware platforms: PICDEMÅEΩ FS USB Demo Board, 
+                    PIC18F87J50 FS USB Plug-In Module, or
+                    Explorer 16 + PIC24 USB PIM.  The firmware may be
+                    modified for use on other USB platforms by editing the
+                    HardwareProfile.h file.
+    Complier:          Microchip C18 (for PIC18) or C30 (for PIC24)
     Company:        Microchip Technology, Inc.
     
     Software License Agreement:
@@ -112,7 +112,7 @@
 
 /** VARIABLES ******************************************************/
 #if defined(COMPILER_MPLAB_C18)
-	#pragma udata
+    #pragma udata
 #endif
 
 BYTE idle_rate;
@@ -135,16 +135,16 @@ BYTE active_protocol;   // [0] Boot Protocol [1] Report Protocol
 /** Section: CLASS SPECIFIC REQUESTS ****************************************/
 
 /********************************************************************
-	Function:
-		void USBCheckHIDRequest(void)
+    Function:
+        void USBCheckHIDRequest(void)
 
- 	Summary:
- 		This routine handles HID specific request that happen on EP0.
+     Summary:
+         This routine handles HID specific request that happen on EP0.
         This function should be called from the USBCBCheckOtherReq() call back
         function whenever implementing a HID device.
 
- 	Description:
- 		This routine handles HID specific request that happen on EP0.  These
+     Description:
+         This routine handles HID specific request that happen on EP0.  These
         include, but are not limited to, requests for the HID report
         descriptors.  This function should be called from the
         USBCBCheckOtherReq() call back function whenever using an HID device.
@@ -159,17 +159,17 @@ BYTE active_protocol;   // [0] Boot Protocol [1] Report Protocol
         }
         </code>
 
-	PreCondition:
-		None
+    PreCondition:
+        None
 
-	Parameters:
-		None
+    Parameters:
+        None
 
-	Return Values:
-		None
+    Return Values:
+        None
 
-	Remarks:
-		None
+    Remarks:
+        None
  
  *******************************************************************/
 void USBCheckHIDRequest(void)
@@ -188,78 +188,78 @@ void USBCheckHIDRequest(void)
         {
             case DSC_HID: //HID Descriptor          
 //                if(USBActiveConfiguration == 1)
-				switch (SetupPkt.bIntfID)
+                switch (SetupPkt.bIntfID)
                 {
                     case 0:
-                    	USBEP0SendROMPtr(
-	                        (ROM BYTE*)&configDescriptor1 + 18,		//18 is a magic number.  It is the offset from start of the configuration descriptor to the start of the HID descriptor.
-	                        sizeof(USB_HID_DSC)+3,
-	                        USB_EP0_INCLUDE_ZERO);
-	                    break;
+                        USBEP0SendROMPtr(
+                            (ROM BYTE*)&configDescriptor1 + 18,        //18 is a magic number.  It is the offset from start of the configuration descriptor to the start of the HID descriptor.
+                            sizeof(USB_HID_DSC)+3,
+                            USB_EP0_INCLUDE_ZERO);
+                        break;
 
                     case 1:
-                    	USBEP0SendROMPtr(
-	                        (ROM BYTE*)&configDescriptor1 + 18 + 9+9+7,		// magic number.  It is the offset from start of the configuration descriptor to the start of the HID descriptor.
-	                        sizeof(USB_HID_DSC)+3,
-	                        USB_EP0_INCLUDE_ZERO);
-	                    break;
+                        USBEP0SendROMPtr(
+                            (ROM BYTE*)&configDescriptor1 + 18 + 9+9+7,        // magic number.  It is the offset from start of the configuration descriptor to the start of the HID descriptor.
+                            sizeof(USB_HID_DSC)+3,
+                            USB_EP0_INCLUDE_ZERO);
+                        break;
 
                     case 2:
-                    	USBEP0SendROMPtr(
-	                        (ROM BYTE*)&configDescriptor1 + 18 + 9+9+7 + 9+9+7+7,		// magic number.  It is the offset from start of the configuration descriptor to the start of the HID descriptor.
-	                        sizeof(USB_HID_DSC)+3,
-	                        USB_EP0_INCLUDE_ZERO);
-	                    break;
+                        USBEP0SendROMPtr(
+                            (ROM BYTE*)&configDescriptor1 + 18 + 9+9+7 + 9+9+7+7,        // magic number.  It is the offset from start of the configuration descriptor to the start of the HID descriptor.
+                            sizeof(USB_HID_DSC)+3,
+                            USB_EP0_INCLUDE_ZERO);
+                        break;
 
                     case 3:
-                    	USBEP0SendROMPtr(
-	                        (ROM BYTE*)&configDescriptor1 + 18 + 9+9+7 + 9+9+7+7 + 9+9+7+7,		// magic number.  It is the offset from start of the configuration descriptor to the start of the HID descriptor.
-	                        sizeof(USB_HID_DSC)+3,
-	                        USB_EP0_INCLUDE_ZERO);
-	                    break;
+                        USBEP0SendROMPtr(
+                            (ROM BYTE*)&configDescriptor1 + 18 + 9+9+7 + 9+9+7+7 + 9+9+7+7,        // magic number.  It is the offset from start of the configuration descriptor to the start of the HID descriptor.
+                            sizeof(USB_HID_DSC)+3,
+                            USB_EP0_INCLUDE_ZERO);
+                        break;
                 }
                 break;
             case DSC_RPT:  //Report Descriptor           
                 //if(USBActiveConfiguration == 1)
-			    switch (SetupPkt.bIntfID)
-			    {
-				    case 0:
-	                    USBEP0SendROMPtr(
-	                        (ROM BYTE*)&hid_rpt01,
-	                        sizeof(hid_rpt01),     //See usbcfg.h
-	                        USB_EP0_INCLUDE_ZERO);
-	                    break;
+                switch (SetupPkt.bIntfID)
+                {
+                    case 0:
+                        USBEP0SendROMPtr(
+                            (ROM BYTE*)&hid_rpt01,
+                            sizeof(hid_rpt01),     //See usbcfg.h
+                            USB_EP0_INCLUDE_ZERO);
+                        break;
 
-				    case 1:
-	                    USBEP0SendROMPtr(
-	                        (ROM BYTE*)&hid_rpt02,
-	                        sizeof(hid_rpt02),     //See usbcfg.h
-	                        USB_EP0_INCLUDE_ZERO);
-	                    break;
+                    case 1:
+                        USBEP0SendROMPtr(
+                            (ROM BYTE*)&hid_rpt02,
+                            sizeof(hid_rpt02),     //See usbcfg.h
+                            USB_EP0_INCLUDE_ZERO);
+                        break;
 
-				    case 2:
-	                    USBEP0SendROMPtr(
-	                        (ROM BYTE*)&hid_rpt03,
-	                        sizeof(hid_rpt03),     //See usbcfg.h
-	                        USB_EP0_INCLUDE_ZERO);
-	                    break;
+                    case 2:
+                        USBEP0SendROMPtr(
+                            (ROM BYTE*)&hid_rpt03,
+                            sizeof(hid_rpt03),     //See usbcfg.h
+                            USB_EP0_INCLUDE_ZERO);
+                        break;
 
-				    case 3:
-	                    USBEP0SendROMPtr(
-	                        (ROM BYTE*)&hid_rpt04,
-	                        sizeof(hid_rpt04),     //See usbcfg.h
-	                        USB_EP0_INCLUDE_ZERO);
-	                    break;
+                    case 3:
+                        USBEP0SendROMPtr(
+                            (ROM BYTE*)&hid_rpt04,
+                            sizeof(hid_rpt04),     //See usbcfg.h
+                            USB_EP0_INCLUDE_ZERO);
+                        break;
                 }
                 break;
             case DSC_PHY:  //Physical Descriptor
-				//Note: The below placeholder code is commented out.  HID Physical Descriptors are optional and are not used
-				//in many types of HID applications.  If an application does not have a physical descriptor,
-				//then the device should return STALL in response to this request (stack will do this automatically
-				//if no-one claims ownership of the control transfer).
-				//If an application does implement a physical descriptor, then make sure to declare
-				//hid_phy01 (rom structure containing the descriptor data), and hid_phy01 (the size of the descriptors in bytes),
-				//and then uncomment the below code.
+                //Note: The below placeholder code is commented out.  HID Physical Descriptors are optional and are not used
+                //in many types of HID applications.  If an application does not have a physical descriptor,
+                //then the device should return STALL in response to this request (stack will do this automatically
+                //if no-one claims ownership of the control transfer).
+                //If an application does implement a physical descriptor, then make sure to declare
+                //hid_phy01 (rom structure containing the descriptor data), and hid_phy01 (the size of the descriptors in bytes),
+                //and then uncomment the below code.
                 //if(USBActiveConfiguration == 1)
                 //{
                 //    USBEP0SendROMPtr((ROM BYTE*)&hid_phy01, sizeof(hid_phy01), USB_EP0_INCLUDE_ZERO);
