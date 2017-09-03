@@ -41,10 +41,10 @@ ONからOFFになる時にも回数分OFFであることを確認します。
 設定値の決め方は、設定ツールからキーボードと適当なキーに設定し、メモ帳を開いてボタンを押してチャタリングが確認できれば数値を上げてみる程度でいいと思います。  
 もちろん遅延を抑えたい場合は逆のことを行えばいいでしょう。  
 ### 遅延について
-遅延秒数は**サンプリング周期 * 一致検出回数 - (サンプリング周期 / 2)**でおおよそ求められます。  
+遅延秒数は **サンプリング周期 * 一致検出回数 - (サンプリング周期 / 2)** でおおよそ求められます。  
 ## 動作環境について
-設定ツールはWindows XP以降のOSで動作します（Windows Vistaで動作を確認しています）。  
-書き込み・設定をWindows上で行ってしまえば、ファームウェア（REVIVE USB）はMacやLinux/UNIX系のOSでも動作するはずです。
+設定ツールはWindows XP以降のOSで動作します。  
+書き込み・設定をWindows上で行ってしまえば、MacやLinux/UNIX系のOSでも動作します。
 ## 開発環境・開発言語について
 ### ハードウェア
 REVIVE USB (PIC18F14K50)
@@ -55,7 +55,7 @@ REVIVE USB (PIC18F14K50)
 開発環境：Visual C# 2010 Express  
 開発言語：C#
 ## ソースコードについて
-「Assembly Desk License」ライセンスに準拠します。  
+「[Assembly Desk License](https://raw.githubusercontent.com/ushui/REVIVE_USB_Debounce/master/LICENSE)」ライセンスに準拠します。  
 「REVIVE USB チャタリング対策版」は「REVIVE USB」と「REVIVE USB, Configuration Tool」をベースに、「REVIVE USB (Keyboard Only版) 」とその設定ツールを参考にして作成しました。作成者である「Bit Trade One, LTD」に感謝いたします。
 ## 派生バージョン
 * [REVIVE USB MATRIX チャタリング対策版（PID004B）](https://github.com/ushui/REVIVE_USB_MATRIX_Debounce)
@@ -64,6 +64,7 @@ REVIVE USB (PIC18F14K50)
 * [REVIVE USB ロータリーエンコーダ対応 アナログレバー入力 チャタリング対策版（PID004E）](https://github.com/ushui/REVIVE_USB_RENC_AL_Debounce)
 
 ***
+2017/09/03 Markdown記法の一部誤り等を修正。曖昧だった表現等の校正。  
 2017/01/24 アナログレバー入力対応版に合わせて派生バージョンを追記。  
 2017/01/22 遅延に関する記述の修正。スライダー/ダイヤル入力対応版に合わせて派生バージョンを追記。  
 2017/01/04 ロータリーエンコーダ対応版に合わせて表記の追記と修正。  
