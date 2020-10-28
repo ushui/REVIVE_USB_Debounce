@@ -1,5 +1,5 @@
 #  REVIVE USB チャタリング対策版（PID004A）
-本プログラムは、株式会社ビット・トレード・ワンが提供するREVIVE USBのファームウェアおよびWindowsアプリケーション「REVIVE USB Configuration Tool」を、[Assembly Desk License](https://raw.githubusercontent.com/ushui/REVIVE_USB_Debounce/master/LICENSE)」ライセンスに基づいて改変したプログラムです。  
+本プログラムは、株式会社ビット・トレード・ワンが提供するREVIVE USBのファームウェアおよびWindowsアプリケーション「REVIVE USB Configuration Tool」を、[Assembly Desk License](https://raw.githubusercontent.com/ushui/REVIVE_USB_Debounce/master/LICENSE)ライセンスに基づいて改変したプログラムです。  
 ここでは追加・変更した機能について記載します。基本的な使用方法、プログラムの仕様は改変元プログラムと変わりませんので、概要については[公式リポジトリ](https://github.com/bit-trade-one/REVIVE-USB)をご覧ください。  
 
 ## 特徴
@@ -75,7 +75,7 @@ ON/OFFが確定している間の不安定な信号の揺れを無効化する�
 
 ----
 
-開発環境(ファームウェア)： MPLAB IDE v8.92、MPLAB C for PIC18 v3.47 Standard-Eval Version 
+開発環境(ファームウェア)： MPLAB IDE v8.92、MPLAB C for PIC18 v3.47 Standard-Eval Version  
 開発環境(設定ツール): Microsoft Visual C# 2010 Express  
 作成者： ushui（ゆーしゅい）  
 Twitter: [@kaede_hrc](https://twitter.com/kaede_hrc)  
