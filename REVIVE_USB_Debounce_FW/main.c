@@ -1,8 +1,11 @@
 // USB HID core
 /*
- * Debounce ver 1.4 (2016/01/04)
+ * Debounce ver 1.5 (2020/10/20)
+ *   「REVIVE USB ver 008」のアップデート内容を反映。
+ *   デフォルトのサンプリング周期を4ms、一致検出回数を2回に変更。
+ * Debounce ver 1.4 (2017/01/04)
  *   バッファオーバーフローが発生していたバグとPIN8以降の入力がおかしくなっていたバグの修正。
- * Debounce ver 1.3 (2016/01/01)
+ * Debounce ver 1.3 (2017/01/01)
  *   リファクタリングを行った。
  * Debounce ver 1.2 (2016/12/29)
  *   入力が無効になっていたバグを修正。
@@ -136,7 +139,7 @@ void YourLowPriorityISRCode();
 
 /** VARIABLES ******************************************************/
 #pragma udata
-char c_version[]="D1.4";
+char c_version[]="D1.5";
 BYTE mouse_buffer[4];
 BYTE joystick_buffer[4];
 BYTE keyboard_buffer[8]; 
@@ -593,8 +596,8 @@ void UserInit(void)
             }
         }
         //以下の初期値は1以上にすること
-        eeprom_smpl_interval = 10;
-        eeprom_check_count = 3;
+        eeprom_smpl_interval = 4;
+        eeprom_check_count = 2;
         uc_temp = WriteEEPROM_Agree(EEPROM_SAVE_NUM*(NUM_OF_PINS*NUM_OF_SETTINGS), eeprom_smpl_interval, EEPROM_SAVE_NUM);
         uc_temp = WriteEEPROM_Agree(EEPROM_SAVE_NUM*(NUM_OF_PINS*NUM_OF_SETTINGS+1), eeprom_check_count, EEPROM_SAVE_NUM);
     }
@@ -865,7 +868,11 @@ void ProcessIO(void)
             hid_report_out_flag--;
         }
     }
-   if(!HIDTxHandleBusy(lastTransmission2))
+    if(!HIDRxHandleBusy(lastOUTTransmissionKeyboard))
+    {
+        lastOUTTransmissionKeyboard = HIDRxPacket(HID_EP3, (BYTE*)hid_report_out, HID_INT_OUT_EP_SIZE);
+    }
+    if(!HIDTxHandleBusy(lastTransmission2))
     {
         //Buttons
         joystick_input[0] = joystick_buffer[0];

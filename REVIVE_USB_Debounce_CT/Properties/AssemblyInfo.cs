@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Bit Trade One, Ltd.")]
 [assembly: AssemblyProduct("Revive USB Configuration Tool")]
-[assembly: AssemblyCopyright("Copyright © 2011-2016 Bit Trade One, Ltd.")]
+[assembly: AssemblyCopyright("Copyright © 2011-2020 Bit Trade One, Ltd.")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -29,5 +29,5 @@ using System.Runtime.InteropServices;
 //      Build Number
 //      Revision
 //
-[assembly: AssemblyVersion("1.0.2.0")]
-[assembly: AssemblyFileVersion("1.0.2.0")]
+[assembly: AssemblyVersion("1.4.0.0")]
+[assembly: AssemblyFileVersion("1.4.0.0")]

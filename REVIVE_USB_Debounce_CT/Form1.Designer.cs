@@ -143,6 +143,8 @@ namespace HID_PnP_Demo
             this.smpl_interval_lbl2 = new System.Windows.Forms.Label();
             this.fw_version_lbl = new System.Windows.Forms.Label();
             this.AllButtonSetting_grpbox = new System.Windows.Forms.GroupBox();
+            this.lbl_delay_calc_result = new System.Windows.Forms.Label();
+            this.lbl_delay_calc = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.MouseMove_UD)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ButtonPressIcon12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ButtonPressIcon11)).BeginInit();
@@ -1451,7 +1453,7 @@ namespace HID_PnP_Demo
             // 
             this.smpl_interval_lbl1.AutoSize = true;
             this.smpl_interval_lbl1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(106)))), ((int)(((byte)(106)))));
-            this.smpl_interval_lbl1.Location = new System.Drawing.Point(22, 27);
+            this.smpl_interval_lbl1.Location = new System.Drawing.Point(22, 21);
             this.smpl_interval_lbl1.Name = "smpl_interval_lbl1";
             this.smpl_interval_lbl1.Size = new System.Drawing.Size(82, 12);
             this.smpl_interval_lbl1.TabIndex = 164;
@@ -1461,7 +1463,7 @@ namespace HID_PnP_Demo
             // 
             this.check_count_lbl1.AutoSize = true;
             this.check_count_lbl1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(106)))), ((int)(((byte)(106)))));
-            this.check_count_lbl1.Location = new System.Drawing.Point(27, 61);
+            this.check_count_lbl1.Location = new System.Drawing.Point(27, 46);
             this.check_count_lbl1.Name = "check_count_lbl1";
             this.check_count_lbl1.Size = new System.Drawing.Size(77, 12);
             this.check_count_lbl1.TabIndex = 165;
@@ -1469,7 +1471,7 @@ namespace HID_PnP_Demo
             // 
             // smpl_interval_numUpDown
             // 
-            this.smpl_interval_numUpDown.Location = new System.Drawing.Point(105, 25);
+            this.smpl_interval_numUpDown.Location = new System.Drawing.Point(105, 18);
             this.smpl_interval_numUpDown.Maximum = new decimal(new int[] {
             174,
             0,
@@ -1484,14 +1486,15 @@ namespace HID_PnP_Demo
             this.smpl_interval_numUpDown.Size = new System.Drawing.Size(38, 19);
             this.smpl_interval_numUpDown.TabIndex = 166;
             this.smpl_interval_numUpDown.Value = new decimal(new int[] {
-            10,
+            4,
             0,
             0,
             0});
+            this.smpl_interval_numUpDown.ValueChanged += new System.EventHandler(this.smpl_interval_numUpDown_ValueChanged);
             // 
             // check_count_numUpDown
             // 
-            this.check_count_numUpDown.Location = new System.Drawing.Point(105, 59);
+            this.check_count_numUpDown.Location = new System.Drawing.Point(105, 43);
             this.check_count_numUpDown.Maximum = new decimal(new int[] {
             255,
             0,
@@ -1506,16 +1509,17 @@ namespace HID_PnP_Demo
             this.check_count_numUpDown.Size = new System.Drawing.Size(38, 19);
             this.check_count_numUpDown.TabIndex = 167;
             this.check_count_numUpDown.Value = new decimal(new int[] {
-            3,
+            2,
             0,
             0,
             0});
+            this.check_count_numUpDown.ValueChanged += new System.EventHandler(this.check_count_numUpDown_ValueChanged);
             // 
             // check_count_lbl2
             // 
             this.check_count_lbl2.AutoSize = true;
             this.check_count_lbl2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(106)))), ((int)(((byte)(106)))));
-            this.check_count_lbl2.Location = new System.Drawing.Point(144, 61);
+            this.check_count_lbl2.Location = new System.Drawing.Point(144, 45);
             this.check_count_lbl2.Name = "check_count_lbl2";
             this.check_count_lbl2.Size = new System.Drawing.Size(17, 12);
             this.check_count_lbl2.TabIndex = 168;
@@ -1525,7 +1529,7 @@ namespace HID_PnP_Demo
             // 
             this.smpl_interval_lbl2.AutoSize = true;
             this.smpl_interval_lbl2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(106)))), ((int)(((byte)(106)))));
-            this.smpl_interval_lbl2.Location = new System.Drawing.Point(144, 27);
+            this.smpl_interval_lbl2.Location = new System.Drawing.Point(144, 20);
             this.smpl_interval_lbl2.Name = "smpl_interval_lbl2";
             this.smpl_interval_lbl2.Size = new System.Drawing.Size(20, 12);
             this.smpl_interval_lbl2.TabIndex = 169;
@@ -1544,6 +1548,8 @@ namespace HID_PnP_Demo
             // 
             // AllButtonSetting_grpbox
             // 
+            this.AllButtonSetting_grpbox.Controls.Add(this.lbl_delay_calc_result);
+            this.AllButtonSetting_grpbox.Controls.Add(this.lbl_delay_calc);
             this.AllButtonSetting_grpbox.Controls.Add(this.check_count_numUpDown);
             this.AllButtonSetting_grpbox.Controls.Add(this.smpl_interval_lbl1);
             this.AllButtonSetting_grpbox.Controls.Add(this.smpl_interval_lbl2);
@@ -1557,7 +1563,27 @@ namespace HID_PnP_Demo
             this.AllButtonSetting_grpbox.Size = new System.Drawing.Size(191, 96);
             this.AllButtonSetting_grpbox.TabIndex = 171;
             this.AllButtonSetting_grpbox.TabStop = false;
-            this.AllButtonSetting_grpbox.Text = "AllButtonSetting";
+            this.AllButtonSetting_grpbox.Text = "É`ÉÉÉ^ÉäÉìÉOñhé~ê›íË";
+            // 
+            // lbl_delay_calc_result
+            // 
+            this.lbl_delay_calc_result.AutoSize = true;
+            this.lbl_delay_calc_result.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(106)))), ((int)(((byte)(106)))));
+            this.lbl_delay_calc_result.Location = new System.Drawing.Point(103, 71);
+            this.lbl_delay_calc_result.Name = "lbl_delay_calc_result";
+            this.lbl_delay_calc_result.Size = new System.Drawing.Size(26, 12);
+            this.lbl_delay_calc_result.TabIndex = 170;
+            this.lbl_delay_calc_result.Text = "6ms";
+            // 
+            // lbl_delay_calc
+            // 
+            this.lbl_delay_calc.AutoSize = true;
+            this.lbl_delay_calc.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(106)))), ((int)(((byte)(106)))));
+            this.lbl_delay_calc.Location = new System.Drawing.Point(27, 71);
+            this.lbl_delay_calc.Name = "lbl_delay_calc";
+            this.lbl_delay_calc.Size = new System.Drawing.Size(77, 12);
+            this.lbl_delay_calc.TabIndex = 170;
+            this.lbl_delay_calc.Text = "ïΩãœíxâÑïbêî";
             // 
             // Form1
             // 
@@ -1672,7 +1698,7 @@ namespace HID_PnP_Demo
             this.MaximumSize = new System.Drawing.Size(894, 538);
             this.MinimizeBox = false;
             this.Name = "Form1";
-            this.Text = "REVIVE USB Debounce, Configuration Tool ver 1.0.2";
+            this.Text = "REVIVE USB Debounce, Configuration Tool ver 1.40";
             ((System.ComponentModel.ISupportInitialize)(this.MouseMove_UD)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ButtonPressIcon12)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ButtonPressIcon11)).EndInit();
@@ -1845,6 +1871,8 @@ namespace HID_PnP_Demo
         private System.Windows.Forms.Label smpl_interval_lbl2;
         private System.Windows.Forms.Label fw_version_lbl;
         private System.Windows.Forms.GroupBox AllButtonSetting_grpbox;
+        private System.Windows.Forms.Label lbl_delay_calc_result;
+        private System.Windows.Forms.Label lbl_delay_calc;
     }
 }
 

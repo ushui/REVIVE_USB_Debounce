@@ -1,5 +1,5 @@
 MPLINK 5.00, LINKER
-Linker Map File - Created Wed Jan 04 12:09:36 2017
+Linker Map File - Created Mon Oct 26 00:17:11 2020
 
                                  Section Info
                   Section       Type    Address   Location Size(Bytes)
@@ -12,35 +12,35 @@ Linker Map File - Created Wed Jan 04 12:09:36 2017
 REMAPPED_HIGH_INTERRUPT_VECTOR       code   0x001008    program   0x000006
 REMAPPED_LOW_INTERRUPT_VECTOR       code   0x001018    program   0x000006
                    .cinit    romdata   0x00101e    program   0x00000e
-             .code_main.o       code   0x00102c    program   0x0011bc
-       .code_usb_device.o       code   0x0021e8    program   0x000cf4
-.romdata_usb_descriptors.o    romdata   0x002edc    program   0x0001af
-    .idata_usb_device.o_i    romdata   0x00308b    program   0x000000
-    .romdata_usb_device.o    romdata   0x00308b    program   0x000000
-.idata_usb_function_hid.o_i    romdata   0x00308b    program   0x000000
-.romdata_usb_function_hid.o    romdata   0x00308b    program   0x000000
-        .idata_eeprom.o_i    romdata   0x00308b    program   0x000000
-        .romdata_eeprom.o    romdata   0x00308b    program   0x000000
-      .idata_fxd1616u.o_i    romdata   0x00308b    program   0x000000
-      .romdata_fxd1616u.o    romdata   0x00308b    program   0x000000
-        .idata___init.o_i    romdata   0x00308b    program   0x000000
-        .romdata___init.o    romdata   0x00308b    program   0x000000
-         .idata_c018i.o_i    romdata   0x00308b    program   0x000000
-         .romdata_c018i.o    romdata   0x00308b    program   0x000000
-.idata_usb_descriptors.o_i    romdata   0x00308b    program   0x000000
-          .romdata_main.o    romdata   0x00308b    program   0x000000
-             .stringtable    romdata   0x00308b    program   0x000000
-            .code_c018i.o       code   0x00308c    program   0x000000
-           .code_eeprom.o       code   0x00308c    program   0x000178
-  .code_usb_descriptors.o       code   0x00308c    program   0x000000
- .code_usb_function_hid.o       code   0x003204    program   0x000122
-                     PROG       code   0x003326    program   0x0000a6
-               _cinit_scn       code   0x0033cc    program   0x00009e
-                   STRING       code   0x00346a    program   0x000050
-         .code_fxd1616u.o       code   0x0034ba    program   0x00002c
-                    .code       code   0x0034e6    program   0x000020
-             _startup_scn       code   0x003506    program   0x00001c
-          .idata_main.o_i    romdata   0x003522    program   0x000040
+             .code_main.o       code   0x00102c    program   0x0011fc
+       .code_usb_device.o       code   0x002228    program   0x000cf4
+.romdata_usb_descriptors.o    romdata   0x002f1c    program   0x0001af
+    .idata_usb_device.o_i    romdata   0x0030cb    program   0x000000
+    .romdata_usb_device.o    romdata   0x0030cb    program   0x000000
+.idata_usb_function_hid.o_i    romdata   0x0030cb    program   0x000000
+.romdata_usb_function_hid.o    romdata   0x0030cb    program   0x000000
+        .idata_eeprom.o_i    romdata   0x0030cb    program   0x000000
+        .romdata_eeprom.o    romdata   0x0030cb    program   0x000000
+      .idata_fxd1616u.o_i    romdata   0x0030cb    program   0x000000
+      .romdata_fxd1616u.o    romdata   0x0030cb    program   0x000000
+        .idata___init.o_i    romdata   0x0030cb    program   0x000000
+        .romdata___init.o    romdata   0x0030cb    program   0x000000
+         .idata_c018i.o_i    romdata   0x0030cb    program   0x000000
+         .romdata_c018i.o    romdata   0x0030cb    program   0x000000
+.idata_usb_descriptors.o_i    romdata   0x0030cb    program   0x000000
+          .romdata_main.o    romdata   0x0030cb    program   0x000000
+             .stringtable    romdata   0x0030cb    program   0x000000
+            .code_c018i.o       code   0x0030cc    program   0x000000
+           .code_eeprom.o       code   0x0030cc    program   0x000178
+  .code_usb_descriptors.o       code   0x0030cc    program   0x000000
+ .code_usb_function_hid.o       code   0x003244    program   0x000122
+                     PROG       code   0x003366    program   0x0000a6
+               _cinit_scn       code   0x00340c    program   0x00009e
+                   STRING       code   0x0034aa    program   0x000050
+         .code_fxd1616u.o       code   0x0034fa    program   0x00002c
+                    .code       code   0x003526    program   0x000020
+             _startup_scn       code   0x003546    program   0x00001c
+          .idata_main.o_i    romdata   0x003562    program   0x000040
     .config_300000_main.o    romdata   0x300000    program   0x000001
     .config_300001_main.o    romdata   0x300001    program   0x000001
     .config_300002_main.o    romdata   0x300002    program   0x000001
@@ -87,91 +87,91 @@ YourLowPriorityISRCode_tmp      udata   0x000014       data   0x00000b
                             0x000008    0x00000d      
                             0x000018    0x00001d      
                             0x001000    0x00100d      
-                            0x001018    0x00308a      
-                            0x00308c    0x003561      
+                            0x001018    0x0030ca      
+                            0x0030cc    0x0035a1      
                             0x300000    0x300003      
                             0x300005    0x300006      
                             0x300008    0x30000d      
-            9589 out of 16408 program addresses used, program memory utilization is 58%
+            9653 out of 16408 program addresses used, program memory utilization is 58%
 
 
 
                               Symbols - Sorted by Name
                      Name    Address   Location    Storage File                     
                 ---------  ---------  ---------  --------- ---------                
-                   D1616S   0x003348    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616s.asm
-                D1616SNEG   0x003356    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616s.asm
-                 D1616SOK   0x003352    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616s.asm
-                  D1616SX   0x003368    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616s.asm
-                  DA1616S   0x003338    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616s.asm
-                 FXD1616S   0x003326    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616s.asm
-                 FXD1616U   0x0034ba    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616u.c
-                 FXM1616S   0x003372    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxm1616s.asm
-                 High_ISR   0x000008    program     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-         InitializeSystem   0x00140a    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-                  Low_ISR   0x000018    program     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-                ProcessIO   0x0016cc    program     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-               ReadEEPROM   0x00308c    program     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\eeprom.c
-         ReadEEPROM_Agree   0x0030d0    program     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\eeprom.c
-        Remapped_High_ISR   0x001008    program     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-         Remapped_Low_ISR   0x001018    program     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-               TSIGN1616A   0x0033be    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxm1616s.asm
-       USBCBCheckOtherReq   0x001f44    program     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-        USBCBErrorHandler   0x001f42    program     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-              USBCBInitEP   0x001f4a    program     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-          USBCBSendResume   0x001f68    program     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-    USBCBStdSetDscHandler   0x001f48    program     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-             USBCBSuspend   0x001f3c    program     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-     USBCBWakeFromSuspend   0x001f3e    program     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-        USBCB_SOF_Handler   0x001f40    program     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-              USBCancelIO   0x0024e0    program     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-       USBCheckHIDRequest   0x003204    program     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\HID Device Driver\usb_function_hid.c
-       USBCheckStdRequest   0x002aaa    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-     USBConfigureEndpoint   0x00259e    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-  USBCtrlEPAllowDataStage   0x002560    program     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-USBCtrlEPAllowStatusStage   0x002514    program     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-         USBCtrlEPService   0x002952    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
- USBCtrlEPServiceComplete   0x0025fa    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-      USBCtrlTrfInHandler   0x002a30    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-     USBCtrlTrfOutHandler   0x002a12    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-      USBCtrlTrfRxService   0x0026d4    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-   USBCtrlTrfSetupHandler   0x0029dc    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-      USBCtrlTrfTxService   0x002654    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-            USBDeviceInit   0x0021e8    program     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-           USBDeviceTasks   0x0022b2    program     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-        USBEnableEndpoint   0x0023dc    program     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-         USBStallEndpoint   0x0024b0    program     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-          USBStallHandler   0x002904    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-  USBStdFeatureReqHandler   0x002b52    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-      USBStdGetDscHandler   0x002814    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-   USBStdGetStatusHandler   0x00288e    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-      USBStdSetCfgHandler   0x00279c    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-               USBSuspend   0x002926    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-     USBTransferOnePacket   0x002424    program     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-       USBWakeFromSuspend   0x00293a    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-               USB_CD_Ptr   0x003083    program     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\usb_descriptors.c
-               USB_SD_Ptr   0x003085    program     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\usb_descriptors.c
-USER_USB_CALLBACK_EVENT_HANDLER   0x001f84    program     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-                 UserInit   0x001414    program     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-              WriteEEPROM   0x00309c    program     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\eeprom.c
-        WriteEEPROM_Agree   0x003162    program     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\eeprom.c
-  YourHighPriorityISRCode   0x00102c    program     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-   YourLowPriorityISRCode   0x00103a    program     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-              _2jContinue   0x00348a    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\memset.asm
-                   _3jEnd   0x003494    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\memset.asm
+                   D1616S   0x003388    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616s.asm
+                D1616SNEG   0x003396    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616s.asm
+                 D1616SOK   0x003392    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616s.asm
+                  D1616SX   0x0033a8    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616s.asm
+                  DA1616S   0x003378    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616s.asm
+                 FXD1616S   0x003366    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616s.asm
+                 FXD1616U   0x0034fa    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616u.c
+                 FXM1616S   0x0033b2    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxm1616s.asm
+                 High_ISR   0x000008    program     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+         InitializeSystem   0x00140a    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+                  Low_ISR   0x000018    program     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+                ProcessIO   0x0016cc    program     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+               ReadEEPROM   0x0030cc    program     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\eeprom.c
+         ReadEEPROM_Agree   0x003110    program     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\eeprom.c
+        Remapped_High_ISR   0x001008    program     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+         Remapped_Low_ISR   0x001018    program     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+               TSIGN1616A   0x0033fe    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxm1616s.asm
+       USBCBCheckOtherReq   0x001f84    program     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+        USBCBErrorHandler   0x001f82    program     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+              USBCBInitEP   0x001f8a    program     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+          USBCBSendResume   0x001fa8    program     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+    USBCBStdSetDscHandler   0x001f88    program     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+             USBCBSuspend   0x001f7c    program     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+     USBCBWakeFromSuspend   0x001f7e    program     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+        USBCB_SOF_Handler   0x001f80    program     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+              USBCancelIO   0x002520    program     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+       USBCheckHIDRequest   0x003244    program     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\HID Device Driver\usb_function_hid.c
+       USBCheckStdRequest   0x002aea    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+     USBConfigureEndpoint   0x0025de    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+  USBCtrlEPAllowDataStage   0x0025a0    program     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+USBCtrlEPAllowStatusStage   0x002554    program     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+         USBCtrlEPService   0x002992    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+ USBCtrlEPServiceComplete   0x00263a    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+      USBCtrlTrfInHandler   0x002a70    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+     USBCtrlTrfOutHandler   0x002a52    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+      USBCtrlTrfRxService   0x002714    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+   USBCtrlTrfSetupHandler   0x002a1c    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+      USBCtrlTrfTxService   0x002694    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+            USBDeviceInit   0x002228    program     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+           USBDeviceTasks   0x0022f2    program     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+        USBEnableEndpoint   0x00241c    program     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+         USBStallEndpoint   0x0024f0    program     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+          USBStallHandler   0x002944    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+  USBStdFeatureReqHandler   0x002b92    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+      USBStdGetDscHandler   0x002854    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+   USBStdGetStatusHandler   0x0028ce    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+      USBStdSetCfgHandler   0x0027dc    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+               USBSuspend   0x002966    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+     USBTransferOnePacket   0x002464    program     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+       USBWakeFromSuspend   0x00297a    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+               USB_CD_Ptr   0x0030c3    program     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\usb_descriptors.c
+               USB_SD_Ptr   0x0030c5    program     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\usb_descriptors.c
+USER_USB_CALLBACK_EVENT_HANDLER   0x001fc4    program     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+                 UserInit   0x001414    program     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+              WriteEEPROM   0x0030dc    program     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\eeprom.c
+        WriteEEPROM_Agree   0x0031a2    program     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\eeprom.c
+  YourHighPriorityISRCode   0x00102c    program     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+   YourLowPriorityISRCode   0x00103a    program     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+              _2jContinue   0x0034ca    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\memset.asm
+                   _3jEnd   0x0034d4    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\memset.asm
            ___?:_lbl00009   0x001256    program     static                          
            ___?:_lbl00010   0x001254    program     static                          
            ___?:_lbl00011   0x001282    program     static                          
            ___?:_lbl00012   0x001280    program     static                          
-     ___case_114_lbl00169   0x002008    program     static                          
-     ___case_115_lbl00165   0x001ff8    program     static                          
-     ___case_116_lbl00167   0x002000    program     static                          
-     ___case_117_lbl00166   0x001ffc    program     static                          
-       ___case_1_lbl00162   0x001fec    program     static                          
-       ___case_2_lbl00163   0x001ff0    program     static                          
-   ___case_32767_lbl00168   0x002004    program     static                          
-       ___case_3_lbl00164   0x001ff4    program     static                          
-      ___default_lbl00170   0x00200c    program     static                          
+     ___case_114_lbl00172   0x002048    program     static                          
+     ___case_115_lbl00168   0x002038    program     static                          
+     ___case_116_lbl00170   0x002040    program     static                          
+     ___case_117_lbl00169   0x00203c    program     static                          
+       ___case_1_lbl00165   0x00202c    program     static                          
+       ___case_2_lbl00166   0x002030    program     static                          
+   ___case_32767_lbl00171   0x002044    program     static                          
+       ___case_3_lbl00167   0x002034    program     static                          
+      ___default_lbl00173   0x00204c    program     static                          
          ___else_lbl00014   0x001260    program     static                          
          ___else_lbl00020   0x00132c    program     static                          
           ___for_lbl00007   0x0013aa    program     static                          
@@ -184,168 +184,168 @@ USER_USB_CALLBACK_EVENT_HANDLER   0x001f84    program     extern Z:\REVIVE_USB_D
            ___if_lbl00018   0x0013aa    program     static                          
            ___if_lbl00019   0x0013aa    program     static                          
            ___if_lbl00022   0x0013b0    program     static                          
-       ___return_lbl00000   0x0034e4    program     static                          
+       ___return_lbl00000   0x003524    program     static                          
        ___return_lbl00000   0x000004    program     static                          
        ___return_lbl00000   0x001004    program     static                          
        ___return_lbl00001   0x00100c    program     static                          
-       ___return_lbl00001   0x003520    program     static                          
+       ___return_lbl00001   0x003560    program     static                          
        ___return_lbl00002   0x00101c    program     static                          
-       ___return_lbl00002   0x003468    program     static                          
+       ___return_lbl00002   0x0034a8    program     static                          
        ___return_lbl00003   0x00000c    program     static                          
        ___return_lbl00004   0x00001c    program     static                          
        ___return_lbl00006   0x0013b0    program     static                          
-       ___return_lbl00160   0x002012    program     static                          
-   ___switchexit_lbl00161   0x00200e    program     static                          
-               __config_0   0x300000    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-               __config_1   0x300001    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-              __config_10   0x30000c    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-              __config_11   0x30000d    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-               __config_2   0x300002    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-               __config_3   0x300003    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-               __config_4   0x300005    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-               __config_5   0x300006    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-               __config_6   0x300008    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-               __config_7   0x300009    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-               __config_8   0x30000a    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-               __config_9   0x30000b    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+       ___return_lbl00163   0x002052    program     static                          
+   ___switchexit_lbl00164   0x00204e    program     static                          
+               __config_0   0x300000    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+               __config_1   0x300001    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+              __config_10   0x30000c    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+              __config_11   0x30000d    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+               __config_2   0x300002    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+               __config_3   0x300003    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+               __config_4   0x300005    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+               __config_5   0x300006    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+               __config_6   0x300008    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+               __config_7   0x300009    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+               __config_8   0x30000a    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+               __config_9   0x30000b    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
                    __init   0x001006    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\__init.c
-                   __pa_0   0x0031ae    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\eeprom.c
-                   __pa_0   0x002c7c    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-                   __pa_0   0x00201a    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-                   __pa_1   0x002c84    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-                   __pa_1   0x0031d0    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\eeprom.c
-                   __pa_1   0x002036    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-                  __pa_10   0x002ce2    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-                  __pa_10   0x0020c4    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-                  __pa_11   0x002cf2    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-                  __pa_11   0x0020d2    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-                  __pa_12   0x002cfc    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-                  __pa_12   0x0020de    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-                  __pa_13   0x002d10    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-                  __pa_13   0x0020f8    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-                  __pa_14   0x002108    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-                  __pa_14   0x002d24    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-                  __pa_15   0x002d30    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-                  __pa_15   0x002118    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-                  __pa_16   0x002130    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-                  __pa_16   0x002d4a    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-                  __pa_17   0x002d56    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-                  __pa_17   0x00213c    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-                  __pa_18   0x002d62    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-                  __pa_18   0x002148    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-                  __pa_19   0x002158    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-                  __pa_19   0x002d6a    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-                   __pa_2   0x0031da    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\eeprom.c
-                   __pa_2   0x002c8e    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-                   __pa_2   0x00205a    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-                  __pa_20   0x002160    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-                  __pa_20   0x002d72    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-                  __pa_21   0x002168    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-                  __pa_21   0x002d7e    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-                  __pa_22   0x002172    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-                  __pa_22   0x002d8e    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-                  __pa_23   0x00217c    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-                  __pa_23   0x002d9e    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-                  __pa_24   0x002182    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-                  __pa_24   0x002dae    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-                  __pa_25   0x002dbc    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-                  __pa_25   0x002188    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-                  __pa_26   0x002dca    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-                  __pa_26   0x00219a    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-                  __pa_27   0x002dd8    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-                  __pa_27   0x0021a6    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-                  __pa_28   0x002de6    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-                  __pa_28   0x0021b2    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-                  __pa_29   0x002df0    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-                  __pa_29   0x0021be    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-                   __pa_3   0x00206a    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-                   __pa_3   0x002c96    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-                   __pa_3   0x0031e2    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\eeprom.c
-                  __pa_30   0x002e08    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-                  __pa_30   0x0021cc    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-                  __pa_31   0x002e14    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-                  __pa_31   0x0021d6    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-                  __pa_32   0x002e1c    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-                  __pa_32   0x0021e0    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-                  __pa_33   0x002e30    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-                  __pa_34   0x002e42    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-                  __pa_35   0x002e50    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-                  __pa_36   0x002e5a    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-                  __pa_37   0x002e64    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-                  __pa_38   0x002e6a    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-                  __pa_39   0x002e72    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-                   __pa_4   0x002ca0    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-                   __pa_4   0x002086    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-                   __pa_4   0x0031ec    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\eeprom.c
-                  __pa_40   0x002e78    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-                  __pa_41   0x002e86    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-                  __pa_42   0x002e94    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-                  __pa_43   0x002ea2    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-                  __pa_44   0x002eac    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-                  __pa_45   0x002eb6    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-                  __pa_46   0x002ebe    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-                  __pa_47   0x002eca    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-                  __pa_48   0x002ed4    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-                   __pa_5   0x0031fa    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\eeprom.c
-                   __pa_5   0x002caa    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-                   __pa_5   0x00208e    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-                   __pa_6   0x002cb4    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-                   __pa_6   0x00209e    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-                   __pa_7   0x002cbc    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-                   __pa_7   0x0020a8    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-                   __pa_8   0x002ccc    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-                   __pa_8   0x0020b0    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-                   __pa_9   0x0020b6    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-                   __pa_9   0x002cd6    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-              __tmplbl_13   0x001fa0    program     static                          
-              __tmplbl_14   0x001fac    program     static                          
-              __tmplbl_15   0x001fb6    program     static                          
-              __tmplbl_16   0x001fc0    program     static                          
-              __tmplbl_17   0x001fca    program     static                          
-              __tmplbl_18   0x001fd4    program     static                          
-              __tmplbl_19   0x001fde    program     static                          
-              __tmplbl_20   0x001fe8    program     static                          
+                   __pa_0   0x0031ee    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\eeprom.c
+                   __pa_0   0x002cbc    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+                   __pa_0   0x00205a    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+                   __pa_1   0x002cc4    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+                   __pa_1   0x003210    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\eeprom.c
+                   __pa_1   0x002076    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+                  __pa_10   0x002d22    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+                  __pa_10   0x002104    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+                  __pa_11   0x002d32    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+                  __pa_11   0x002112    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+                  __pa_12   0x002d3c    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+                  __pa_12   0x00211e    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+                  __pa_13   0x002d50    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+                  __pa_13   0x002138    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+                  __pa_14   0x002148    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+                  __pa_14   0x002d64    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+                  __pa_15   0x002d70    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+                  __pa_15   0x002158    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+                  __pa_16   0x002170    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+                  __pa_16   0x002d8a    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+                  __pa_17   0x002d96    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+                  __pa_17   0x00217c    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+                  __pa_18   0x002da2    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+                  __pa_18   0x002188    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+                  __pa_19   0x002198    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+                  __pa_19   0x002daa    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+                   __pa_2   0x00321a    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\eeprom.c
+                   __pa_2   0x002cce    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+                   __pa_2   0x00209a    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+                  __pa_20   0x0021a0    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+                  __pa_20   0x002db2    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+                  __pa_21   0x0021a8    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+                  __pa_21   0x002dbe    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+                  __pa_22   0x0021b2    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+                  __pa_22   0x002dce    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+                  __pa_23   0x0021bc    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+                  __pa_23   0x002dde    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+                  __pa_24   0x0021c2    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+                  __pa_24   0x002dee    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+                  __pa_25   0x002dfc    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+                  __pa_25   0x0021c8    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+                  __pa_26   0x002e0a    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+                  __pa_26   0x0021da    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+                  __pa_27   0x002e18    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+                  __pa_27   0x0021e6    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+                  __pa_28   0x002e26    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+                  __pa_28   0x0021f2    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+                  __pa_29   0x002e30    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+                  __pa_29   0x0021fe    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+                   __pa_3   0x0020aa    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+                   __pa_3   0x002cd6    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+                   __pa_3   0x003222    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\eeprom.c
+                  __pa_30   0x002e48    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+                  __pa_30   0x00220c    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+                  __pa_31   0x002e54    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+                  __pa_31   0x002216    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+                  __pa_32   0x002e5c    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+                  __pa_32   0x002220    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+                  __pa_33   0x002e70    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+                  __pa_34   0x002e82    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+                  __pa_35   0x002e90    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+                  __pa_36   0x002e9a    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+                  __pa_37   0x002ea4    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+                  __pa_38   0x002eaa    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+                  __pa_39   0x002eb2    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+                   __pa_4   0x002ce0    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+                   __pa_4   0x0020ba    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+                   __pa_4   0x00322c    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\eeprom.c
+                  __pa_40   0x002eb8    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+                  __pa_41   0x002ec6    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+                  __pa_42   0x002ed4    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+                  __pa_43   0x002ee2    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+                  __pa_44   0x002eec    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+                  __pa_45   0x002ef6    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+                  __pa_46   0x002efe    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+                  __pa_47   0x002f0a    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+                  __pa_48   0x002f14    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+                   __pa_5   0x00323a    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\eeprom.c
+                   __pa_5   0x002cea    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+                   __pa_5   0x0020d6    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+                   __pa_6   0x002cf4    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+                   __pa_6   0x0020de    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+                   __pa_7   0x002cfc    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+                   __pa_7   0x0020e8    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+                   __pa_8   0x002d0c    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+                   __pa_8   0x0020f0    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+                   __pa_9   0x0020f6    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+                   __pa_9   0x002d16    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+              __tmplbl_13   0x001fe0    program     static                          
+              __tmplbl_14   0x001fec    program     static                          
+              __tmplbl_15   0x001ff6    program     static                          
+              __tmplbl_16   0x002000    program     static                          
+              __tmplbl_17   0x00200a    program     static                          
+              __tmplbl_18   0x002014    program     static                          
+              __tmplbl_19   0x00201e    program     static                          
+              __tmplbl_20   0x002028    program     static                          
               __tmplbl_21   0x001214    program     static                          
               __tmplbl_22   0x001230    program     static                          
-              __tmplbl_24   0x002cb4    program     static                          
-              __tmplbl_28   0x001f28    program     static                          
-              __tmplbl_29   0x001f28    program     static                          
-              __tmplbl_34   0x002cb4    program     static                          
-              __tmplbl_37   0x002cb4    program     static                          
-              __tmplbl_38   0x002cb4    program     static                          
-            __zero_memory   0x0034e6    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f14k50.asm
-                _do_cinit   0x0033cc    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
+              __tmplbl_24   0x002cf4    program     static                          
+              __tmplbl_28   0x001f68    program     static                          
+              __tmplbl_29   0x001f68    program     static                          
+              __tmplbl_34   0x002cf4    program     static                          
+              __tmplbl_37   0x002cf4    program     static                          
+              __tmplbl_38   0x002cf4    program     static                          
+            __zero_memory   0x003526    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f14k50.asm
+                _do_cinit   0x00340c    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
                    _entry   0x000000    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
-                   _reset   0x001000    program     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-                 _startup   0x003506    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
-                compare_l   0x0034fc    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f14k50.asm
-        configDescriptor1   0x002eee    program     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\usb_descriptors.c
-                copy_loop   0x00343e    program     static                          
-            copy_one_byte   0x003444    program     static                          
-               device_dsc   0x002edc    program     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\usb_descriptors.c
-                     done   0x003468    program     static                          
-             done_copying   0x003452    program     static                          
-                  endloop   0x0034e0    program     static                          
-                hid_rpt01   0x002f70    program     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\usb_descriptors.c
-                hid_rpt02   0x002fa4    program     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\usb_descriptors.c
-                hid_rpt03   0x002fd5    program     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\usb_descriptors.c
-                hid_rpt04   0x003014    program     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\usb_descriptors.c
-                     jEnd   0x00349c    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\memset.asm
-                     jEnd   0x0034b8    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\strlen.asm
-                    jLoop   0x00347e    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\memset.asm
-                    jLoop   0x0034ae    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\strlen.asm
-                     loop   0x0034c4    program     static                          
-                     loop   0x003516    program     static                          
-                   loop_h   0x0034f4    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f14k50.asm
-                   loop_l   0x0034fe    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f14k50.asm
-                     main   0x001400    program     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-                   memset   0x00346a    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\memset.asm
-                    sd000   0x003031    program     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\usb_descriptors.c
-                    sd001   0x003035    program     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\usb_descriptors.c
-                    sd002   0x00305b    program     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\usb_descriptors.c
-                   strlen   0x00349e    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\strlen.asm
-                     test   0x0033e6    program     static                          
-               zero_block   0x0034f4    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f14k50.asm
+                   _reset   0x001000    program     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+                 _startup   0x003546    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
+                compare_l   0x00353c    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f14k50.asm
+        configDescriptor1   0x002f2e    program     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\usb_descriptors.c
+                copy_loop   0x00347e    program     static                          
+            copy_one_byte   0x003484    program     static                          
+               device_dsc   0x002f1c    program     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\usb_descriptors.c
+                     done   0x0034a8    program     static                          
+             done_copying   0x003492    program     static                          
+                  endloop   0x003520    program     static                          
+                hid_rpt01   0x002fb0    program     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\usb_descriptors.c
+                hid_rpt02   0x002fe4    program     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\usb_descriptors.c
+                hid_rpt03   0x003015    program     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\usb_descriptors.c
+                hid_rpt04   0x003054    program     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\usb_descriptors.c
+                     jEnd   0x0034dc    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\memset.asm
+                     jEnd   0x0034f8    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\strlen.asm
+                    jLoop   0x0034be    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\memset.asm
+                    jLoop   0x0034ee    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\strlen.asm
+                     loop   0x003504    program     static                          
+                     loop   0x003556    program     static                          
+                   loop_h   0x003534    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f14k50.asm
+                   loop_l   0x00353e    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f14k50.asm
+                     main   0x001400    program     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+                   memset   0x0034aa    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\memset.asm
+                    sd000   0x003071    program     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\usb_descriptors.c
+                    sd001   0x003075    program     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\usb_descriptors.c
+                    sd002   0x00309b    program     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\usb_descriptors.c
+                   strlen   0x0034de    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\strlen.asm
+                     test   0x003426    program     static                          
+               zero_block   0x003534    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f14k50.asm
                    ADCON0   0x000fc2       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f14k50.asm
                ADCON0bits   0x000fc2       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f14k50.asm
                    ADCON1   0x000fc1       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f14k50.asm
@@ -363,9 +363,9 @@ USER_USB_CALLBACK_EVENT_HANDLER   0x001f84    program     extern Z:\REVIVE_USB_D
               BAUDCONbits   0x000fb8       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f14k50.asm
                   BAUDCTL   0x000fb8       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f14k50.asm
               BAUDCTLbits   0x000fb8       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f14k50.asm
-                      BDT   0x000200       data     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+                      BDT   0x000200       data     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
                       BSR   0x000fe0       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f14k50.asm
-       BothEP0OutUOWNsSet   0x00008f       data     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+       BothEP0OutUOWNsSet   0x00008f       data     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
                   CCP1CON   0x000fbd       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f14k50.asm
               CCP1CONbits   0x000fbd       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f14k50.asm
                     CCPR1   0x000fbe       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f14k50.asm
@@ -377,7 +377,7 @@ USER_USB_CALLBACK_EVENT_HANDLER   0x001f84    program     extern Z:\REVIVE_USB_D
               CM2CON0bits   0x000f6b       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f14k50.asm
                   CM2CON1   0x000f6c       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f14k50.asm
               CM2CON1bits   0x000f6c       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f14k50.asm
-              CtrlTrfData   0x000258       data     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+              CtrlTrfData   0x000258       data     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
                      DDRA   0x000f92       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f14k50.asm
                  DDRAbits   0x000f92       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f14k50.asm
                      DDRB   0x000f93       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f14k50.asm
@@ -479,8 +479,8 @@ USER_USB_CALLBACK_EVENT_HANDLER   0x001f84    program     extern Z:\REVIVE_USB_D
               REFCON1bits   0x000fbb       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f14k50.asm
                   REFCON2   0x000fbc       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f14k50.asm
               REFCON2bits   0x000fbc       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f14k50.asm
-       ReceivedDataBuffer   0x000279       data     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-             RemoteWakeup   0x00008b       data     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+       ReceivedDataBuffer   0x000279       data     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+             RemoteWakeup   0x00008b       data     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
                      SIGN   0x000000       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\cmath18.asm
                    SLRCON   0x000f76       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f14k50.asm
                SLRCONbits   0x000f76       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f14k50.asm
@@ -504,7 +504,7 @@ USER_USB_CALLBACK_EVENT_HANDLER   0x001f84    program     extern Z:\REVIVE_USB_D
                STATUSbits   0x000fd8       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f14k50.asm
                    STKPTR   0x000ffc       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f14k50.asm
                STKPTRbits   0x000ffc       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f14k50.asm
-                 SetupPkt   0x000250       data     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+                 SetupPkt   0x000250       data     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
                     T0CON   0x000fd5       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f14k50.asm
                 T0CONbits   0x000fd5       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f14k50.asm
                     T1CON   0x000fcd       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f14k50.asm
@@ -538,7 +538,7 @@ USER_USB_CALLBACK_EVENT_HANDLER   0x001f84    program     extern Z:\REVIVE_USB_D
                     TXREG   0x000fad       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f14k50.asm
                     TXSTA   0x000fac       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f14k50.asm
                 TXSTAbits   0x000fac       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f14k50.asm
-         ToSendDataBuffer   0x0002b9       data     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+         ToSendDataBuffer   0x0002b9       data     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
                     UADDR   0x000f5c       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f14k50.asm
                 UADDRbits   0x000f5c       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f14k50.asm
                      UCFG   0x000f61       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f14k50.asm
@@ -573,21 +573,21 @@ USER_USB_CALLBACK_EVENT_HANDLER   0x001f84    program     extern Z:\REVIVE_USB_D
                   UIEbits   0x000f60       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f14k50.asm
                       UIR   0x000f62       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f14k50.asm
                   UIRbits   0x000f62       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f14k50.asm
-   USBActiveConfiguration   0x000061       data     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-    USBAlternateInterface   0x000062       data     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-        USBBusIsSuspended   0x00008c       data     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-USBDeferINDataStagePackets   0x00009e       data     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-USBDeferOUTDataStagePackets   0x00009f       data     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-USBDeferStatusStagePacket   0x00009b       data     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-           USBDeviceState   0x000060       data     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-              USBInHandle   0x0000a7       data     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-             USBOutHandle   0x0000a5       data     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-USBStatusStageEnabledFlag1   0x00009c       data     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-USBStatusStageEnabledFlag2   0x00009d       data     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-USBStatusStageTimeoutCounter   0x00009a       data     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+   USBActiveConfiguration   0x000061       data     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+    USBAlternateInterface   0x000062       data     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+        USBBusIsSuspended   0x00008c       data     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+USBDeferINDataStagePackets   0x00009e       data     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+USBDeferOUTDataStagePackets   0x00009f       data     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+USBDeferStatusStagePacket   0x00009b       data     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+           USBDeviceState   0x000060       data     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+              USBInHandle   0x0000a7       data     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+             USBOutHandle   0x0000a5       data     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+USBStatusStageEnabledFlag1   0x00009c       data     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+USBStatusStageEnabledFlag2   0x00009d       data     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+USBStatusStageTimeoutCounter   0x00009a       data     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
                     USTAT   0x000f63       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f14k50.asm
                 USTATbits   0x000f63       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f14k50.asm
-                USTATcopy   0x00008d       data     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+                USTATcopy   0x00008d       data     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
                  VREFCON0   0x000fba       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f14k50.asm
              VREFCON0bits   0x000fba       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f14k50.asm
                  VREFCON1   0x000fbb       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f14k50.asm
@@ -627,69 +627,69 @@ USBStatusStageTimeoutCounter   0x00009a       data     extern Z:\REVIVE_USB_Debo
                  __TEMPB1   0x000012       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\temparg.asm
                  __TEMPB2   0x000011       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\temparg.asm
                  __TEMPB3   0x000010       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\temparg.asm
-                  __tmp_0   0x00001f       data     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\eeprom.c
-                  __tmp_0   0x00001f       data     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-                  __tmp_0   0x00001f       data     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-                  __tmp_2   0x000014       data     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-          active_protocol   0x0000eb       data     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\HID Device Driver\usb_function_hid.c
-    button_pressing_count   0x000158       data     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-        button_state_set1   0x0000a9       data     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-        button_state_set2   0x0000aa       data     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-                c_version   0x0000a0       data     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-     controlTransferState   0x00007c       data     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+                  __tmp_0   0x00001f       data     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\eeprom.c
+                  __tmp_0   0x00001f       data     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+                  __tmp_0   0x00001f       data     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+                  __tmp_2   0x000014       data     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+          active_protocol   0x0000eb       data     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\HID Device Driver\usb_function_hid.c
+    button_pressing_count   0x000158       data     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+        button_state_set1   0x0000a9       data     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+        button_state_set2   0x0000aa       data     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+                c_version   0x0000a0       data     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+     controlTransferState   0x00007c       data     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
                 curr_byte   0x0000e3       data     static E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
                curr_entry   0x0000e5       data     static E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
                  data_ptr   0x0000e7       data     static E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
-              delay_count   0x00017c       data     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-       eeprom_check_count   0x0000dc       data     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-              eeprom_data   0x0000b7       data     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-     eeprom_smpl_interval   0x0000db       data     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-          endpoint_number   0x00008e       data     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-               ep_data_in   0x000090       data     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-              ep_data_out   0x000095       data     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-               hid_report   0x000271       data     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-            hid_report_in   0x000261       data     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-           hid_report_out   0x000260       data     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-      hid_report_out_flag   0x0000df       data     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-                idle_rate   0x0000ea       data     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\HID Device Driver\usb_function_hid.c
-                  inPipes   0x00007d       data     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-          joystick_buffer   0x000144       data     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-           joystick_input   0x000269       data     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-  joystick_input_out_flag   0x0000dd       data     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-          keyboard_buffer   0x000148       data     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-lastINTransmissionKeyboard   0x000154       data     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-lastOUTTransmissionKeyboard   0x000156       data     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-         lastTransmission   0x000150       data     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-        lastTransmission2   0x000152       data     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-             mouse_buffer   0x000140       data     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-              mouse_input   0x00026d       data     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-     mouse_input_out_flag   0x0000de       data     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-          mouse_move_down   0x000171       data     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-          mouse_move_left   0x000172       data     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-         mouse_move_right   0x000173       data     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-            mouse_move_up   0x000170       data     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-         mouse_wheel_down   0x000175       data     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-           mouse_wheel_up   0x000174       data     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-                 outPipes   0x000082       data     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-   pBDTEntryEP0OutCurrent   0x000063       data     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-      pBDTEntryEP0OutNext   0x000065       data     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-              pBDTEntryIn   0x000071       data     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-             pBDTEntryOut   0x000067       data     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-                     pDst   0x000089       data     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+              delay_count   0x00017c       data     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+       eeprom_check_count   0x0000dc       data     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+              eeprom_data   0x0000b7       data     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+     eeprom_smpl_interval   0x0000db       data     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+          endpoint_number   0x00008e       data     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+               ep_data_in   0x000090       data     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+              ep_data_out   0x000095       data     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+               hid_report   0x000271       data     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+            hid_report_in   0x000261       data     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+           hid_report_out   0x000260       data     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+      hid_report_out_flag   0x0000df       data     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+                idle_rate   0x0000ea       data     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\HID Device Driver\usb_function_hid.c
+                  inPipes   0x00007d       data     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+          joystick_buffer   0x000144       data     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+           joystick_input   0x000269       data     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+  joystick_input_out_flag   0x0000dd       data     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+          keyboard_buffer   0x000148       data     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+lastINTransmissionKeyboard   0x000154       data     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+lastOUTTransmissionKeyboard   0x000156       data     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+         lastTransmission   0x000150       data     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+        lastTransmission2   0x000152       data     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+             mouse_buffer   0x000140       data     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+              mouse_input   0x00026d       data     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+     mouse_input_out_flag   0x0000de       data     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+          mouse_move_down   0x000171       data     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+          mouse_move_left   0x000172       data     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+         mouse_move_right   0x000173       data     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+            mouse_move_up   0x000170       data     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+         mouse_wheel_down   0x000175       data     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+           mouse_wheel_up   0x000174       data     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+                 outPipes   0x000082       data     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+   pBDTEntryEP0OutCurrent   0x000063       data     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+      pBDTEntryEP0OutNext   0x000065       data     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+              pBDTEntryIn   0x000071       data     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+             pBDTEntryOut   0x000067       data     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+                     pDst   0x000089       data     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
                      prom   0x0000e0       data     static E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
-        shortPacketStatus   0x00007b       data     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-    speed_mouse_move_down   0x000177       data     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-    speed_mouse_move_left   0x000178       data     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-   speed_mouse_move_right   0x000179       data     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-      speed_mouse_move_up   0x000176       data     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-   speed_mouse_wheel_down   0x00017b       data     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-     speed_mouse_wheel_up   0x00017a       data     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-     temp_mouse_move_down   0x0000ad       data     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-     temp_mouse_move_left   0x0000af       data     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-    temp_mouse_move_right   0x0000b1       data     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-       temp_mouse_move_up   0x0000ab       data     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-    temp_mouse_wheel_down   0x0000b5       data     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-      temp_mouse_wheel_up   0x0000b3       data     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+        shortPacketStatus   0x00007b       data     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+    speed_mouse_move_down   0x000177       data     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+    speed_mouse_move_left   0x000178       data     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+   speed_mouse_move_right   0x000179       data     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+      speed_mouse_move_up   0x000176       data     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+   speed_mouse_wheel_down   0x00017b       data     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+     speed_mouse_wheel_up   0x00017a       data     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+     temp_mouse_move_down   0x0000ad       data     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+     temp_mouse_move_left   0x0000af       data     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+    temp_mouse_move_right   0x0000b1       data     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+       temp_mouse_move_up   0x0000ab       data     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+    temp_mouse_wheel_down   0x0000b5       data     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+      temp_mouse_wheel_up   0x0000b3       data     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
 
 
 
@@ -698,19 +698,19 @@ lastOUTTransmissionKeyboard   0x000156       data     extern Z:\REVIVE_USB_Debou
                 ---------  ---------  ---------  --------- ---------                
                    _entry   0x000000    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
        ___return_lbl00000   0x000004    program     static                          
-                 High_ISR   0x000008    program     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+                 High_ISR   0x000008    program     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
        ___return_lbl00003   0x00000c    program     static                          
-                  Low_ISR   0x000018    program     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+                  Low_ISR   0x000018    program     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
        ___return_lbl00004   0x00001c    program     static                          
-                   _reset   0x001000    program     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+                   _reset   0x001000    program     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
        ___return_lbl00000   0x001004    program     static                          
                    __init   0x001006    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\__init.c
-        Remapped_High_ISR   0x001008    program     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+        Remapped_High_ISR   0x001008    program     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
        ___return_lbl00001   0x00100c    program     static                          
-         Remapped_Low_ISR   0x001018    program     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+         Remapped_Low_ISR   0x001018    program     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
        ___return_lbl00002   0x00101c    program     static                          
-  YourHighPriorityISRCode   0x00102c    program     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-   YourLowPriorityISRCode   0x00103a    program     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+  YourHighPriorityISRCode   0x00102c    program     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+   YourLowPriorityISRCode   0x00103a    program     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
           ___for_lbl00021   0x001200    program     static                          
               __tmplbl_21   0x001214    program     static                          
               __tmplbl_22   0x001230    program     static                          
@@ -730,219 +730,219 @@ lastOUTTransmissionKeyboard   0x000156       data     extern Z:\REVIVE_USB_Debou
        ___return_lbl00006   0x0013b0    program     static                          
            ___if_lbl00022   0x0013b0    program     static                          
           ___for_lbl00008   0x0013b0    program     static                          
-                     main   0x001400    program     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-         InitializeSystem   0x00140a    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-                 UserInit   0x001414    program     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-                ProcessIO   0x0016cc    program     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-              __tmplbl_29   0x001f28    program     static                          
-              __tmplbl_28   0x001f28    program     static                          
-             USBCBSuspend   0x001f3c    program     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-     USBCBWakeFromSuspend   0x001f3e    program     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-        USBCB_SOF_Handler   0x001f40    program     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-        USBCBErrorHandler   0x001f42    program     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-       USBCBCheckOtherReq   0x001f44    program     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-    USBCBStdSetDscHandler   0x001f48    program     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-              USBCBInitEP   0x001f4a    program     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-          USBCBSendResume   0x001f68    program     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-USER_USB_CALLBACK_EVENT_HANDLER   0x001f84    program     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-              __tmplbl_13   0x001fa0    program     static                          
-              __tmplbl_14   0x001fac    program     static                          
-              __tmplbl_15   0x001fb6    program     static                          
-              __tmplbl_16   0x001fc0    program     static                          
-              __tmplbl_17   0x001fca    program     static                          
-              __tmplbl_18   0x001fd4    program     static                          
-              __tmplbl_19   0x001fde    program     static                          
-              __tmplbl_20   0x001fe8    program     static                          
-       ___case_1_lbl00162   0x001fec    program     static                          
-       ___case_2_lbl00163   0x001ff0    program     static                          
-       ___case_3_lbl00164   0x001ff4    program     static                          
-     ___case_115_lbl00165   0x001ff8    program     static                          
-     ___case_117_lbl00166   0x001ffc    program     static                          
-     ___case_116_lbl00167   0x002000    program     static                          
-   ___case_32767_lbl00168   0x002004    program     static                          
-     ___case_114_lbl00169   0x002008    program     static                          
-      ___default_lbl00170   0x00200c    program     static                          
-   ___switchexit_lbl00161   0x00200e    program     static                          
-       ___return_lbl00160   0x002012    program     static                          
-                   __pa_0   0x00201a    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-                   __pa_1   0x002036    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-                   __pa_2   0x00205a    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-                   __pa_3   0x00206a    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-                   __pa_4   0x002086    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-                   __pa_5   0x00208e    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-                   __pa_6   0x00209e    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-                   __pa_7   0x0020a8    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-                   __pa_8   0x0020b0    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-                   __pa_9   0x0020b6    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-                  __pa_10   0x0020c4    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-                  __pa_11   0x0020d2    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-                  __pa_12   0x0020de    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-                  __pa_13   0x0020f8    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-                  __pa_14   0x002108    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-                  __pa_15   0x002118    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-                  __pa_16   0x002130    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-                  __pa_17   0x00213c    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-                  __pa_18   0x002148    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-                  __pa_19   0x002158    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-                  __pa_20   0x002160    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-                  __pa_21   0x002168    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-                  __pa_22   0x002172    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-                  __pa_23   0x00217c    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-                  __pa_24   0x002182    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-                  __pa_25   0x002188    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-                  __pa_26   0x00219a    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-                  __pa_27   0x0021a6    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-                  __pa_28   0x0021b2    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-                  __pa_29   0x0021be    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-                  __pa_30   0x0021cc    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-                  __pa_31   0x0021d6    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-                  __pa_32   0x0021e0    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-            USBDeviceInit   0x0021e8    program     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-           USBDeviceTasks   0x0022b2    program     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-        USBEnableEndpoint   0x0023dc    program     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-     USBTransferOnePacket   0x002424    program     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-         USBStallEndpoint   0x0024b0    program     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-              USBCancelIO   0x0024e0    program     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-USBCtrlEPAllowStatusStage   0x002514    program     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-  USBCtrlEPAllowDataStage   0x002560    program     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-     USBConfigureEndpoint   0x00259e    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
- USBCtrlEPServiceComplete   0x0025fa    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-      USBCtrlTrfTxService   0x002654    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-      USBCtrlTrfRxService   0x0026d4    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-      USBStdSetCfgHandler   0x00279c    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-      USBStdGetDscHandler   0x002814    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-   USBStdGetStatusHandler   0x00288e    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-          USBStallHandler   0x002904    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-               USBSuspend   0x002926    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-       USBWakeFromSuspend   0x00293a    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-         USBCtrlEPService   0x002952    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-   USBCtrlTrfSetupHandler   0x0029dc    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-     USBCtrlTrfOutHandler   0x002a12    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-      USBCtrlTrfInHandler   0x002a30    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-       USBCheckStdRequest   0x002aaa    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-  USBStdFeatureReqHandler   0x002b52    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-                   __pa_0   0x002c7c    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-                   __pa_1   0x002c84    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-                   __pa_2   0x002c8e    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-                   __pa_3   0x002c96    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-                   __pa_4   0x002ca0    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-                   __pa_5   0x002caa    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-              __tmplbl_38   0x002cb4    program     static                          
-              __tmplbl_37   0x002cb4    program     static                          
-                   __pa_6   0x002cb4    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-              __tmplbl_34   0x002cb4    program     static                          
-              __tmplbl_24   0x002cb4    program     static                          
-                   __pa_7   0x002cbc    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-                   __pa_8   0x002ccc    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-                   __pa_9   0x002cd6    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-                  __pa_10   0x002ce2    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-                  __pa_11   0x002cf2    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-                  __pa_12   0x002cfc    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-                  __pa_13   0x002d10    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-                  __pa_14   0x002d24    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-                  __pa_15   0x002d30    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-                  __pa_16   0x002d4a    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-                  __pa_17   0x002d56    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-                  __pa_18   0x002d62    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-                  __pa_19   0x002d6a    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-                  __pa_20   0x002d72    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-                  __pa_21   0x002d7e    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-                  __pa_22   0x002d8e    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-                  __pa_23   0x002d9e    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-                  __pa_24   0x002dae    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-                  __pa_25   0x002dbc    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-                  __pa_26   0x002dca    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-                  __pa_27   0x002dd8    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-                  __pa_28   0x002de6    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-                  __pa_29   0x002df0    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-                  __pa_30   0x002e08    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-                  __pa_31   0x002e14    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-                  __pa_32   0x002e1c    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-                  __pa_33   0x002e30    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-                  __pa_34   0x002e42    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-                  __pa_35   0x002e50    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-                  __pa_36   0x002e5a    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-                  __pa_37   0x002e64    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-                  __pa_38   0x002e6a    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-                  __pa_39   0x002e72    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-                  __pa_40   0x002e78    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-                  __pa_41   0x002e86    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-                  __pa_42   0x002e94    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-                  __pa_43   0x002ea2    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-                  __pa_44   0x002eac    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-                  __pa_45   0x002eb6    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-                  __pa_46   0x002ebe    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-                  __pa_47   0x002eca    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-                  __pa_48   0x002ed4    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-               device_dsc   0x002edc    program     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\usb_descriptors.c
-        configDescriptor1   0x002eee    program     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\usb_descriptors.c
-                hid_rpt01   0x002f70    program     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\usb_descriptors.c
-                hid_rpt02   0x002fa4    program     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\usb_descriptors.c
-                hid_rpt03   0x002fd5    program     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\usb_descriptors.c
-                hid_rpt04   0x003014    program     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\usb_descriptors.c
-                    sd000   0x003031    program     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\usb_descriptors.c
-                    sd001   0x003035    program     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\usb_descriptors.c
-                    sd002   0x00305b    program     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\usb_descriptors.c
-               USB_CD_Ptr   0x003083    program     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\usb_descriptors.c
-               USB_SD_Ptr   0x003085    program     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\usb_descriptors.c
-               ReadEEPROM   0x00308c    program     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\eeprom.c
-              WriteEEPROM   0x00309c    program     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\eeprom.c
-         ReadEEPROM_Agree   0x0030d0    program     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\eeprom.c
-        WriteEEPROM_Agree   0x003162    program     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\eeprom.c
-                   __pa_0   0x0031ae    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\eeprom.c
-                   __pa_1   0x0031d0    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\eeprom.c
-                   __pa_2   0x0031da    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\eeprom.c
-                   __pa_3   0x0031e2    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\eeprom.c
-                   __pa_4   0x0031ec    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\eeprom.c
-                   __pa_5   0x0031fa    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\eeprom.c
-       USBCheckHIDRequest   0x003204    program     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\HID Device Driver\usb_function_hid.c
-                 FXD1616S   0x003326    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616s.asm
-                  DA1616S   0x003338    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616s.asm
-                   D1616S   0x003348    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616s.asm
-                 D1616SOK   0x003352    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616s.asm
-                D1616SNEG   0x003356    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616s.asm
-                  D1616SX   0x003368    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616s.asm
-                 FXM1616S   0x003372    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxm1616s.asm
-               TSIGN1616A   0x0033be    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxm1616s.asm
-                _do_cinit   0x0033cc    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
-                     test   0x0033e6    program     static                          
-                copy_loop   0x00343e    program     static                          
-            copy_one_byte   0x003444    program     static                          
-             done_copying   0x003452    program     static                          
-                     done   0x003468    program     static                          
-       ___return_lbl00002   0x003468    program     static                          
-                   memset   0x00346a    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\memset.asm
-                    jLoop   0x00347e    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\memset.asm
-              _2jContinue   0x00348a    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\memset.asm
-                   _3jEnd   0x003494    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\memset.asm
-                     jEnd   0x00349c    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\memset.asm
-                   strlen   0x00349e    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\strlen.asm
-                    jLoop   0x0034ae    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\strlen.asm
-                     jEnd   0x0034b8    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\strlen.asm
-                 FXD1616U   0x0034ba    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616u.c
-                     loop   0x0034c4    program     static                          
-                  endloop   0x0034e0    program     static                          
-       ___return_lbl00000   0x0034e4    program     static                          
-            __zero_memory   0x0034e6    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f14k50.asm
-                   loop_h   0x0034f4    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f14k50.asm
-               zero_block   0x0034f4    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f14k50.asm
-                compare_l   0x0034fc    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f14k50.asm
-                   loop_l   0x0034fe    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f14k50.asm
-                 _startup   0x003506    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
-                     loop   0x003516    program     static                          
-       ___return_lbl00001   0x003520    program     static                          
-               __config_0   0x300000    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-               __config_1   0x300001    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-               __config_2   0x300002    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-               __config_3   0x300003    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-               __config_4   0x300005    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-               __config_5   0x300006    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-               __config_6   0x300008    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-               __config_7   0x300009    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-               __config_8   0x30000a    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-               __config_9   0x30000b    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-              __config_10   0x30000c    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-              __config_11   0x30000d    program     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+                     main   0x001400    program     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+         InitializeSystem   0x00140a    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+                 UserInit   0x001414    program     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+                ProcessIO   0x0016cc    program     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+              __tmplbl_29   0x001f68    program     static                          
+              __tmplbl_28   0x001f68    program     static                          
+             USBCBSuspend   0x001f7c    program     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+     USBCBWakeFromSuspend   0x001f7e    program     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+        USBCB_SOF_Handler   0x001f80    program     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+        USBCBErrorHandler   0x001f82    program     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+       USBCBCheckOtherReq   0x001f84    program     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+    USBCBStdSetDscHandler   0x001f88    program     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+              USBCBInitEP   0x001f8a    program     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+          USBCBSendResume   0x001fa8    program     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+USER_USB_CALLBACK_EVENT_HANDLER   0x001fc4    program     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+              __tmplbl_13   0x001fe0    program     static                          
+              __tmplbl_14   0x001fec    program     static                          
+              __tmplbl_15   0x001ff6    program     static                          
+              __tmplbl_16   0x002000    program     static                          
+              __tmplbl_17   0x00200a    program     static                          
+              __tmplbl_18   0x002014    program     static                          
+              __tmplbl_19   0x00201e    program     static                          
+              __tmplbl_20   0x002028    program     static                          
+       ___case_1_lbl00165   0x00202c    program     static                          
+       ___case_2_lbl00166   0x002030    program     static                          
+       ___case_3_lbl00167   0x002034    program     static                          
+     ___case_115_lbl00168   0x002038    program     static                          
+     ___case_117_lbl00169   0x00203c    program     static                          
+     ___case_116_lbl00170   0x002040    program     static                          
+   ___case_32767_lbl00171   0x002044    program     static                          
+     ___case_114_lbl00172   0x002048    program     static                          
+      ___default_lbl00173   0x00204c    program     static                          
+   ___switchexit_lbl00164   0x00204e    program     static                          
+       ___return_lbl00163   0x002052    program     static                          
+                   __pa_0   0x00205a    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+                   __pa_1   0x002076    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+                   __pa_2   0x00209a    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+                   __pa_3   0x0020aa    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+                   __pa_4   0x0020ba    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+                   __pa_5   0x0020d6    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+                   __pa_6   0x0020de    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+                   __pa_7   0x0020e8    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+                   __pa_8   0x0020f0    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+                   __pa_9   0x0020f6    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+                  __pa_10   0x002104    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+                  __pa_11   0x002112    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+                  __pa_12   0x00211e    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+                  __pa_13   0x002138    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+                  __pa_14   0x002148    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+                  __pa_15   0x002158    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+                  __pa_16   0x002170    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+                  __pa_17   0x00217c    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+                  __pa_18   0x002188    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+                  __pa_19   0x002198    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+                  __pa_20   0x0021a0    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+                  __pa_21   0x0021a8    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+                  __pa_22   0x0021b2    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+                  __pa_23   0x0021bc    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+                  __pa_24   0x0021c2    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+                  __pa_25   0x0021c8    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+                  __pa_26   0x0021da    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+                  __pa_27   0x0021e6    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+                  __pa_28   0x0021f2    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+                  __pa_29   0x0021fe    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+                  __pa_30   0x00220c    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+                  __pa_31   0x002216    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+                  __pa_32   0x002220    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+            USBDeviceInit   0x002228    program     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+           USBDeviceTasks   0x0022f2    program     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+        USBEnableEndpoint   0x00241c    program     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+     USBTransferOnePacket   0x002464    program     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+         USBStallEndpoint   0x0024f0    program     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+              USBCancelIO   0x002520    program     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+USBCtrlEPAllowStatusStage   0x002554    program     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+  USBCtrlEPAllowDataStage   0x0025a0    program     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+     USBConfigureEndpoint   0x0025de    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+ USBCtrlEPServiceComplete   0x00263a    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+      USBCtrlTrfTxService   0x002694    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+      USBCtrlTrfRxService   0x002714    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+      USBStdSetCfgHandler   0x0027dc    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+      USBStdGetDscHandler   0x002854    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+   USBStdGetStatusHandler   0x0028ce    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+          USBStallHandler   0x002944    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+               USBSuspend   0x002966    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+       USBWakeFromSuspend   0x00297a    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+         USBCtrlEPService   0x002992    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+   USBCtrlTrfSetupHandler   0x002a1c    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+     USBCtrlTrfOutHandler   0x002a52    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+      USBCtrlTrfInHandler   0x002a70    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+       USBCheckStdRequest   0x002aea    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+  USBStdFeatureReqHandler   0x002b92    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+                   __pa_0   0x002cbc    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+                   __pa_1   0x002cc4    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+                   __pa_2   0x002cce    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+                   __pa_3   0x002cd6    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+                   __pa_4   0x002ce0    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+                   __pa_5   0x002cea    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+              __tmplbl_38   0x002cf4    program     static                          
+              __tmplbl_37   0x002cf4    program     static                          
+                   __pa_6   0x002cf4    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+              __tmplbl_34   0x002cf4    program     static                          
+              __tmplbl_24   0x002cf4    program     static                          
+                   __pa_7   0x002cfc    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+                   __pa_8   0x002d0c    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+                   __pa_9   0x002d16    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+                  __pa_10   0x002d22    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+                  __pa_11   0x002d32    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+                  __pa_12   0x002d3c    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+                  __pa_13   0x002d50    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+                  __pa_14   0x002d64    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+                  __pa_15   0x002d70    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+                  __pa_16   0x002d8a    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+                  __pa_17   0x002d96    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+                  __pa_18   0x002da2    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+                  __pa_19   0x002daa    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+                  __pa_20   0x002db2    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+                  __pa_21   0x002dbe    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+                  __pa_22   0x002dce    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+                  __pa_23   0x002dde    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+                  __pa_24   0x002dee    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+                  __pa_25   0x002dfc    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+                  __pa_26   0x002e0a    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+                  __pa_27   0x002e18    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+                  __pa_28   0x002e26    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+                  __pa_29   0x002e30    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+                  __pa_30   0x002e48    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+                  __pa_31   0x002e54    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+                  __pa_32   0x002e5c    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+                  __pa_33   0x002e70    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+                  __pa_34   0x002e82    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+                  __pa_35   0x002e90    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+                  __pa_36   0x002e9a    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+                  __pa_37   0x002ea4    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+                  __pa_38   0x002eaa    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+                  __pa_39   0x002eb2    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+                  __pa_40   0x002eb8    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+                  __pa_41   0x002ec6    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+                  __pa_42   0x002ed4    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+                  __pa_43   0x002ee2    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+                  __pa_44   0x002eec    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+                  __pa_45   0x002ef6    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+                  __pa_46   0x002efe    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+                  __pa_47   0x002f0a    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+                  __pa_48   0x002f14    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+               device_dsc   0x002f1c    program     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\usb_descriptors.c
+        configDescriptor1   0x002f2e    program     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\usb_descriptors.c
+                hid_rpt01   0x002fb0    program     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\usb_descriptors.c
+                hid_rpt02   0x002fe4    program     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\usb_descriptors.c
+                hid_rpt03   0x003015    program     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\usb_descriptors.c
+                hid_rpt04   0x003054    program     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\usb_descriptors.c
+                    sd000   0x003071    program     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\usb_descriptors.c
+                    sd001   0x003075    program     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\usb_descriptors.c
+                    sd002   0x00309b    program     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\usb_descriptors.c
+               USB_CD_Ptr   0x0030c3    program     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\usb_descriptors.c
+               USB_SD_Ptr   0x0030c5    program     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\usb_descriptors.c
+               ReadEEPROM   0x0030cc    program     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\eeprom.c
+              WriteEEPROM   0x0030dc    program     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\eeprom.c
+         ReadEEPROM_Agree   0x003110    program     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\eeprom.c
+        WriteEEPROM_Agree   0x0031a2    program     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\eeprom.c
+                   __pa_0   0x0031ee    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\eeprom.c
+                   __pa_1   0x003210    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\eeprom.c
+                   __pa_2   0x00321a    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\eeprom.c
+                   __pa_3   0x003222    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\eeprom.c
+                   __pa_4   0x00322c    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\eeprom.c
+                   __pa_5   0x00323a    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\eeprom.c
+       USBCheckHIDRequest   0x003244    program     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\HID Device Driver\usb_function_hid.c
+                 FXD1616S   0x003366    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616s.asm
+                  DA1616S   0x003378    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616s.asm
+                   D1616S   0x003388    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616s.asm
+                 D1616SOK   0x003392    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616s.asm
+                D1616SNEG   0x003396    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616s.asm
+                  D1616SX   0x0033a8    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616s.asm
+                 FXM1616S   0x0033b2    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxm1616s.asm
+               TSIGN1616A   0x0033fe    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxm1616s.asm
+                _do_cinit   0x00340c    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
+                     test   0x003426    program     static                          
+                copy_loop   0x00347e    program     static                          
+            copy_one_byte   0x003484    program     static                          
+             done_copying   0x003492    program     static                          
+                     done   0x0034a8    program     static                          
+       ___return_lbl00002   0x0034a8    program     static                          
+                   memset   0x0034aa    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\memset.asm
+                    jLoop   0x0034be    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\memset.asm
+              _2jContinue   0x0034ca    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\memset.asm
+                   _3jEnd   0x0034d4    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\memset.asm
+                     jEnd   0x0034dc    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\memset.asm
+                   strlen   0x0034de    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\strlen.asm
+                    jLoop   0x0034ee    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\strlen.asm
+                     jEnd   0x0034f8    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\strlen.asm
+                 FXD1616U   0x0034fa    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616u.c
+                     loop   0x003504    program     static                          
+                  endloop   0x003520    program     static                          
+       ___return_lbl00000   0x003524    program     static                          
+            __zero_memory   0x003526    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f14k50.asm
+                   loop_h   0x003534    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f14k50.asm
+               zero_block   0x003534    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f14k50.asm
+                compare_l   0x00353c    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f14k50.asm
+                   loop_l   0x00353e    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f14k50.asm
+                 _startup   0x003546    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
+                     loop   0x003556    program     static                          
+       ___return_lbl00001   0x003560    program     static                          
+               __config_0   0x300000    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+               __config_1   0x300001    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+               __config_2   0x300002    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+               __config_3   0x300003    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+               __config_4   0x300005    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+               __config_5   0x300006    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+               __config_6   0x300008    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+               __config_7   0x300009    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+               __config_8   0x30000a    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+               __config_9   0x30000b    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+              __config_10   0x30000c    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+              __config_11   0x30000d    program     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
                      SIGN   0x000000       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\cmath18.asm
             __FPFLAGSbits   0x000001       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\cmath18.asm
                 __FPFLAGS   0x000001       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\cmath18.asm
@@ -969,89 +969,89 @@ USBCtrlEPAllowStatusStage   0x002514    program     extern Z:\REVIVE_USB_Debounc
                  __TEMPB1   0x000012       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\temparg.asm
                  __TEMPB0   0x000013       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\temparg.asm
                    __TEMP   0x000013       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\temparg.asm
-                  __tmp_2   0x000014       data     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-                  __tmp_0   0x00001f       data     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-                  __tmp_0   0x00001f       data     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-                  __tmp_0   0x00001f       data     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\eeprom.c
-           USBDeviceState   0x000060       data     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-   USBActiveConfiguration   0x000061       data     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-    USBAlternateInterface   0x000062       data     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-   pBDTEntryEP0OutCurrent   0x000063       data     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-      pBDTEntryEP0OutNext   0x000065       data     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-             pBDTEntryOut   0x000067       data     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-              pBDTEntryIn   0x000071       data     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-        shortPacketStatus   0x00007b       data     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-     controlTransferState   0x00007c       data     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-                  inPipes   0x00007d       data     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-                 outPipes   0x000082       data     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-                     pDst   0x000089       data     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-             RemoteWakeup   0x00008b       data     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-        USBBusIsSuspended   0x00008c       data     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-                USTATcopy   0x00008d       data     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-          endpoint_number   0x00008e       data     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-       BothEP0OutUOWNsSet   0x00008f       data     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-               ep_data_in   0x000090       data     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-              ep_data_out   0x000095       data     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-USBStatusStageTimeoutCounter   0x00009a       data     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-USBDeferStatusStagePacket   0x00009b       data     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-USBStatusStageEnabledFlag1   0x00009c       data     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-USBStatusStageEnabledFlag2   0x00009d       data     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-USBDeferINDataStagePackets   0x00009e       data     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-USBDeferOUTDataStagePackets   0x00009f       data     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-                c_version   0x0000a0       data     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-             USBOutHandle   0x0000a5       data     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-              USBInHandle   0x0000a7       data     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-        button_state_set1   0x0000a9       data     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-        button_state_set2   0x0000aa       data     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-       temp_mouse_move_up   0x0000ab       data     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-     temp_mouse_move_down   0x0000ad       data     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-     temp_mouse_move_left   0x0000af       data     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-    temp_mouse_move_right   0x0000b1       data     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-      temp_mouse_wheel_up   0x0000b3       data     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-    temp_mouse_wheel_down   0x0000b5       data     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-              eeprom_data   0x0000b7       data     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-     eeprom_smpl_interval   0x0000db       data     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-       eeprom_check_count   0x0000dc       data     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-  joystick_input_out_flag   0x0000dd       data     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-     mouse_input_out_flag   0x0000de       data     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-      hid_report_out_flag   0x0000df       data     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+                  __tmp_2   0x000014       data     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+                  __tmp_0   0x00001f       data     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+                  __tmp_0   0x00001f       data     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+                  __tmp_0   0x00001f       data     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\eeprom.c
+           USBDeviceState   0x000060       data     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+   USBActiveConfiguration   0x000061       data     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+    USBAlternateInterface   0x000062       data     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+   pBDTEntryEP0OutCurrent   0x000063       data     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+      pBDTEntryEP0OutNext   0x000065       data     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+             pBDTEntryOut   0x000067       data     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+              pBDTEntryIn   0x000071       data     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+        shortPacketStatus   0x00007b       data     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+     controlTransferState   0x00007c       data     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+                  inPipes   0x00007d       data     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+                 outPipes   0x000082       data     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+                     pDst   0x000089       data     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+             RemoteWakeup   0x00008b       data     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+        USBBusIsSuspended   0x00008c       data     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+                USTATcopy   0x00008d       data     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+          endpoint_number   0x00008e       data     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+       BothEP0OutUOWNsSet   0x00008f       data     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+               ep_data_in   0x000090       data     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+              ep_data_out   0x000095       data     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+USBStatusStageTimeoutCounter   0x00009a       data     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+USBDeferStatusStagePacket   0x00009b       data     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+USBStatusStageEnabledFlag1   0x00009c       data     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+USBStatusStageEnabledFlag2   0x00009d       data     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+USBDeferINDataStagePackets   0x00009e       data     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+USBDeferOUTDataStagePackets   0x00009f       data     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+                c_version   0x0000a0       data     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+             USBOutHandle   0x0000a5       data     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+              USBInHandle   0x0000a7       data     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+        button_state_set1   0x0000a9       data     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+        button_state_set2   0x0000aa       data     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+       temp_mouse_move_up   0x0000ab       data     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+     temp_mouse_move_down   0x0000ad       data     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+     temp_mouse_move_left   0x0000af       data     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+    temp_mouse_move_right   0x0000b1       data     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+      temp_mouse_wheel_up   0x0000b3       data     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+    temp_mouse_wheel_down   0x0000b5       data     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+              eeprom_data   0x0000b7       data     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+     eeprom_smpl_interval   0x0000db       data     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+       eeprom_check_count   0x0000dc       data     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+  joystick_input_out_flag   0x0000dd       data     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+     mouse_input_out_flag   0x0000de       data     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+      hid_report_out_flag   0x0000df       data     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
                      prom   0x0000e0       data     static E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
                 curr_byte   0x0000e3       data     static E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
                curr_entry   0x0000e5       data     static E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
                  data_ptr   0x0000e7       data     static E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
-                idle_rate   0x0000ea       data     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\HID Device Driver\usb_function_hid.c
-          active_protocol   0x0000eb       data     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\HID Device Driver\usb_function_hid.c
-             mouse_buffer   0x000140       data     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-          joystick_buffer   0x000144       data     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-          keyboard_buffer   0x000148       data     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-         lastTransmission   0x000150       data     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-        lastTransmission2   0x000152       data     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-lastINTransmissionKeyboard   0x000154       data     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-lastOUTTransmissionKeyboard   0x000156       data     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-    button_pressing_count   0x000158       data     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-            mouse_move_up   0x000170       data     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-          mouse_move_down   0x000171       data     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-          mouse_move_left   0x000172       data     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-         mouse_move_right   0x000173       data     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-           mouse_wheel_up   0x000174       data     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-         mouse_wheel_down   0x000175       data     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-      speed_mouse_move_up   0x000176       data     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-    speed_mouse_move_down   0x000177       data     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-    speed_mouse_move_left   0x000178       data     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-   speed_mouse_move_right   0x000179       data     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-     speed_mouse_wheel_up   0x00017a       data     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-   speed_mouse_wheel_down   0x00017b       data     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-              delay_count   0x00017c       data     static Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-                      BDT   0x000200       data     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-                 SetupPkt   0x000250       data     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-              CtrlTrfData   0x000258       data     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-           hid_report_out   0x000260       data     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-            hid_report_in   0x000261       data     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
-           joystick_input   0x000269       data     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-              mouse_input   0x00026d       data     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-               hid_report   0x000271       data     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-       ReceivedDataBuffer   0x000279       data     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
-         ToSendDataBuffer   0x0002b9       data     extern Z:\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+                idle_rate   0x0000ea       data     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\HID Device Driver\usb_function_hid.c
+          active_protocol   0x0000eb       data     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\HID Device Driver\usb_function_hid.c
+             mouse_buffer   0x000140       data     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+          joystick_buffer   0x000144       data     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+          keyboard_buffer   0x000148       data     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+         lastTransmission   0x000150       data     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+        lastTransmission2   0x000152       data     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+lastINTransmissionKeyboard   0x000154       data     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+lastOUTTransmissionKeyboard   0x000156       data     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+    button_pressing_count   0x000158       data     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+            mouse_move_up   0x000170       data     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+          mouse_move_down   0x000171       data     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+          mouse_move_left   0x000172       data     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+         mouse_move_right   0x000173       data     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+           mouse_wheel_up   0x000174       data     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+         mouse_wheel_down   0x000175       data     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+      speed_mouse_move_up   0x000176       data     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+    speed_mouse_move_down   0x000177       data     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+    speed_mouse_move_left   0x000178       data     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+   speed_mouse_move_right   0x000179       data     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+     speed_mouse_wheel_up   0x00017a       data     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+   speed_mouse_wheel_down   0x00017b       data     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+              delay_count   0x00017c       data     static C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+                      BDT   0x000200       data     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+                 SetupPkt   0x000250       data     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+              CtrlTrfData   0x000258       data     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+           hid_report_out   0x000260       data     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+            hid_report_in   0x000261       data     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\Microchip\USB\usb_device.c
+           joystick_input   0x000269       data     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+              mouse_input   0x00026d       data     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+               hid_report   0x000271       data     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+       ReceivedDataBuffer   0x000279       data     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
+         ToSendDataBuffer   0x0002b9       data     extern C:\Users\guroc\Desktop\REVIVE_USB_Debounce\REVIVE_USB_Debounce_FW\main.c
                  UEP0bits   0x000f53       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f14k50.asm
                      UEP0   0x000f53       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f14k50.asm
                      UEP1   0x000f54       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f14k50.asm
