@@ -1,3 +1,9 @@
+#### 最新バージョン
+最終更新日: 2020/10/29  
+ファームウェア: D1.5  
+設定ツール: 1.40  
+最終更新内容: 公式ファームウェアver008のマージ、設定ツールの機能追加(遅延秒数の計算機能)  
+
 #  REVIVE USB チャタリング対策版（PID004A）
 本プログラムは、株式会社ビット・トレード・ワンが提供するREVIVE USBのファームウェアおよびWindowsアプリケーション「REVIVE USB Configuration Tool」を、[Assembly Desk License](https://raw.githubusercontent.com/ushui/REVIVE_USB_Debounce/master/LICENSE)ライセンスに基づいて改変したプログラムです。  
 ここでは追加・変更した機能について記載します。基本的な使用方法、プログラムの仕様は改変元プログラムと変わりませんので、概要については[公式リポジトリ](https://github.com/bit-trade-one/REVIVE-USB)をご覧ください。  
